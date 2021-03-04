@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hiển thị đầu ra</title>
+
+</head>
+<h1>tôi là tâm</h1>
+<body>
+
+
+ <button type="button" onclick="do_something();">click me</button>
+ <button type="button" onclick="hi();">click me</button>
+ <button type="butotn" onclick="hoi()";>click me</button>
+
+<script>
+   function do_something() {
+       alert('hello');
+
+   }
+   function hi(){
+       document.write('toi laf tam')
+   }
+   function hoi() {
+       console.log('wey');
+
+   }
+
+</script>
+ <div id="tam"></div>
+ <button type="button" onclick="why();">Click Me!</button>
+ <script>
+     function why(){
+         document.getElementById('tam').innerHTML = 'Xin chào!';
+     }
+ </script>
+
+</body>
+</html>
