@@ -7,7 +7,7 @@
 
 <body>
 <h1>caculator</h1>
-<h2>ketqua</h2>
+<h2 id="ketqua">ketqua</h2>
 <input type="text"id="so1">
 <input type="text"id="so2">
 <br>
@@ -17,15 +17,28 @@
 <input type="button" value="chia" onclick="tinh('/')">
 
 <script>
-    let num1=parseInt(document.getElementById("so1").value);
-    let num2=parseInt(document.getElementById("so2").value);
+    let num1=document.getElementById("so1");
+    let num2=document.getElementById("so2");
     function tinh(chon) {
         if(chon==='+'){
-
+            let num3=parseInt(num1.value)+parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num3;
+        }
+        if (chon==='-'){
+            num3=parseInt(num1.value)-parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num3;
+        }
+        if (chon==='*'){
+            num3=parseInt(num1.value)*parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num3;
         }
 
-
+        if (chon==='/'){
+            num3=parseInt(num1.value)/parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num3;
+        }
     }
+    
 
 </script>
 
