@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+</div>
+
+<form>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+    </table>
+    <input type="text" id="money" value="1">
+    <select id="from">
+        <option value="USD">USD</option>
+    </select>
+
+    <select id="to">
+        <option value="VN">VN</option>
+        <option value="USD">USD</option>
+    </select>
+    <input type="button" value="do" onclick="changeMoney()">
+    <h1 id="ketqua"></h1>
+    <script>
+        function changeMoney() {
+
+            let amount = document.getElementById("money").value;
+            let fromCurrency = document.getElementById("from").value;
+            let toCurrency = document.getElementById("to").value;
+            let result=0;
+            if (toCurrency==="VN"){
+                    result=amount*2300;
+            } else {
+                result=amount;
+            }
+
+            document.getElementById("ketqua").innerHTML=result;
+        }
+
+    </script>
+
+</form>
+
+</body>
+</html>

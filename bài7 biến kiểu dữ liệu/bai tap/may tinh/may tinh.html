@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h2 id="ketqua"></h2>
+    <h1>Caculator</h1>
+    <input type="text" id="so1">
+    <input type="text"  id="so2">
+    <br>
+    <input type="button" value="addition(+)"  onclick="tinh()">
+    <input type="button" value="subtraction(-)" id="subtraction" onclick="tru()">
+    <input type="button" value="mutiplication(x)" id="mutiplication" onclick="nhan()">
+    <input type="button" value="division(/)" id="division" onclick="chia()">
+    <script>
+        let num1= document.getElementById("so1");
+        let num2= document.getElementById("so2");
+        function tinh () {
+            let num3= parseInt(num1.value) + parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num3;
+        }function tru () {
+            let num4= parseInt(num1.value) - parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num4;
+        }function nhan () {
+            let num5= parseInt(num1.value) * parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num5;
+        }function chia () {
+            let num6= parseInt(num1.value) / parseInt(num2.value);
+            document.getElementById("ketqua").innerHTML=num6;
+        }
+    </script>
+
+</form>
+
+</body>
+</html>
