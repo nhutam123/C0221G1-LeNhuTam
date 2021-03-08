@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="nobita" src="../anh/download.png" style="position: absolute">
+</form>
+<script>
+ let imgo=document.getElementById("nobita");
+ function f() {
+     imgo.style.top=parseInt(imgo.style.top)-5+"px";
+ }
+ function a() {
+     imgo.style.top=parseInt(imgo.style.top)+5+"px";
+ }
+ function d() {
+     imgo.style.left=parseInt(imgo.style.left)-5+"px";
+ }
+ function e() {
+     imgo.style.left=parseInt(imgo.style.left)+5+"px";
+ }
+ function moveSelection(evt) {
+     switch (evt.keyCode) {
+         case 37:
+             a();
+             break;
+         case 38:
+             f();
+             break;
+         case 39:
+             e();
+             break;
+         case 40:
+             a();
+             break;
+
+
+     }
+
+ }
+</script>
+
+</body>
+</html>

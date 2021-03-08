@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="bong" src="../anh/quabong.jpg" height="50" width="50" style="position: relative" />
+    <p>click buton below to move the image to right</p>
+    <input id="click2" type="button" value="click me" onclick="click1()">
+    <input id="move" type="button" value="holdme" onclick="click3()">
+</form>
+<script>
+    let imgo = null;
+    imgo=document.getElementById("bong");
+    imgo.style.left = "0px";
+    // function init() {
+    //     imgo.style.position="relative";
+    //     imgo.style.left = "0px";
+    // }
+    function click1() {
+        imgo.style.left=parseInt(imgo.style.left)+10+"px";
+
+    }
+    function click3() {
+        imgo.style.left=parseInt(imgo.style.left)-10+"px";
+
+    }
+    // init();
+</script>
+
+</body>
+</html>

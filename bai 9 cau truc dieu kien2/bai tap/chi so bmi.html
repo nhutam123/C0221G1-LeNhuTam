@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="canNang" >
+<input type="text" id="chieuCao">
+<input type="button" onclick="tinh()" value="tinh bmi">
+<script>
+    let canNang=document.getElementById("canNang");
+    let chieuCao=document.getElementById("chieuCao");
+    function tinh(){
+        let bmi= parseFloat(canNang.value)/(parseFloat(chieuCao.value)*parseFloat(chieuCao.value));
+        alert(bmi);
+        if (bmi>=30){
+            alert("obese");
+        }else if (25<=bmi){
+            alert("overweight");
+        }else if (18.5<=bmi){
+            alert("normal");
+        }else {
+            alert("underweight");
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let year =parseInt(prompt("nhap nawm"));
+    let con1 = year % 4==0;
+    if (con1){
+        let con2=year % 100==0;
+        if (con2){
+            let con3= year % 400==0;
+            if (con3){alert(year+ "is a leap year");}
+            else {alert(year+ "is not a leap year");}
+        }else {alert(year + "is a leap year");}
+    }else {alert(year+ "is not a leap year");}
+</script>
+
+</body>
+</html>

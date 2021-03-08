@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="nobita" src="../anh/download.png." style="position: relative">
+    <br>
+    <br>
+    <br>
+    <input type="button" value="len" onclick="len()">
+    <input type="button" value="xuong" onclick="xuong()" >
+    <input type="button"  value="trai" onclick="trai()">
+    <input type="button"  value="phai" onclick="phai()">
+</form>
+<script>
+    let eleme=null;
+    eleme =document.getElementById("nobita");
+    eleme.style.top="0px";
+    eleme.style.left="0px";
+    function len() {
+        eleme.style.top=parseInt(eleme.style.top)-5+"px";
+    }
+    function xuong() {
+        eleme.style.top=parseInt(eleme.style.top)+5+"px";
+    }
+    function trai() {
+        eleme.style.left=parseInt(eleme.style.left)-5+"px";
+    }
+    function phai() {
+        eleme.style.left=parseInt(eleme.style.left)+5+"px";
+    }
+</script>
+
+</body>
+</html>
