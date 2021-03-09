@@ -7,49 +7,46 @@
 <body>
 <fieldset>
     <form>
-        <input type="text" id="nhapSo">
+        <input type="text" id="nhapso">
         <br>
         <br>
-        <input type="button" value="1" onclick="nhap(1)">
-        <input type="button" value="2" onclick="nhap(2)">
-        <input type="button" value="3" onclick="nhap(2)">
-        <input type="button" value="+" onclick="nhap('+')">
+        <input type="button" value="1" onclick="nhap(this.value)">
+        <input type="button" value="2" onclick="nhap(this.value)">
+        <input type="button" value="3" onclick="nhap(this.value)">
+        <input type="button" value="+" onclick="nhap(this.value)">
         <br>
         <br>
-        <input type="button" value="4" onclick="nhap(4)">
-        <input type="button" value="5" onclick="nhap(5)">
-        <input type="button" value="6" onclick="nhap(6)">
-        <input type="button" value="-" onclick="nhap('-')">
+        <input type="button" value="4" onclick="nhap(this.value)">
+        <input type="button" value="5" onclick="nhap(this.value)">
+        <input type="button" value="6" onclick="nhap(this.value)">
+        <input type="button" value="-" onclick="nhap(this.value)">
         <br>
         <br>
-        <input type="button" value="7" onclick="nhap(7)">
-        <input type="button" value="8" onclick="nhap(8)">
-        <input type="button" value="9" onclick="nhap(9)">
-        <input type="button" value="*" onclick="nhap('*')">
+        <input type="button" value="7" onclick="nhap(this.value)">
+        <input type="button" value="8" onclick="nhap(this.value)">
+        <input type="button" value="9" onclick="nhap(this.value)">
+        <input type="button" value="*" onclick="nhap(this.value)">
         <br>
         <br>
-        <input type="button" value="c" onclick="nhap(c)">
-        <input type="button" value="0" onclick="nhap(0)">
-        <input type="button" value="=" onclick="nhap('=')">
-        <input type="button" value="/" onclick="nhap('/')">
-
+        <input type="button" value="c" onclick="xoa()">
+        <input type="button" value="0" onclick="nhap(this.value)">
+        <input type="button" value="=" onclick="bang()">
+        <input type="button" value="/" onclick="nhap(this.value)">
     </form>
     <script>
-        function nhap(chon) {
-            //if (chon=="1"){
-            //   document.getElementById("nhapSo").value="1";
-            //}
-            switch (chon) {
-                case 1:
-                    document.getElementById("nhapSo").value="1";
-                    break;
-                case 2:
-                    document.getElementById("nhapSo").value="2";
-                    break;
-
-            }
-
+        function nhap(duLieu){
+            document.getElementById("nhapso").value += duLieu;
         }
+        function bang() {
+            let string=document.getElementById("nhapso").value;
+            let ketqua=eval(string);
+            document.getElementById("nhapso").value=ketqua;
+        }
+        function xoa() {
+            document.getElementById("nhapso").value="";
+        }
+
+
     </script>
 </fieldset>
 
