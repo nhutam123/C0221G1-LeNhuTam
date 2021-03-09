@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhutGoi=parseInt(prompt("nhập số phút gọi trong tháng"));
+    let cuocDienThoai=0;
+    if (soPhutGoi==0){
+        document.write("tổng cước tháng này là:25000");
+    }else if (soPhutGoi<50){
+        cuocDienThoai=25000 + soPhutGoi*600 ;
+        document.write("tổng cước tháng này là"+cuocDienThoai);
+    }else if (soPhutGoi<150){
+        cuocDienThoai=25000+soPhutGoi*400;
+        document.write("tổng cước tháng này là"+cuocDienThoai);
+    }else {
+        cuocDienThoai=25000+150*400+(soPhutGoi-150)*200;
+        document.write("tổng cước tháng này là"+cuocDienThoai);
+    }
+</script>
+
+</body>
+</html>

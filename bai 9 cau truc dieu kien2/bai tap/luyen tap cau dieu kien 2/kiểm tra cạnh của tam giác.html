@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra cạnh của tam giác</title>
+</head>
+<body>
+<script>
+    let canh1=parseInt(prompt("nhập độ dài cạnh 1"));
+    let canh2=parseInt(prompt("nhập độ dài cạnh 2"));
+    let canh3=parseInt(prompt("nhập độ dài canh 3"));
+    if (canh1>0 && canh2>0 && canh3>0 ){
+        if (canh1+canh2>canh3 && canh2+canh3>canh1 && canh1+canh3>canh2){
+            alert("đây là các cạnh của 1 tâm giác");
+        }else {
+            alert("đây không phải là các cạnh của 1 tam giac");
+        }
+    }else {
+        alert("đây không phải là các cạnh của 1 tâm giác");
+    }
+
+</script>
+</body>
+</html>

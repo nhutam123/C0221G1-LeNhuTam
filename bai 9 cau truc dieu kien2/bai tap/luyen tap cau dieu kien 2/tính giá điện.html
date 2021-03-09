@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính giá điện</title>
+</head>
+<body>
+<script>
+    let soDien=prompt("nhập số điện của hộ gia đinh");
+    tienDien=0;
+    if (soDien<=50){
+        tienDien=soDien*600;
+        document.write("tiền điện của gia đình bạn là:"+tienDien);
+    }else if (soDien<=100){
+        tienDien=soDien*865;
+        document.write("tiền điện của gia đình bạn là :"+tienDien);
+    }else if (soDien<=150){
+        tienDien=soDien*1135;
+        document.write("tiền điện của gia đình bạn là :"+tienDien);
+    }else if (soDien<=200){
+        tienDien=soDien*1495;
+        document.write("tiền điện của gia đình bạn là :"+tienDien);
+    }else {
+        tienDien=soDien*1740;
+        document.write("tiền điện của gia đình bạn là :"+tienDien);
+    }
+</script>
+</body>
+</html>

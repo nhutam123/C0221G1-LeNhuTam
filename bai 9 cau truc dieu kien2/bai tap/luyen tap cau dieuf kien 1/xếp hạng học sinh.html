@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xếp hạng học sinh</title>
+</head>
+<body>
+<script>
+    let diemGiuaKy=parseInt(prompt("nhập điểm thi giữa kỳ"));
+    let diemCuoiKy=parseInt(prompt("nhập điểm thi cuối ky"));
+    let diemTrungBinh=(diemGiuaKy+diemCuoiKy)/2;
+    if (diemTrungBinh>=8){
+        alert("học sinh đạt loại A");
+    }else if (diemTrungBinh>=6){
+        alert("học sinh dat loại B");
+    }else if (diemTrungBinh>=4){
+        alert("học sinh đạt loại C");
+    }else {
+        alert("học sinh đạt loại D");
+    }
+</script>
+
+</body>
+</html>

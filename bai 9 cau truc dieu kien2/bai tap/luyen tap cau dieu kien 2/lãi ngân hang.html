@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lãi ngân hàng</title>
+</head>
+<body>
+<script>
+    let laiSuat=parseInt(prompt("nhập lãi suât hàng năm"));
+    let time=parseInt(prompt("nhập số năm tính lãi"));
+    let tienBanDau=parseInt(prompt("nhập số tiền ban đầu"));
+    let tongTien=tienBanDau*((1+laiSuat/100)**time);
+    alert(tongTien);
+</script>
+</body>
+</html>

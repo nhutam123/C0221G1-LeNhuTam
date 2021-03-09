@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>nhập doanh thu của hàng (triệu đông)</p>
+<script>
+    let doanhThu=parseInt(prompt("nhập doanh thu của cửa hàng"));
+    let hoaHong=0;
+    if (doanhThu>=100){
+        hoaHong=doanhThu/10;
+        alert("hoa hồng là :"+hoaHong+"triệu đồng");
+    }else if (doanhThu>=75){
+        hoaHong=doanhThu/20;
+        alert("hoa hồng là :"+hoaHong+"triệu đồng");
+    }else if (doanhThu>=50){
+        hoaHong=doanhThu/25;
+        alert("hoa hồng là :"+hoaHong+"triệu đồng");
+    }else {
+        alert("không có hoa hồng");
+    }
+</script>
+
+</body>
+</html>

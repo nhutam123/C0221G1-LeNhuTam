@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuế thu nhập cá nhân</title>
+</head>
+<body>
+<script>
+    let thuNhap=prompt("nhập thu nhập theo năm của bạn ");
+    let thueThuNhap=0;
+    if (thuNhap<=60){
+        thueThuNhap=thuNhap*5/100;
+        //alert(thueThuNhap);
+    }else if (thuNhap<=120){
+        thueThuNhap=thuNhap*10/100;
+        //alert(thueThuNhap);
+    }else  if (thuNhap<=216){
+        thueThuNhap=thuNhap*15/100;
+        //alert(thueThuNhap);
+    }else if (thuNhap<=384){
+        thueThuNhap=thuNhap*20/100;
+        //alert(thueThuNhap);
+    }else {
+        thueThuNhap=thuNhap*25/100;
+
+    }
+    alert(thueThuNhap);
+</script>
+</body>
+</html>

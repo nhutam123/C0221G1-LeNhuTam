@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giải phuong trình bậc 2</title>
+</head>
+<body>
+<script>
+    let numA=parseFloat(prompt("nhập số a"));
+    let numB=parseFloat(prompt("nhập số b"));
+    let numC=parseFloat(prompt("nhập số c"));
+    let x1=0;
+    let x2=0;
+    let delta=numB*numB-4*numA*numC;
+    if (delta<0){
+        alert("phuong trình vô nghiệm");
+    }else if (delta==0){
+        x1=x2=-numB/(2*numA);
+        alert("phuong trình có nghiệm kép : "+"x1"+"="+"x2"+ "="+ x1);
+    }else {
+        x1=(-numB+Math.sqrt(delta))/(2*numA);
+        x2=(-numB-Math.sqrt(delta))/(2*numA);
+        alert("phuong trình có 2 nghiệm" +x1+ "và"+x2);
+    }
+</script>
+</body>
+</html>

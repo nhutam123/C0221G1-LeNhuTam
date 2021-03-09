@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính bỏ túi</title>
+</head>
+<body>
+<fieldset>
+    <form>
+        <input type="text" id="nhapSo">
+        <br>
+        <br>
+        <input type="button" value="1" onclick="nhap(1)">
+        <input type="button" value="2" onclick="nhap(2)">
+        <input type="button" value="3" onclick="nhap(2)">
+        <input type="button" value="+" onclick="nhap('+')">
+        <br>
+        <br>
+        <input type="button" value="4" onclick="nhap(4)">
+        <input type="button" value="5" onclick="nhap(5)">
+        <input type="button" value="6" onclick="nhap(6)">
+        <input type="button" value="-" onclick="nhap('-')">
+        <br>
+        <br>
+        <input type="button" value="7" onclick="nhap(7)">
+        <input type="button" value="8" onclick="nhap(8)">
+        <input type="button" value="9" onclick="nhap(9)">
+        <input type="button" value="*" onclick="nhap('*')">
+        <br>
+        <br>
+        <input type="button" value="c" onclick="nhap(c)">
+        <input type="button" value="0" onclick="nhap(0)">
+        <input type="button" value="=" onclick="nhap('=')">
+        <input type="button" value="/" onclick="nhap('/')">
+
+    </form>
+    <script>
+        function nhap(chon) {
+            //if (chon=="1"){
+            //   document.getElementById("nhapSo").value="1";
+            //}
+            switch (chon) {
+                case 1:
+                    document.getElementById("nhapSo").value="1";
+                    break;
+                case 2:
+                    document.getElementById("nhapSo").value="2";
+                    break;
+
+            }
+
+        }
+    </script>
+</fieldset>
+
+</body>
+</html>
