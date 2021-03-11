@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let cout = "<table border='1'>";
+    for (i = 1; i < 10; i++) {
+        cout += "<tr>";
+        for (j = 1; j < 10; j++) {
+            cout += "<td>" +i+ "*"+j+ "=" +j*i + "</td>";
+        }
+        cout += "</tr>";
+    }
+    cout += "</table>";
+    document.write(cout);
+</script>
+
+</body>
+</html>

@@ -6,25 +6,29 @@
 </head>
 <body>
 <script>
-    let num=prompt("nhap so luong so nguyen to can in");
-    for (let i=1;i<=num;i++) {
-        let n = 0;
-        let ketqua = true;
+    let num = prompt("nhap so luong so nguyen to can in");
+    let n = 0;
+    let result = "";
+    let ketqua = true;
+    let i=0;
+    while (i <= num) {
         if (n < 2) {
             ketqua = false;
         } else {
-            for (let j = 2; j < n / 2; j++) {
-                if (n % i === 0) {
+            for (let j = 2; j <= n / 2; j++) {
+                if (n % i == 0) {
                     ketqua = false;
                     break;
-                }else {
-                    ketqua=true;
-                    document.write(n)
                 }
-                n++;
+            }
+            if (ketqua) {
+                i++;
+                result += n + ",";
             }
         }
+        n++;
     }
+    document.write(result);
 
 </script>
 
