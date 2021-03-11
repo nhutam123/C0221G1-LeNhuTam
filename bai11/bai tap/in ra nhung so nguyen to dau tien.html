@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=prompt("nhap so luong so nguyen to can in");
+    for (let i=1;i<=num;i++) {
+        let n = 0;
+        let ketqua = true;
+        if (n < 2) {
+            ketqua = false;
+        } else {
+            for (let j = 2; j < n / 2; j++) {
+                if (n % i === 0) {
+                    ketqua = false;
+                    break;
+                }else {
+                    ketqua=true;
+                    document.write(n)
+                }
+                n++;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
