@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhap">
+<input type="button" onclick="kiemTra()" value="kiểm tra">
+<script>
+    //let arr2=[1,2,5,7,11,6,19,-5];
+    function kiemTra() {
+        let arr2=[1,2,5,7,11,6,19,-5];
+        let giaTriNhap = document.getElementById("nhap").value;
+        for (let i=0;i<arr2.length;i++){
+            if (giaTriNhap==arr2[i]){
+                alert("value"+arr2[i]+ "vitri"+i);
+            }//else {
+                //alert("khong");
+
+        }
+    }
+</script>
+
+</body>
+</html>

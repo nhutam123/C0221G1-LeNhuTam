@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pp</title>
+</head>
+<body>
+<input type="text" id="nhapSo">
+<input type="button" value="nhập phần tử" onclick="nhapPhanTu()">
+<input type="button" value="giá trị lớn nhât là" onclick="giaTri()">
+<script>
+let soNhap=document.getElementById("nhapSo");
+let arr4=[];
+let y=0;
+function nhapPhanTu() {
+        arr4[y]=soNhap.value;
+        y++;
+        //let a= arr4[0]
+        //alert(a);
+        document.getElementById("nhapSo").value="";
+}
+function giaTri() {
+    let total=0;
+    let average=0;
+    let max=arr4[0];
+    for (let i=0;i <arr4.length;i++) {
+        total+=parseInt(arr4[i]);
+        average = total/arr4.length;
+        if (max<arr4[i]){
+            max=arr4[i];
+        }
+    }
+ alert("gia trin lơn nhát là"+max + "trung binh cộng là" + average);
+
+}
+
+
+</script>
+
+</body>
+</html>

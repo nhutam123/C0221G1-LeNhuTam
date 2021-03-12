@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1=[1,3,5,7,6,-1];
+    let first=0;
+    let last=arr1.length-1;
+    arr1.reverse();
+    while (first<last){
+        let b=arr1[first];
+        arr1[first]=arr1[last];
+        arr1[last]=b;
+        first++;
+        last--;
+
+    }
+    document.write(arr1);
+</script>
+
+</body>
+</html>

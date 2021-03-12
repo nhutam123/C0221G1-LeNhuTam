@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[1,2,2,2,2,3,2,4];//13244//13444
+    let num =prompt("nhập số n");
+    for (let i=0;i<arr.length;i++){
+        if (num==arr[i]){
+           for (let j=i; j<arr.length-1;j++){
+               arr[j]=arr[j+1];
+               i--;
+           }
+           arr[arr.length-1] =0;
+        }
+    }
+    alert(arr);
+    // let arr=[1,2,3,4,6,7,4,8,9,14,24];
+    // let num =prompt("nhập số n");
+    // let count=0;
+    // let c=0;
+    // let last=arr.length-1;
+    // for (let i=0;i<arr.length;i++){
+    //     if (num==arr[i]){
+    //         count++;
+    //         c = i;
+    //     }
+    // }
+    // if (count!==0){
+    //     let b=arr[c];
+    //     arr[c]=arr[last];
+    //     arr[last]=b;
+    // }
+    // arr.pop();
+    // alert(arr);
+</script>
+
+</body>
+</html>

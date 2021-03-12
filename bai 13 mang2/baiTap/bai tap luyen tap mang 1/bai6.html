@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[];
+    let x="";
+    for (x=0;x<10;x++){
+        arr[x] = prompt("nhạp 10 phần tử vào mảng");
+    }
+    let count="";
+    let num=prompt("nhập số nguyên");
+    for (let i=0;i<arr.length;i++){
+        if (num==arr[i]){
+            count++;
+            //document.write("v is in the array");
+        }
+            //document.write("v is not in the array");
+    }
+    if (count==0){
+        document.write("v is not in the array");
+    }else {
+        document.write("v is in the array");
+    }
+</script>
+
+</body>
+</html>

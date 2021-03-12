@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Sample Screen</h2>
+<input type="text" id="nhap">
+<input type="button" value="Add" onclick="add()">
+<input type="button" value="Display" onclick="thucThi()">
+<div id="result"></div>
+<script>
+    let array=[];
+    let x=0;
+    function add() {
+        array[x]=document.getElementById("nhap").value;
+        x++;
+        //let ten=array[0];
+        //alert;(ten)
+        document.getElementById("nhap").value="";
+    }
+    function thucThi() {
+        let e ="<hr/>";
+        for (let i=0;i<array.length;i++){
+            e+="element"+i+"="+array[i]+"<br>";
+        }
+        document.getElementById("result").innerHTML= e;
+
+    }
+</script>
+
+
+</body>
+</html>
