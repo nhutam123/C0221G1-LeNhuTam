@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="" id="luong">
+<input type="button" value="tính" onclick="tinh()">
+<p>nhap luong</p>
+<script>
+    let thueThuNhap=0.1;
+    let luongRong=0.1;
+    function tinh() {
+        let luong=document.getElementById("luong").value;
+        if (luong==15){
+            thueThuNhap=luong*20/100;
+        }else if (luong>=7){
+            thueThuNhap=luong*10/100;
+        }else {
+            thueThuNhap=luong*5/100;
+        }
+        luongRong=luong-thueThuNhap;
+        document.write("thuế thu nhập bằng :"+thueThuNhap +"<br>"+"luong rong là"+luongRong);
+    }
+
+
+</script>
+
+</body>
+</html>

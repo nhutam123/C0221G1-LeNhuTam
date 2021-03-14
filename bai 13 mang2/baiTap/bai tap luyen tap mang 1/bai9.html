@@ -6,8 +6,18 @@
 </head>
 <body>
 <script>
-    let arr=prompt("nhap mang");
-    document.write(arr[0].toString());
+    let arrA=[1,2,4,5,19,0,5,7,6,1];
+    let arrB=[2,6,4,7,8,3,9,12,3,4];
+    let arrC=arrA.concat(arrB);
+    arrC.sort(function (a,b) {
+        return b-a;
+
+    });
+    //for (i=1;i<arrC.length;i++){
+
+    //}
+    document.write(arrC);
+
 </script>
 
 </body>
