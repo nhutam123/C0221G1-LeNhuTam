@@ -9,14 +9,15 @@
     let num = prompt("nhap so luong so nguyen to can in");
     let n = 0;
     let result = "";
-    let ketqua = true;
+    //let ketqua = true;
     let i=0;
-    while (i <= num) {
+    while (i < num) {
+        let ketqua = true;
         if (n < 2) {
             ketqua = false;
         } else {
             for (let j = 2; j <= n / 2; j++) {
-                if (n % i == 0) {
+                if (n % j == 0) {
                     ketqua = false;
                     break;
                 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhap">
+<input type="button" value="dich" onclick="dich()">
+<input type="text" id="xuat">
+<script>
+    let arr1=["teacher","student","vacation","now","summer"];
+    let arr2=["giáo viên","học sinh","kỳ nghỉ","bây giờ","mùa he"];
+    let b=0;
+    function dich() {
+        let a=document.getElementById("nhap").value;
+        for (let i=0;i<arr1.length;i++){
+            if (arr1[i]==a){
+                b=i;
+                break;
+            }
+        }
+        document.getElementById("xuat").value=arr2[b];
+    }
+</script>
+
+</body>
+</html>

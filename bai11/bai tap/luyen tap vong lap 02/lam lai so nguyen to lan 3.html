@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=prompt("nhập số lượng số nguyên tố cần in ra");
+    let count=0;
+    let n=0;
+    let result="";
+    while (count<num){
+        let check=true;
+        if(n<2){
+            check=false;
+        }else {
+            for (i=2;i<=n/2;i++){
+                if (n%i==0){
+                    check=false;
+                    break;
+                }
+            }
+            if (check){
+                count++;
+                result+=n+",";
+            }
+        }
+        n++;
+    }
+    document.write(result);
+
+</script>
+
+</body>
+</html>

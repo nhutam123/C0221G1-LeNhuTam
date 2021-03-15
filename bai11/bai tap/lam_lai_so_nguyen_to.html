@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=prompt("nhap so lượng số nguyên cần in ra");
+    let count1=0;
+    //đếm số lượng số nguyên tố cần in ra
+    //let count2=0;
+    //để kiểm tra số đó có phải số nguyên tố ko
+    let n=0;
+    let result="";
+    while (count1<num){
+        let check=true;
+        if (n<2){
+            check=false;
+        }else {
+            for (let i = 2; i <= n / 2; i++) {
+                if (n % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                result += n + ",";
+                count1++;
+
+            }
+        }
+        n++;
+    }
+    document.write(result);
+
+</script>
+
+</body>
+</html>

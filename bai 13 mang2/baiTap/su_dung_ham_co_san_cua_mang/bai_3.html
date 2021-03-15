@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string=prompt("nhập chuỗi cần chuyển");
+    let chuHoa="QWERTYUIOPASDFGHJKLZXCVBNM 1234567890+-*/?{}[]";
+    let arr=[];
+    let chuThuong="qwertyuiopasdfghjklzxcvbnm 1234567890+-*/?{}[]";
+    for (let i=0;i<string.length;i++){
+        for (let j=0;j<chuThuong.length;j++){
+            if (string[i]==chuThuong[j]){
+                arr.push(chuHoa[j]);
+                break;
+            }else if (string[i]==chuHoa[j]){
+                arr.push(chuThuong[j]);
+                break;
+            }
+        }
+    }
+    document.write(arr.join(""));
+</script>
+
+</body>
+</html>

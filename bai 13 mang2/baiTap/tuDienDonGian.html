@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="text" id="nhap">-->
+<!--<input type="button" value="dich" onclick="dich()">-->
+<!--<input type="text" id="xuat">-->
+<script>
+    let stt="";
+    let array1=["teacher","student","doctor","vacation","now"];
+    let array2=["giáo viên","học sinh","bác sĩ","kỳ nghỉ","bây giờ"];
+    let result="";
+    let tuNHapVao=prompt("nhap tu vao");
+        for (let i=0;i<array1.length;i++){
+            if (tuNHapVao==array1[i]){
+                stt=i;
+                result=array2[stt];
+                break;
+            }else {
+                result="khong tim thay";
+            }
+        }
+    document.write(result);
+
+
+
+
+</script>
+
+</body>
+</html>
