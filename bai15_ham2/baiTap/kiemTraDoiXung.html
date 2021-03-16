@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="kiemTraDoiXung()">kiem tra doi xung</p>
+<script>
+    function kiemTraDoiXung(){
+
+        let string=prompt("nhap chuoi can kiem tra");
+        let arr=string.split("");
+        let arr1=[];
+        let arr2=[];
+        for (let i=0;i<=arr.length/2-1;i++){
+            arr1.push(arr[i]);
+        }
+        let string1=arr1.toString();
+        alert(arr1);
+        for (let j=arr.length-1;j>=arr.length/2;j--){
+            arr2.push(arr[j]);
+        }
+        let string2=arr2.toString();
+        alert(arr2);
+        if (string1===string2){
+            document.write("chuoi doi xung");
+        }else {
+            document.write("chuoi khong doi xung");
+        }
+
+    }
+</script>
+
+</body>
+</html>

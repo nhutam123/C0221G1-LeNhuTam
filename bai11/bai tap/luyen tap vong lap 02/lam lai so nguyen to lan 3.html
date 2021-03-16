@@ -10,6 +10,7 @@
     let count=0;
     let n=0;
     let result="";
+    let sum=0;
     while (count<num){
         let check=true;
         if(n<2){
@@ -24,11 +25,13 @@
             if (check){
                 count++;
                 result+=n+",";
+                sum=sum+n;
             }
         }
         n++;
     }
     document.write(result);
+    document.write(sum);
 
 </script>
 

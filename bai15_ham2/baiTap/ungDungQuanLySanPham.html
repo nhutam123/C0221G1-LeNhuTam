@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="taoBang()">
+    tao bang
+</p>
+<script>
+    let arr=[];
+    for (i=0;i<10;i++){
+        arr[i]=[];
+        for (j=0;j<7;j++){
+            arr[i][j]="";
+        }
+    }
+    let arrSanPham=["ten san pham","sony exper","samsum a51","iphone 7","samsung note 8"];
+
+    function taoBang() {
+        let bang='<table border="1">';
+        for (let i=0;i<9;i++){
+            bang+='<tr>';
+            for (let j=0;j<3;j++){
+                bang+='<td width="50px" height="20px" onclick="thaoTac">'+arr[i][j]+'</td>';
+            }
+            bang+='</tr>';
+        }
+        bang+='</table>';
+        document.write(bang);
+    }
+    arr[0][0]="ten san pham";
+    function thaoTac() {
+        for (i=0;i<7;i++){
+            arr[i][0]=arrSanPham[i];
+        }
+
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

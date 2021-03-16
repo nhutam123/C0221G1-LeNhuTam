@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="timSoNhoNhat()">tìm số nhỏ nhất</p>
+<script>
+    function timSoNhoNhat() {
+        let n = prompt("nhập số lượng số cần tìm giá trị nhỏ nhất");
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(prompt("nhập các số cần tìm giá trị nhỏ nhất"));
+        }
+        let min = arr[0];
+        for (let j = 1; j < arr.length; j++) {
+            if (min > arr[j]) {
+                min = arr[j];
+                return min;
+            }
+        }
+        document.write("giá trị nhỏ nhất là :" + min);
+    }
+</script>
+
+</body>
+</html>

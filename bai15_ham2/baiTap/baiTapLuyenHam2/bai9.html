@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="kiemTraKyTu()">nhap</p>
+<script>
+    function kiemTraKyTu(arr,a) {
+        let check=false;
+        let n=0;
+        let string=prompt("nhập chuỗi ký tự");
+        arr= string.split("");
+        a=prompt("nhâp ký tự cần kiểm tra");
+        for (let i=0;i<arr.length;i++){
+            if (a==arr[i]){
+                n++;
+                check=true;
+            }
+        }
+        if (check){
+            document.write(n);
+        }else {
+            n=-1;
+            document.write(n);
+        }
+
+    }
+</script>
+
+</body>
+</html>

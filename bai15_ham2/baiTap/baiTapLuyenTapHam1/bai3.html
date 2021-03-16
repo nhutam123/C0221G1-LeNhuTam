@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhapSo1">
+<input type="text" id="nhapSo2">
+<p onclick="soSanh(this.value)">kết quả</p>
+
+<script>
+    function soSanh(a,b) {
+        a=parseInt(document.getElementById("nhapSo1").value);
+        b=parseInt(document.getElementById("nhapSo2").value);
+        if (a>b){
+            alert("số 1 lớn hơn số 2");
+        }else {
+            document.write(a+b);
+        }
+
+    }
+</script>
+
+</body>
+</html>

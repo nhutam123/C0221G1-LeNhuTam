@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="timSao()">tìm sao</p>
+<script>
+    let arr1=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arr2=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    //let n=false;
+    function timSao() {
+        let check=false;
+        let ten=prompt("nhập tên ngôi sao");
+        for (let i=0;i<arr1.length;i++){
+            if (ten==arr1[i]){
+                check=false;
+               document.write(arr2[i]);
+               break;
+            }else {
+                check=true;
+            }
+        }
+        if (check){
+            document.write("khong tìm thấy ngôi sao") ;
+        }
+    }
+</script>
+
+</body>
+</html>

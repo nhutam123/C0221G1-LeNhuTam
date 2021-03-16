@@ -9,17 +9,19 @@
 <input type="button" value="kiểm tra" onclick="kiemTra()">
 <script>
     let arr=['o','u','a','e','i','O','U','I','A','E'];
+    let result="";
     function kiemTra() {
         //let arr=['o','u','a','e','i','O','U','I','A','E'];
         let chuCaiNhap=document.getElementById("nhapChuCai").value;
-        for (let i=1;i<arr.length;i++){
+        for (let i=0;i<arr.length;i++){
             if (chuCaiNhap==arr[i]){
-                chuCaiNhap="là nguyên âm";
+                result="là nguyên âm";
+                break;
             }else {
-                chuCaiNhap="không phải là nguyên âm";
+                result="không phải là nguyên âm";
             }
         }
-        document.write(chuCaiNhap);
+        document.write(result);
     }
 </script>
 

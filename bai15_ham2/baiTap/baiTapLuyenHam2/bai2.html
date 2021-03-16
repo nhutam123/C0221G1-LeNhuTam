@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="tinhChuVi()">tính chu vi hình tròn</p>
+<p onclick="tinhDienTich()">tính diện tích hình tròn</p>
+<script>
+    function tinhDienTich(r) {
+        r=parseFloat(prompt("nhập bán kính của đường tron"));
+        let dienTich=r*r*3.14;
+        document.write("diên tích hình tròn là:"+dienTich);
+    }
+    function tinhChuVi(r) {
+        r=parseFloat(prompt("nhạp bán kính đường tròn"));
+        let chuVi=3.14*r*2;
+        document.write("chu vi hình tròn là:"+chuVi);
+
+    }
+</script>
+
+</body>
+</html>

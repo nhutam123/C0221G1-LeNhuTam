@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="tinhGiaiThua()">tính giai thừa</p>
+<script>
+    function tinhGiaiThua(x) {
+        let giaiThua=1;
+        x=parseInt(prompt("nhập số nguyên cần tính giai thừa"));
+        for (let i=1;i<=x;i++){
+            giaiThua*=i;
+        }
+        document.write("giai thừa của số vừa nhập là :"+giaiThua);
+
+    }
+</script>
+
+</body>
+</html>

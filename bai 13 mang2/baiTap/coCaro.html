@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>chơi cờ caro</h2>
+<p id="hienthi"></p>
+<script>
+    let nguoiChoi1=true;
+    let nguoiChoi2=true;
+    //tao mảng 2 chiều lưu giá trị
+
+    let arr=[];
+    for (let i=0;i<15;i++){
+        arr[i]=[];
+        for (let j=0;j<15;j++){
+            arr[i][j]="";
+        }
+    }
+    for (i=0;i<7;i++){
+
+    }
+    display();
+    //tạo bảng
+    function display(){
+        let bang='<table border="1">';
+        for (let i=1;i<13;i++){
+            bang+='<tr>';
+            for (let j=1;j<13;j++){
+                bang+='<td width="20px" height="20px" onclick="choi('+i+','+j+')">'+arr[i][j]+'</td>';
+            }
+            bang+='<tr>';
+        }
+        bang+='</table>';
+        document.getElementById("hienthi").innerHTML=bang;
+    }
+    function choi(i,j) {
+        if (nguoiChoi1 && arr[i][j]===""){
+            arr[i][j]="X";
+            nguoiChoi1=false;
+            if(kiemTraWin()){
+                alert("nguoi choi 1 thang");
+
+            }
+        }else if(nguoiChoi2 && arr[i][j]==="") {
+            arr[i][j]="O";
+            nguoiChoi1=true;
+            if (kiemTraWin()){
+                alert("người chơi 2 thắng");
+            }
+        }
+        display();
+    }
+    function kiemTraWin() {
+        for (let i = 0; i < 13; i++) {
+            for (let j = 0; j < 13; j++) {
+                if (arr[i][j] === "X"){
+                    if (arr[i][j+1] === "X"&&arr[i][j+2] === "X"&&arr[i][j+3]==="X"&&arr[i][j+4]==="X"){
+                        return true;
+                    }
+                    if (arr[i+1][j] === "X"&&arr[i+2][j] === "X"&&arr[i+3][j]==="X"&&arr[i+4][j]==="X"){
+                        return true;
+                    }
+                    if (arr[i+1][j+1]==="X"&&arr[i+2][j+2]==="X"&&arr[i+3][j+3]==="X"&&arr[i+4][j+4]==="X"){
+                        return true;
+                    }
+                    if (arr[i-1][j+1] === "X"&&arr[i-2][j+2] === "X"&&arr[i-3][j+3]==="X"&&arr[i-4][j+4]==="X"){
+                        return true;
+                    }
+                }else if(arr[i][j] === "O"){
+                    if (arr[i][j+1] ==="O"&&arr[i][j+2] ==="O"&&arr[i][j+3]==="O"&&arr[i][j+4]==="O"){
+                        return true;
+                    }
+                    if (arr[i+1][j] === "O"&&arr[i+2][j] === "O"&&arr[i+3][j]==="O"&&arr[i+4][j]==="O"){
+                        return true;
+                    }
+                    if (arr[i+1][j+1] === "O"&&arr[i+2][j+2] === "O"&&arr[i+3][j+3]==="O"&&arr[i+4][j+4]==="O"){
+                        return true;
+                    }
+                    if (arr[i-1][j+1] === "O"&&arr[i-2][j+2] === "O"&&arr[i-3][j+3]==="O"&&arr[i-4][j+4]==="O"){
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

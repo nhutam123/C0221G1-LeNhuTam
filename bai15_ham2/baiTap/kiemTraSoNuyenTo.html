@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n=0;
+    while (n<1000){
+        kiemTraSoNguyenTo(n);
+        n++
+    }
+    function kiemTraSoNguyenTo(num){
+        let check=true;
+        if (num<2){
+            check=false;
+        }else {
+            for (let i=2;i<=num/2;i++){
+                if (num%i==0){
+                    check=false;
+                    break;
+                }else {
+                    check=true;
+                }
+            }
+        }
+        if (check){
+            document.write(num+",");
+            return num;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
