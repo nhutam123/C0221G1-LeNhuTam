@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ten san pham </th>
+        <th>xóa</th>
+        <th>sửa</th>
+    </tr>
+</table>
+<input type="text" id="tenSanPham" >
+<input type="button" value="add" onclick="add()">
+<p id="bang"></p>
+<script>
+    let danhSachSanPham=["sam sung","iphone","nokia"];
+    display();
+
+    function display() {
+        let tab = '<table border="1">';
+        tab+='  <tr>' +
+            '        <th>ten san pham </th>' +
+            '        <th >xóa</th>' +
+            '        <th>sửa</th>' +
+            '    </tr>';
+        for (i = 0; i < danhSachSanPham.length; i++) {
+            tab += '<tr>' +
+                '        <th>'+danhSachSanPham[i] +'</th>' +
+                '        <th><input type="button" value="sửa" onclick="sua('+i+')"></th>' +
+                '        <th><input type="button"  value="xóa" onclick="xoa('+i+')"></th>' +
+                '    </tr>'
+        }
+        tab += '</table>';
+        document.getElementById("bang").innerHTML=tab;
+    }
+
+    function add() {
+        let sanPham=document.getElementById("tenSanPham").value;
+        if (sanPham!=""){
+            danhSachSanPham.push(sanPham);
+        }
+        display();
+
+    }
+
+    function xoa(index) {
+        let luaChon=confirm(" bạn có muốn xóa"+danhSachSanPham[index]);
+        if (luaChon){
+            danhSachSanPham.splice(index,1);
+        }else {
+            alert("bạn không xóa sản phẩm trên");
+        }
+        display();
+
+    }
+
+    function sua(index) {
+        let sanPhamCanSua=prompt("bạn muốn sửa thành");
+        danhSachSanPham[index]=sanPhamCanSua;
+        display();
+    }
+
+</script>
+
+</body>
+</html>

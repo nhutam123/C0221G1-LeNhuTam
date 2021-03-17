@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="tên sản phẩm" id="name">
+<input type="button" name="thêm sản phẩm" onclick="layDuLieu()" value="thêm sản phẩm">
+<table border="1" id="table">
+    <tr>
+        <th>tên sản phẩm</th>
+        <th>xóa</th>
+        <th>sửa</th>
+    </tr>
+</table>
+
+<script>
+    let danhSachSanPham=[];
+    function layDuLieu() {
+        let name=document.getElementById("name").value;
+        if (name !=""){
+            danhSachSanPham.push(name);
+            // let danhSachSanPham=localStorage.getItem("key")? JSON.parse(localStorage.getItem("key")):[];
+            //
+            // danhSachSanPham.push({
+            //     name: name
+            // });
+            // localStorage.setItem("key", JSON.stringify(danhSachSanPham))
+        }
+        xuatDuLieu();
+        document.getElementById("name").value="";
+    }
+    function xuatDuLieu() {
+        let name = document.getElementById("name").value;
+        let sanPham = '<tr>\n' +
+            '        <th>tên sản phẩm</th>\n' +
+            '        <th>xóa</th>\n' +
+            '        <th>sửa</th>\n' +
+            '    </tr>';
+        // let table='<tr>';
+        // for (i=0;i<3;i++){
+        //         table+='<td>'+'</td>';
+        // }
+        // table +='</tr>';
+
+
+        danhSachSanPham.forEach((value , index )=> {
+            sanPham += '<tr id="tam">' +
+                '        <th id="sanPham">' + value + '</th>' +
+                '        <th><button id="xoa" onclick="xoa(index)">xóa</button></th>' +
+                '        <th><button>sửa</button></th> ' +
+                '    </tr>';
+        });
+        document.getElementById("table").innerHTML = sanPham;
+    }
+    function xoa(index) {
+       danhSachSanPham.splice();
+    }
+
+
+
+</script>
+
+</body>
+</html>
