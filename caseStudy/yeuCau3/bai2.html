@@ -6,7 +6,21 @@
 </head>
 <body>
 <script>
-
+let arr1=[1,2,4,5,7,8,9];
+let arr2=[4,15,7,12,8,110];
+let arr3=[];
+for (i=0;i<arr1.length;i++){
+    for (let j=0;j<arr2.length;j++){
+        if (arr1[i]==arr2[j]){
+            arr1.splice(i,1);
+            arr2.splice(j,1);
+        }
+    }
+}
+arr3=arr1.concat(arr2);
+arr3.sort( function (a,b) {return a-b
+});
+alert(arr3);
 </script>
 
 </body>

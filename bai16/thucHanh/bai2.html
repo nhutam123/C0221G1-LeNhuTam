@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Cicle=function (radius) {
+        this.radius =radius;
+        this.getRadius=function () {
+            return radius;
+        };
+        this.getArea=function () {
+            return Math.PI*radius*radius;
+        }
+    };
+    let cicle=new Cicle(2);
+    let radius=cicle.getRadius();
+    let area=cicle.getArea();
+    alert("dien tich cua hinh trong co ban kinh :" +radius+"la:"+area);
+    let cicle1=new  Cicle(4);
+    let  radius1=cicle1.getRadius();
+    let  area1=cicle1.getArea();
+    alert("dien tich cua hinh trong co ban kinh :" +radius1+"la:"+area1);
+    let cicle2=new Cicle(5);
+    let radius2=cicle2.getRadius();
+    let area2=cicle2.getArea();
+    alert("dien tich cua hinh trong co ban kinh :" +radius2+"la:"+area2);
+</script>
+
+</body>
+</html>

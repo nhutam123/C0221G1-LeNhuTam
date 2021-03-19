@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài tập công tắc bóng đèn</h3>
+<img src="th.jpg" id="lamp">
+<button onclick="SwitchButton()">Công tắc</button>
+<h3 id="result">Bóng đèn đang tắt</h3>
+
+<script>
+    class Button{
+        constructor(status) {
+            this.status=status;
+        }
+        turnOn(){
+            this.status=true;
+        }
+        turnOff(){
+            this.status=false;
+        }
+    }
+    class Lamp{
+        constructor(button,status) {
+            this.button=button;
+            this.status=status;
+        }
+        switch() {
+            if (this.button.status) {
+                document.getElementById("lamp").src = "bong_den_400.jpeg.crdownload";
+                document.getElementById("result").innerText = "Bóng đèn đang bật";
+            } else {
+                document.getElementById("lamp").src = "th.jpg";
+                document.getElementById("result").innerText = "Bóng đèn đang tắt";
+            }
+        }
+    }
+    let button=new Button(false);
+    let lamp=new Lamp(button,false);
+    function SwitchButton() {
+        button.turnOff();
+        button.turnOn();
+        lamp.switch();
+    }
+
+
+
+</script>
+
+</body>
+</html>

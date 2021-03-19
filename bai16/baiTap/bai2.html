@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(doC) {
+            this.doC=doC;
+        }
+        getDoCSangDof(){
+            return 1.8*this.doC+32;
+        }
+        getDoCSangDok(){
+            return this.doC+273.15
+        }
+    }
+    let temperature=new Temperature(25);
+    let doF=temperature.getDoCSangDof();
+    let doK=temperature.getDoCSangDok();
+    alert("do f tuong ung la: "+doF+" "+"do kevin tuong ung la:"+doK);
+</script>
+
+</body>
+</html>

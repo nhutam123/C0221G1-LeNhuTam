@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400" ></canvas>
+<p id="hinh1"></p>
+<p id="hinh2"></p>
+<script>
+    class HinhChuNhat{
+        constructor(chieuDai,chieuRong) {
+            this.chieuDai=chieuDai;
+            this.chieuRong=chieuRong;
+        }
+        getDienTich(){
+            return this.chieuDai*this.chieuRong;
+        }
+        getChuVi(){
+            return 2*(this.chieuRong+this.chieuDai);
+        }
+        getHienThi(){
+            let canvas=document.getElementById("canvas");
+            let ctx=canvas.getContext("2d");
+            ctx.fillStyle= "red";
+            ctx.fillRect(0,0,this.chieuDai,this.chieuRong);
+            alert(this.chieuRong+','+this.chieuDai);
+        }
+        setChieuDai(chieuDai){
+            this.chieuDai=chieuDai;
+        }
+        setChieuRong(chieuRong){
+            this.chieuRong=chieuRong;
+        }
+    }
+    let hinhChuNhat=new HinhChuNhat(150,75);
+    let dienTich=hinhChuNhat.getDienTich();
+    let chuVi=hinhChuNhat.getChuVi();
+    document.getElementById("hinh1").innerHTML=hinhChuNhat.getHienThi();
+    document.write("dien tich la"+dienTich+"chu vi la"+chuVi);
+    hinhChuNhat.setChieuDai(40);
+    hinhChuNhat.setChieuRong(30);
+    dienTich=hinhChuNhat.getDienTich();
+    chuVi=hinhChuNhat.getChuVi();
+    document.getElementById("hinh2").innerHTML=hinhChuNhat.getHienThi();
+    document.write("dien tich la"+dienTich+"chu vi la"+chuVi);
+</script>
+
+</body>
+</html>

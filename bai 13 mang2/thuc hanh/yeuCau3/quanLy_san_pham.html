@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+<input type="text" id="tenSanPham">
+<input type="button" onclick="themSanPham()" value="thêm sản phẩm">
+<p id="hienThi"></p>
+<script>
+    let arr=["sam sung", "iphone","nokia"];
+    display();
+    function display() {
+        let bang='<table border="1">';
+        bang+='<tr>'+
+                '<th>tên sản phẩm</th>'+
+                '<th>xóa</th>'+
+                '<th>sửa</th>'+
+                '</tr>';
+        for (let i=0;i<arr.length;i++){
+            bang+='<tr>'+
+            '<th>'+arr[i]+'</th>'+
+            '<th><input type="button" value="xóa" onclick="xoa('+i+')"></th>'+
+            '<th><input type="button" value="sửa" onclick="sua('+i+')"></th>'+
+            '</tr>';
+        }
+        bang+='</table>';
+        document.getElementById("hienThi").innerHTML=bang;
+    }
+
+    function themSanPham(){
+        let tenSanPham=document.getElementById("tenSanPham").value;
+        if (tenSanPham!=""){
+            arr.push(tenSanPham);
+        }
+        document.getElementById("tenSanPham").value="";
+        display();
+    }
+
+    function xoa(index) {
+        let luaChon=confirm("bạn có muốn xóa khong");
+        if (luaChon){
+            arr.splice(index,1);
+        }else {
+            alert("bạn không xóa");
+        }
+        display();
+    }
+    function sua(index) {
+        let suaSanPham=prompt("bạn muốn sửa tên sản phẩm thành");
+        if (suaSanPham){
+            arr[index]=suaSanPham;
+        }else {
+            alert("bạn không muốn sửa sản phẩm");
+        }
+        display();
+    }
+</script>
+
+</body>
+</html>
