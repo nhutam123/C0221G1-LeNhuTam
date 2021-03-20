@@ -16,7 +16,11 @@
             this.status=status;
         }
         turnOn(){
-            this.status=true;
+            if (this.status){
+                this.status=false;
+            }else {
+                this.status=true;
+            }
         }
         turnOff(){
             this.status=false;
@@ -40,13 +44,9 @@
     let button=new Button(false);
     let lamp=new Lamp(button,false);
     function SwitchButton() {
-        button.turnOff();
         button.turnOn();
         lamp.switch();
     }
-
-
-
 </script>
 
 </body>

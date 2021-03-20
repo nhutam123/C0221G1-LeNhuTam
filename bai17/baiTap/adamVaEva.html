@@ -13,9 +13,8 @@
         getWeight(){
             return this.weight;
         }
-        decrease(){
-            let weight=this.weight-1;
-            return weight;
+        decrease(apple){
+            this.weight=apple.weight--;
         }
     }
     class Human{
@@ -27,14 +26,28 @@
         say(){
             console.log("hi");
         }
-        eat(){
-            if (Apple.decrease()>0){
-                let weight=this.weight+1;
+        eat(apple){
+            if (apple.weight>0){
+                this.weight=this.weight+1;
+                apple.weight--;
             }
-
         }
     }
-    let apple=Apple.getWeight(10);
+    let apple=new Apple(10);
+    let adam=new Human("adam","male",50);
+    let eva=new Human("eva","female",47);
+    adam.eat(apple);
+    eva.eat(apple);
+    alert(apple.weight);
+        // if (apple.weight>0){
+        //     adam.eat(apple);
+        //     if (apple.weight>0){
+        //         eva.eat(apple);
+        //     }
+        // }else {
+        //     eva.say("may an tham the");
+        // }
+
 
 </script>
 
