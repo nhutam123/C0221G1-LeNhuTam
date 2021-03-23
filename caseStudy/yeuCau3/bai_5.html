@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ol>
+    <li onclick="chon(1)" value="">cafe</li>
+    <li onclick="chon(2)" value="">cam vắt</li>
+    <li onclick="chon(3)" value="">nước ép cà rốt</li>
+    <li onclick="chon(4)" value="">nước ép cà chua</li>
+    <li onclick="chon(5)" value="">nước lọc</li>
+    <li onclick="chon(6)" value="">nước dừa</li>
+    <li onclick="chon(7)" value="">tinh tien</li>
+</ol>
+<script>
+    function chon(n) {
+        switch (n) {
+            case 1:
+                let so1=prompt("cà phê 30k/ly \n+" +
+                    "nhập số ly");
+            case 2:
+                let so2=prompt("cam vắt giá 40k/ly\n+" +
+                     "nhập số ly");
+            case 3:
+                let so3=prompt("nước ép cà rốt giá 50k/ly\n+" +
+                    "nhập số ly");
+            case 4:
+                let so4=prompt("nước ép cà chua giá 40k/ly\n+" +
+                    "nhập số lý");
+            case 5:
+                let  so5=prompt("nước lọc giá 10k/chai\n+" +
+                    "nhập số chai");
+            case 6:
+                let so6=prompt("nước dừa 25k/quả\n+" +
+                    "nhập số quả");
+            case 7:
+                let tong= so1*30 +so2*40+so3*50 +so4*40+so5*10+so6*25;
+                alert(tong);
+        }
+
+
+    }
+</script>
+
+</body>
+</html>

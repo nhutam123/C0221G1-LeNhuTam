@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [
+        [6,3,6,8,9,12],
+        [3,7,6,5,17,18],
+        [2,4,6,8,10,9]
+    ];
+    timMaxMin();
+    function timMaxMin(){
+        let min=arr1[0][0];
+        let smax=arr1[0][0];
+        for (let i=0;i<3;i++){
+            for (let j=0;j<6;j++){
+                if (arr1[i][j]>smax){
+                    smax=arr1[i][j];
+                }
+                if (arr1[i][j]<min){
+                    min=arr1[i][j];
+                }
+            }
+        }
+        document.write("số lớn nhất là :"+smax +"<br>"+"số bé nhất là:"+min);
+    }
+
+
+</script>
+
+</body>
+</html>

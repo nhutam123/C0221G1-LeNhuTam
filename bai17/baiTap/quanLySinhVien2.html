@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class SinhVien{
+        constructor(id,ten,tuoi) {
+            this.id=id;
+            this.ten=ten;
+            this.tuoi=tuoi;
+        }
+        getId(){
+            return this.id;
+        }
+        setId(id){
+            this.id=id;
+        }
+        getTen(){
+            return this.ten;
+        }
+        setTen(ten){
+            this.ten=ten;
+        }
+        getTuoi(){
+            return this.tuoi;
+        }
+        setTuoi(tuoi){
+            this.tuoi=tuoi;
+        }
+        chuyenChuoi(){
+            return "id="+this.id+" "+"ten="+this.ten+" "+"tuoi="+this.tuoi;
+        }
+    }
+    let sinhVien1=new SinhVien(1,"trần văn a",23);
+    let sinhVien2=new  SinhVien(2,"lê văn tam",23);
+    let sinhVien3=new SinhVien(3,"nguyễn văn tám",24);
+    let sinhVien4=new SinhVien(4,"hồ hà",24);
+    let danhSachSinhVien=[];
+    danhSachSinhVien.push(sinhVien1,sinhVien2,sinhVien3,sinhVien4);
+    do{
+        let chon=prompt("chon danh muc\n+" +
+            "1.hiển thị danh sách sv\n+" +
+            "2.thêm sinh viên\n+" +
+            "3.xóa sinh viên\n+" +
+            "4.exit");
+        switch (chon) {
+            case "1":
+                hienThi();
+                break;
+            case "2":
+                themSinhVien();
+                break;
+            case "3":
+                xoaSinhVien();
+                break;
+            case "4":
+                break
+
+        }
+    }while (chon!==4);
+    function hienThi() {
+          let danhSach="";
+         for (let i=0;i<danhSachSinhVien.length;i++){
+             danhSach += danhSachSinhVien[i].chuyenChuoi()+'\n';
+         }
+         alert(danhSach);
+    }
+    function themSinhVien() {
+        let id=prompt("nhập id");
+        let ten=prompt("nhập tên");
+        let tuoi=prompt("nhập tuổi");
+        let sinhVien=new SinhVien(id,ten,tuoi);
+        danhSachSinhVien.push(sinhVien);
+        hienThi();
+
+    }
+    function xoaSinhVien() {
+        let danhSach="";
+        for (let i=0;i<danhSachSinhVien.length;i++){
+            danhSach +=danhSachSinhVien[i].chuyenChuoi()+'\n';
+        }
+        let chon=prompt("chon sinh viên muốn xóa\n"+ danhSach);
+        danhSachSinhVien.splice(chon-1,1);
+        hienThi();
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

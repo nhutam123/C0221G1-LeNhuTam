@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border: 1px solid red"></canvas>
+<script>
+ let ctx=document.getElementById("myCanvas").getContext("2d");
+ ctx.fillStyle="red";
+ ctx.fillRect(100,100,200,100);
+ let cicle=document.getElementById("myCanvas").getContext("2d");
+ cicle.beginPath();
+ cicle.fillStyle="blue";
+ cicle.arc(200,200,100,0,2*Math.PI);
+ cicle.fill();
+ let mat=document.getElementById("myCanvas").getContext("2d");
+ mat.beginPath();
+ mat.fillStyle="black";
+ mat.arc(150,175,10,Math.PI,0,);
+ mat.fill();
+ let mat1=document.getElementById("myCanvas").getContext("2d");
+ mat1.beginPath();
+ mat1.fillStyle="black";
+ mat1.arc(250,175,10,Math.PI,0);
+ mat.fill();
+ let mom=document.getElementById("myCanvas").getContext("2d");
+ mom.beginPath();
+ mom.fillStyle="white";
+ mom.arc(200,250,20,0,Math.PI);
+ mom.fill();
+</script>
+
+</body>
+</html>

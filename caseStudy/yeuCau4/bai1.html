@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string=prompt("nhập chuỗi");
+    arr=string.split("");
+    arr1=[];
+    for (let i=0;i<arr.length;i++){
+           if (i==0||arr[i-1]==" "){
+               if (arr[i]!==" "){
+                   arr1.push(arr[i].toUpperCase());
+               }
+
+           }else {
+               arr1.push(arr[i].toLowerCase());
+           }
+    }
+    alert(arr1.join(""));
+</script>
+
+</body>
+</html>
