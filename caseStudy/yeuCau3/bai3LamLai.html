@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1=[1,2,3,4,5,6];
+    let arr2=[];
+    let sum=0;
+    for (let i=0;i<arr1.length;i++){
+        for (let j=0;j<i+1;j++){
+            sum+=arr1[j];
+        }
+        arr2.push(sum);
+        sum=0;
+    }
+    alert(arr2);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input style="width: 1000px" type="text" id="sanPham" placeholder="stt,ten,hinhAnh,gia">
+<input type="button" value="thêmSp" onclick="themSanPham()">
+<p id="hienThi"></p>
+<script>
+    class SanPham {
+        constructor(stt, ten, hinhAnh, gia) {
+            this.stt = stt;
+            this.ten = ten;
+            this.hinhAnh = hinhAnh;
+            this.gia = gia;
+        }
+        getTen(){
+            return this.ten;
+        }
+        setStt(stt){
+            this.stt=stt;
+        }
+        setTen(ten){
+            this.ten=ten;
+        }
+        setHinhAnh(hinhAnh){
+            this.hinhAnh=hinhAnh;
+        }
+        setGia(gia){
+            this.gia=gia;
+        }
+    }
+
+    let danhSachSanPham = [];
+    let sanPham1 = new SanPham(1, "iphone",
+        '<img width="50px" height="100px" src="https://m.media-amazon.com/images/I/81qOdpVypzL._AC_SL1500_.jpg">', 12);
+    let sanPham2 = new SanPham(2, "samsung",
+        '<img width="50px" height="100px" src="https://images-na.ssl-images-amazon.com/images/I/71QZcCFQcAL._AC_SL1500_.jpg">', 14);
+    danhSachSanPham.push(sanPham1, sanPham2);
+
+    function hienThi() {
+        let bang = '<table border="1">';
+        bang += ' <tr>' +
+            '<th>sst</th>' +
+            '<th>ten</th>' +
+            '<th>hinh anh</th>' +
+            '<th>giá</th>' +
+            '<th>xóa</th>' +
+            '<th>sửa</th>' +
+            '</tr>';
+        for (let i = 0; i < danhSachSanPham.length; i++) {
+            bang += ' <tr>' +
+                '<td>' + danhSachSanPham[i].stt + '</td>' +
+                '<td>' + danhSachSanPham[i].ten + '</td>' +
+                '<td>' + danhSachSanPham[i].hinhAnh + '</td>' +
+                '<td>' + danhSachSanPham[i].gia + "(triệu đồng)" + '</td>' +
+                '<td>' + '<input type="button" value="xóa" onclick="xoaSanPham('+i+')">' + '</td>' +
+                '<td>' + '<input type="button" value="sửa" onclick="suaSanPham('+i+')">' + '</td>' +
+                '</tr>';
+        }
+        bang += '</table>';
+        document.getElementById("hienThi").innerHTML = bang;
+    }
+
+    hienThi();
+
+    function themSanPham() {
+        let sanPham = document.getElementById("sanPham").value.split(",");
+        let sst = sanPham[0];
+        let ten = sanPham[1];
+        let hinhAnh = sanPham[2];
+        let gia = sanPham[3];
+        if (sst !== "" && ten !== "" && hinhAnh !== "" && gia !== ""){
+            let sanPhamMoi = new SanPham(sst, ten, hinhAnh, gia);
+            danhSachSanPham.push(sanPhamMoi);
+        }else {
+            alert("hãy nhập đủ thông tin sản phẩm");
+        }
+
+        hienThi();
+        document.getElementById("sanPham").value = "";
+    }
+    function xoaSanPham(index) {
+        let chon=confirm("bạn có muốn xóa sản phẩm" +danhSachSanPham[index].getTen());
+        if (chon){
+            danhSachSanPham.splice(index,1);
+        }
+        hienThi();
+
+    }
+    function suaSanPham(index) {
+        let sanPhamSua=prompt("hãy điền thồng tin bạn muốn sửa dưới dạng stt,ten,hinhanh,giá").split(",");
+        let stt=sanPhamSua[0];
+        let ten=sanPhamSua[1];
+        let hinhAnh=sanPhamSua[2];
+        let gia=sanPhamSua[3];
+        danhSachSanPham[index].setStt(stt);
+        danhSachSanPham[index].setTen(ten);
+        danhSachSanPham[index].setHinhAnh(hinhAnh);
+        danhSachSanPham[index].setGia(gia);
+        hienThi();
+
+    }
+</script>
+
+</body>
+</html>

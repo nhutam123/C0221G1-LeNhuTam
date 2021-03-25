@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>xổ số codegym</h1>
+<p id="muaVe"></p>
+<p id="quayVe"></p>
+<input type="button" value="mua vé" onclick="muaVe()">
+<input type="button" value="quay số" onclick="quaySo()">
+
+
+<script>
+    class VeSo{
+        constructor(id,so1,so2,so3,so4,so5,so6) {
+            this.id=id;
+            this.so1=so1;
+            this.so2=so2;
+            this.so3=so3;
+            this.so4=so4;
+            this.so5=so5;
+            this.so6=so6;
+        }
+    }
+    function hienThi() {
+        let table='<table border="1">';
+        table+='<tr>' ;
+          for (let i=0;i<6;i++){
+              table+='<td><input type="text" id="'+i+'" width="40"></td>'
+        }
+        table+='</tr>';
+        table+='</table>';
+        document.getElementById("muaVe").innerHTML=table;
+        document.getElementById("quayVe").innerHTML=table;
+    }
+    hienThi();
+    function muaVe() {
+        let arr=[];
+        chon=prompt("chọn cách mua ve\n" +
+            "1.tự chọn ve\n"+
+            "2.mua vé ngẫu nhiên");
+        if (chon==1){
+            alert("bạn hãy nhập số vào dòng 1")
+
+        }else if (chon==2){
+            for (let i=0;i<6;i++){
+                document.getElementById(i).value=
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -9,94 +9,108 @@
 <input type="button" onclick="themSinhVien()" value="add">
 <p id="ketQua"></p>
 <script>
-    class SinhVien{
-        constructor(id,ten,tuoi) {
-            this.id=id;
-            this.ten=ten;
-            this.tuoi=tuoi;
+    class SinhVien {
+        constructor(id, ten, tuoi) {
+            this.id = id;
+            this.ten = ten;
+            this.tuoi = tuoi;
         }
-        getId(){
+
+        getId() {
             return this.id;
         }
-        getTen(){
+
+        getTen() {
             return this.ten;
         }
-        getTuoi(){
+
+        getTuoi() {
             return this.tuoi;
         }
-        setId(id){
-            this.id=id;
+
+        setId(id) {
+            this.id = id;
         }
-        setTen(ten){
-            this.ten=ten;
+
+        setTen(ten) {
+            this.ten = ten;
         }
-        setTuoi(tuoi){
-            this.tuoi=tuoi;
+
+        setTuoi(tuoi) {
+            this.tuoi = tuoi;
         }
-        chuyenChuoi(){
-            return "1.id:"+this.id+" "+"2.ten:"+this.ten+" "+"3.tuoi"+this.tuoi;
+
+        chuyenChuoi() {
+            return "1.id:" + this.id + " " + "2.ten:" + this.ten + " " + "3.tuoi" + this.tuoi;
         }
     }
-    let danhSachSinhVien=[];
-    let sinhVien1=new SinhVien(1,"lê thị còi",23);
-    let sinhVien2=new SinhVien(2,"trần văn a",24);
-    let sinhVien3=new SinhVien(3,"nguyễn Văn A",22);
-    danhSachSinhVien.push(sinhVien1,sinhVien2,sinhVien3);
+
+    let danhSachSinhVien = [];
+    let sinhVien1 = new SinhVien(1, "lê thị còi", 23);
+    let sinhVien2 = new SinhVien(2, "trần văn a", 24);
+    let sinhVien3 = new SinhVien(3, "nguyễn Văn A", 22);
+    danhSachSinhVien.push(sinhVien1, sinhVien2, sinhVien3);
+
     function hienThi() {
-        let table='<table border="1">';
-        table+='<tr>'+
-                '<th>STT</th>'+
-                '<th>Id</th>'+
-                '<th>Tên</th>'+
-                '<th>Tuổi</th>'+
-                '<th>xóa</th>'+
-                '</tr>';
-        for (let i=0;i<danhSachSinhVien.length;i++){
-            table+='<tr>'+
-                    '<td>'+(i+1)+'</td>'+
-                    '<td>'+danhSachSinhVien[i].id+'</td>'+
-                    '<td>'+danhSachSinhVien[i].ten+'</td>'+
-                    '<td>'+danhSachSinhVien[i].tuoi+'</td>'+
-                    '<td>'+'<input type="button" onclick="xoaSinhVien('+i+')" value="xóa">'+'</td>'+
-                    '<td>'+'<input type="button" onclick="suaSinhVien('+i+')" value="sửa">'+'</td>'+
-                    '</tr>'
+        let table = '<table border="1">';
+        table += '<tr>' +
+            '<th>STT</th>' +
+            '<th>Id</th>' +
+            '<th>Tên</th>' +
+            '<th>Tuổi</th>' +
+            '<th>xóa</th>' +
+            '<th>sửa</th>' +
+            '</tr>';
+        for (let i = 0; i < danhSachSinhVien.length; i++) {
+            table += '<tr>' +
+                '<td>' + (i + 1) + '</td>' +
+                '<td>' + danhSachSinhVien[i].id + '</td>' +
+                '<td>' + danhSachSinhVien[i].ten + '</td>' +
+                '<td>' + danhSachSinhVien[i].tuoi + '</td>' +
+                '<td>' + '<input type="button" onclick="xoaSinhVien(' + i + ')" value="xóa">' + '</td>' +
+                '<td>' + '<input type="button" onclick="suaSinhVien(' + i + ')" value="sửa">' + '</td>' +
+                '</tr>'
         }
-        table+='</table>';
-        document.getElementById("ketQua").innerHTML=table;
+        table += '</table>';
+        document.getElementById("ketQua").innerHTML = table;
     }
+
     hienThi();
+
     function themSinhVien() {
-        let arr=document.getElementById("nhap").value.split(",");
-        if(arr[0]!==""&& arr[1]!==""&& arr[2]!==""&& arr[1]!==undefined &&arr[2]!==undefined){
-            let id=arr[0];
-            let ten=arr[1];
-            let tuoi=arr[2];
-            let sinhVien=new SinhVien(id,ten,tuoi);
+        let arr = document.getElementById("nhap").value.split(",");
+        if (arr[0] !== "" && arr[1] !== "" && arr[2] !== "" && arr[1] !== undefined && arr[2] !== undefined) {
+            let id = arr[0];
+            let ten = arr[1];
+            let tuoi = arr[2];
+            let sinhVien = new SinhVien(id, ten, tuoi);
             danhSachSinhVien.push(sinhVien);
             hienThi();
-        }else {
+        } else {
             alert("vui long nhập đủ thông tin");
         }
-        document.getElementById("nhap").value="";
+        document.getElementById("nhap").value = "";
 
     }
+
     function xoaSinhVien(index) {
-        let chon=confirm("bạn có muốn xóa hay không");
-        if (chon){
-            danhSachSinhVien.splice(index,1);
+        let chon = confirm("bạn có muốn xóa hay không");
+        if (chon) {
+            danhSachSinhVien.splice(index, 1);
         }
         hienThi();
     }
+
     function suaSinhVien(index) {
-        let sua=prompt("nhập thông tin muốn sửa theo dạng: id,ten,tuoi ").split(",");
-        let id=sua[0];
-        let ten=sua[1];
-        let tuoi=sua[2];
-        if (id!==""&&ten!==""&&tuoi!==""){
+        let sua = prompt("nhập thông tin muốn sửa theo dạng: id,ten,tuoi ").split(",");
+        let id = sua[0];
+        let ten = sua[1];
+        let tuoi = sua[2];
+        if (id !== "" && ten !== "" && tuoi !== "") {
             danhSachSinhVien[index].setId(id);
             danhSachSinhVien[index].setTen(ten);
             danhSachSinhVien[index].setTuoi(tuoi);
-        }else {
+        } else {
             alert("bạn hãy nhập đủ thông tin")
         }
 

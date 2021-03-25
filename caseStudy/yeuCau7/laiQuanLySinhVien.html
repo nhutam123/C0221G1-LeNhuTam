@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="id,ten,tuoi" id="thongTin">
+<input type="button" value="themSv" onclick="themSinhVien()">
+<p id="bang"></p>
+<script>
+    class SinhVien {
+        constructor(id, ten, tuoi) {
+            this.id = id;
+            this.ten = ten;
+            this.tuoi = tuoi;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getTuoi() {
+            return this.tuoi;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setTuoi(tuoi) {
+            this.tuoi = tuoi;
+        }
+
+        chuyenChuoi() {
+            return "\n id : " + this.id + "\nten : " + this.ten + "\ntuoi : " + this.tuoi;
+        }
+    }
+
+    let danhSachSinhVien = [];
+    let sinhVien1 = new SinhVien(1, "le van a", 24);
+    let sinhVien2 = new SinhVien(2, "nguyen tân danh", 24);
+    let sinhVien3 = new SinhVien(3, "nho van nhung", 24);
+    let sinhVien4 = new SinhVien(4, "le thi coi", 24);
+    danhSachSinhVien.push(sinhVien1, sinhVien2, sinhVien3, sinhVien4);
+
+    function hienThi() {
+        let bang = '<table border="1">';
+        bang += '<tr> ' +
+            '<th>STT</th>' +
+            '<th>Tên</th>' +
+            '<th>Tuổi</th>' +
+            '<th>xóa</th>' +
+            '<th>sửa</th>' +
+            '</tr>';
+        for (let i = 0; i < danhSachSinhVien.length; i++) {
+            bang += '<tr> ' +
+                '<td>' + danhSachSinhVien[i].getId() + '</td>' +
+                '<td>' + danhSachSinhVien[i].getTen() + '</td>' +
+                '<td>' + danhSachSinhVien[i].getTuoi() + '</td>' +
+                '<td>' + '<input type="button" value="xóa" onclick="xoaSinhVien(' + i + ')">' + '</td>' +
+                '<td>' + '<input type="button" value="sửa" onclick="suaSinhVien(' + i + ')">' + '</td>' +
+                '</tr>'
+        }
+        bang += '</table>';
+        document.getElementById("bang").innerHTML = bang;
+    }
+
+    hienThi();
+
+    function themSinhVien() {
+        let thongTin = document.getElementById("thongTin").value.split(",");
+        if (thongTin[0] !== "" && thongTin[1] !== "" && thongTin[2] !== "") {
+            let id = thongTin[0];
+            let ten = thongTin[1];
+            let tuoi = thongTin[2];
+            let sinhVien = new SinhVien(id, ten, tuoi);
+            danhSachSinhVien.push(sinhVien);
+        } else {
+            alert("hãy nhập đủ thông tin");
+        }
+        hienThi();
+    }
+
+    function xoaSinhVien(index) {
+        let chon = confirm("bạn có muốn xóa sinh viên này không");
+        if (chon) {
+            danhSachSinhVien.splice(index, 1);
+        }
+        hienThi();
+    }
+
+    function suaSinhVien(index) {
+        let thayDoi = prompt("thong tin sinh viên muốn sủa là" + danhSachSinhVien[index].chuyenChuoi() +
+            "\n hãy nhập thông tin muốn sửa dưới dang: id,ten,tuoi").split(",");
+        if (thayDoi[0] !== "" && thayDoi[1] !== "" && thayDoi[2] !== "" &&thayDoi[1]!==undefined&&thayDoi[2]!==undefined){
+            danhSachSinhVien[index].setId(thayDoi[0]);
+            danhSachSinhVien[index].setTen(thayDoi[1]);
+            danhSachSinhVien[index].setTuoi(thayDoi[2]);
+        }else {
+            alert("bạn hãy nhập đủ thông tin đúng dạng")
+        }
+
+        hienThi();
+    }
+</script>
+
+</body>
+</html>
