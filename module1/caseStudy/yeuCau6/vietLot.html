@@ -80,9 +80,9 @@
             document.getElementById("4").value = arr1[4];
             document.getElementById("5").value = arr1[5];
         }
-        arr = [];
-        let danhSachVe = [];
-        let so1 = document.getElementById("0").value;
+    }
+    function quaySo() {
+        arr[0] = document.getElementById("0").value;
         let so2 = document.getElementById("1").value;
         let so3 = document.getElementById("2").value;
         let so4 = document.getElementById("3").value;
@@ -91,8 +91,6 @@
         let veSo = new VeSo(so1, so2, so3, so4, so5, so6);
         danhSachVe.push(veSo);
         alert(veSo.toString());
-    }
-    function quaySo() {
         let arr=[];
         for (let i = 0; i < 6; i++) {
             arr.push(Math.floor(Math.random() * 100));

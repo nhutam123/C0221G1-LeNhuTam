@@ -23,11 +23,11 @@
     document.write("số lượng số nguyên tố là"+count);
     //kiemSoNguyenTo(9);
     function kiemSoNguyenTo(n) {
-        check=true;
+        let check=true;
         if (n < 2) {
             check= false;
         } else {
-            for (i = 2; i < n; i++) {
+            for (let i = 2; i < n; i++) {
                 if (n % i == 0) {
                     check= false;
                 }
