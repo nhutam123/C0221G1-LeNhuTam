@@ -2,20 +2,22 @@ package bai3.baiTap;
 
 public class ThemPhanTuVaoMang {
     public static void main(String[] args) {
+        int arr[]={1,2,3,4,5,6,0,0,0};
+
+        System.out.println( themPhanTuVaomang(5,4, arr));
 
 
 
     }
-    public static int[] themPhanTuVaomang(int num,int x){
-        int arr[]={1,2,3,4,5,6,0,0,0,0};
-        for (int i=0;i<arr.length;i++){
-            if (i==x){
-                int c=arr[i];
-                arr[i] =num;
-            for (int j=i+1;j<arr.length-1;j++)
-                arr[j+1]=arr[j];
-            }
+    public static String themPhanTuVaomang(int num,int x , int arr[]){
+        String result="";
+        for (int i=arr.length-1;i>x;i--){
+            arr[i]=arr[i-1];
+            arr[x]=num;
         }
-        return arr;
+        for (int i=0;i<arr.length;i++) {
+            result += arr[i] + " ";
+        }
+        return result;
     }
 }
