@@ -1,4 +1,4 @@
-package bai4.thucHanh;
+package bai4.thuc_hanh;
 
 public class Rectangle {
     double width;

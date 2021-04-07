@@ -1,5 +1,5 @@
-package bai4.thucHanh.myPack;
-import bai4.thucHanh.pack.*;
+package bai4.thuc_hanh.myPack;
+import bai4.thuc_hanh.pack.*;
 
 public class B extends A {
     public static void main(String[] args) {

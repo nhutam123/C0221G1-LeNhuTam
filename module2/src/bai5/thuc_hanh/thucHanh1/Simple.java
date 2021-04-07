@@ -1,6 +1,6 @@
-package bai5.thucHanh.thucHanh1;
+package bai5.thuc_hanh.thucHanh1;
 
-import bai5.thucHanh.thucHanh1.AccessModifier;
+import bai5.thuc_hanh.thucHanh1.AccessModifier;
 
 public class Simple {
     public static void main(String[] args) {

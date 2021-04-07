@@ -1,4 +1,4 @@
-package bai5.thucHanh.thucHanh2;
+package bai5.thuc_hanh.thucHanh2;
 
 public class Student {
     private int rollno;

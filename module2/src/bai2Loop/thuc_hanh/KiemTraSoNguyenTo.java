@@ -1,4 +1,4 @@
-package bai2Loop.thucHanh;
+package bai2Loop.thuc_hanh;
 
 import java.util.Scanner;
 

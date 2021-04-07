@@ -1,4 +1,4 @@
-package bai6.baiTap.bai3_point_MoveablePoint;
+package bai6.bai_tap.bai3_point_MoveablePoint;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package bai4.baiTap.lopPan;
+package bai4.bai_tap.lopPan;
 
 public class Quat {
     final int SLOW=1;

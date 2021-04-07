@@ -1,4 +1,4 @@
-package bai3.baiTap;
+package bai3.bai_tap;
 
 public class GopMang {
     public static void main(String[] args) {

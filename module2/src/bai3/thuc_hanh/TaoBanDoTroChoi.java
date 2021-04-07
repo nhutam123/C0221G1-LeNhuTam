@@ -1,4 +1,4 @@
-package bai3.thucHanh;
+package bai3.thuc_hanh;
 
 import java.util.Scanner;
 

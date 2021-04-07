@@ -1,4 +1,4 @@
-package bai5.thucHanh.thucHanh4;
+package bai5.thuc_hanh.thucHanh4;
 
 public class CheckPerson {
     CheckPerson(String name){}

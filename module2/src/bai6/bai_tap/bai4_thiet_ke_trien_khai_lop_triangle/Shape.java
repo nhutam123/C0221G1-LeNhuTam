@@ -1,4 +1,4 @@
-package bai6.baiTap.bai4_thiet_ke_trien_khai_lop_triangle;
+package bai6.bai_tap.bai4_thiet_ke_trien_khai_lop_triangle;
 
 public class Shape {
     private String color;

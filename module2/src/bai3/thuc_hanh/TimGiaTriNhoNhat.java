@@ -1,4 +1,4 @@
-package bai3.thucHanh;
+package bai3.thuc_hanh;
 
 public class TimGiaTriNhoNhat {
     public static void main(String[] args) {

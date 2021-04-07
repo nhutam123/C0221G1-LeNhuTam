@@ -1,4 +1,4 @@
-package bai5.thucHanh.thucHanh3;
+package bai5.thuc_hanh.thucHanh3;
 
 public class TestStaticProperty {
     public static void main(String[] args) {

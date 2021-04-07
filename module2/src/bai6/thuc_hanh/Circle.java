@@ -1,4 +1,4 @@
-package bai6.thucHanh;
+package bai6.thuc_hanh;
 
 public class Circle extends Shape {
     private double radius;

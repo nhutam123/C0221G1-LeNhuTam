@@ -1,4 +1,4 @@
-package bai5.thucHanh.thucHanh1;
+package bai5.thuc_hanh.thucHanh1;
 
 public class AccessModifier {
     private int data=40;

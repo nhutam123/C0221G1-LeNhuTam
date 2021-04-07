@@ -1,4 +1,4 @@
-package bai1.ThucHanh;
+package bai1.thuc_hanh;
 
 public class KhaiBaoVaSuDungBien {
     public static void main(String[] args) {
