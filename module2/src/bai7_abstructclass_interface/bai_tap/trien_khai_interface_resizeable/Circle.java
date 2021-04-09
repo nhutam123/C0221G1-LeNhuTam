@@ -41,13 +41,13 @@ public class Circle extends Shape implements iResizeable {
                 ", color='" + color + '\'' +
                 '}';
     }
-    //    public static void main(String[] args) {
-//        Circle newCircle=new Circle(2,"red");
-//        double percent=Math.random()*100;
-//        System.out.println(newCircle.getRadius());
-//        newCircle.resized(percent);
-//        System.out.println(newCircle.getRadius());
-//
-//    }
+        public static void main(String[] args) {
+        Circle newCircle=new Circle(2,"red");
+        double percent=Math.random()*100;
+        System.out.println(newCircle.getRadius());
+        newCircle.resized(percent);
+        System.out.println(newCircle.getRadius());
+
+    }
 
 }
