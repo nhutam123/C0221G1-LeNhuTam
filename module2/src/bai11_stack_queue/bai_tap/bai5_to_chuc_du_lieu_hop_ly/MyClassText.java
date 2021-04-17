@@ -34,6 +34,11 @@ public class MyClassText {
             }
         });
         System.out.println(list);
+        System.out.println();
+        int a=5;
+
+        int b=a--+ + ++a + a++;
+        System.out.println(b);
 
 
     }
