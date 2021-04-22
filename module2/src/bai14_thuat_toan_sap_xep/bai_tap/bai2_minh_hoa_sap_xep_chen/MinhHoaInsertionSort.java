@@ -10,7 +10,7 @@ public class MinhHoaInsertionSort {
         int key;
         int k=1;
 
-        for (int i=0;i<length;i++){
+        for (int i=1;i<length;i++){
 
             key=list[i];
             int j=i-1;
@@ -23,6 +23,7 @@ public class MinhHoaInsertionSort {
             list[j+1]=key;
             System.out.println("bước : "+ k++);
             printList(list);
+            System.out.println();
         }
     }
     static  void  printList(int[] arr){

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f220424d-1cf1-4dbd-b26f-45c5831ad47b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../bai10/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10/src/models/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/module2/bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/module2/bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/models/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/models/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1rVBlXsAbpfV6J3UeKbpyRZTIg7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../bai10/src" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f220424d-1cf1-4dbd-b26f-45c5831ad47b" name="Default Changelist" comment="" />
+      <created>1619051527047</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619051527047</updated>
+      <workItem from="1619051528234" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="111" y="96" key="FileChooserDialogImpl" timestamp="1619051553476">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="111" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1619051553476" />
+  </component>
+</project>

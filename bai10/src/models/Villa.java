@@ -35,7 +35,6 @@ public class Villa extends Services {
         return "Villa{" +
                 "roomStandard='" + roomStandard + '\'' +
                 ", floor=" + floor +
-                ", id='" + id + '\'' +
                 ", standardName='" + standardName + '\'' +
                 ", areaUsing=" + areaUsing +
                 ", price=" + price +
