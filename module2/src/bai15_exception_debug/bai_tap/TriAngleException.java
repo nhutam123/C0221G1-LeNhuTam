@@ -2,7 +2,7 @@ package bai15_exception_debug.bai_tap;
 
 import java.util.Scanner;
 
-public class TriAngleException extends Throwable {
+public class TriAngleException extends Exception {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         while (true){
@@ -18,7 +18,7 @@ public class TriAngleException extends Throwable {
             }catch (TriAngleException e){
                 System.err.println("độ dài 3 cạnh không phù hợp");
             }catch (NumberFormatException e){
-                System.out.println("khong dc nhap chu cai");
+                System.out.println("ban phai nhap mot so : ");
             }
         }
         System.out.println("bạn đã nhập chuẩn");
@@ -26,7 +26,7 @@ public class TriAngleException extends Throwable {
     }
     private static void illegalTriangleException(double a,double b,double c) throws TriAngleException {
         if (a <= 0 || b <= 0 || c <= 0 || a + b <= c || b + c <= a || a + c <= b) {
-            throw new TriAngleException();
+            throw  new TriAngleException();
         }
     }
 }
