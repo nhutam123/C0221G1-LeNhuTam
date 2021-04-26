@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DocFile {
     public static void main(String[] args) {
        DocFile docFile=new DocFile();
-       ArrayList arrayList=readFile("src\\\\bai16_io_text_file\\\\thuc_hanh\\\\text1");
+       ArrayList arrayList=readFile("src\\bai16_io_text_file\\thuc_hanh\\text1");
        for (int i=0;i<arrayList.size();i++){
            System.out.println(arrayList.get(i));
        }
