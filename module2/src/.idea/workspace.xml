@@ -2,10 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7beecb5d-9683-440c-b7c3-ed4d490c9f4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../bai10/src/data/Custumer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai10/src/data/service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai10/src/models/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/NNCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/billData" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/bai10.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10/case_study.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/out/production/bai10/controllers/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/out/production/bai10/controllers/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/out/production/bai10/models/House.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/out/production/bai10/models/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/out/production/bai10/models/Services.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/out/production/bai10/models/Villa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/out/production/bai10/test/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10/src/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/src/models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10/src/models/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10/src/models/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10/src/models/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10/src/models/Services.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../bai10/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10/src/models/Villa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/module2/bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/models/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/models/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai14_thuat_toan_sap_xep/bai_tap/bai2_minh_hoa_sap_xep_chen/MinhHoaInsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/bai16_io_text_file/bai_tap/bai2_doc_file/DocFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/bai16_io_text_file/bai_tap/bai2_doc_file/DocFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/bai_tap_lam_them_2_quan_ly_tien_dien/Bill.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/bai_tap_lam_them_2_quan_ly_tien_dien/Bill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/bai_tap_lam_them_2_quan_ly_tien_dien/Custumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/bai_tap_lam_them_2_quan_ly_tien_dien/Custumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/bai_tap_lam_them_2_quan_ly_tien_dien/VietNamCustumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/bai_tap_lam_them_2_quan_ly_tien_dien/VietNamCustumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai16_io_text_file/bai_tap/bai2_doc_file/DocFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai16_io_text_file/bai_tap/bai2_doc_file/DocFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/Custumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/Custumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/VietNamCustumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap_lam_them_2_quan_ly_tien_dien/VietNamCustumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -39,6 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1619051316164</updated>
       <workItem from="1619051317431" duration="24000" />
+      <workItem from="1619657131017" duration="22000" />
+      <workItem from="1619855558562" duration="16000" />
     </task>
     <servers />
   </component>
@@ -46,9 +75,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="111" y="96" key="FileChooserDialogImpl" timestamp="1619051339738">
+    <state x="111" y="96" key="FileChooserDialogImpl" timestamp="1619855573037">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="111" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1619051339738" />
+    <state x="111" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1619855573037" />
   </component>
 </project>

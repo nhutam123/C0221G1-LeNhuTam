@@ -1,11 +1,13 @@
 package bai_tap_lam_them_2_quan_ly_tien_dien;
 
+import java.util.List;
 import java.util.Scanner;
 
 public abstract class Custumer {
     Scanner scanner =new Scanner(System.in);
     String id;
     String name;
+    Bill bill=new VietNamCustumer.BillVietNam();
 
     public Custumer() {
     }
@@ -14,6 +16,24 @@ public abstract class Custumer {
         this.id = id;
         this.name = name;
     }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void checkBill(){
 
     }
@@ -25,12 +45,21 @@ public abstract class Custumer {
 
     }
 
+
     @Override
     public String toString() {
         return
-               scanner +
-                "," + id +
+                ","+id +
                 "," + name
+               ;
+    }
+
+
+    public String showInfo(){
+        return
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", bill=" + bill
                 ;
     }
 }

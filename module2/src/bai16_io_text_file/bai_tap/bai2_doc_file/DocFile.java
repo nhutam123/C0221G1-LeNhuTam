@@ -22,7 +22,8 @@ public class DocFile {
             if (!file.exists()) {
                 throw new FileNotFoundException();
             }
-            BufferedReader br=new BufferedReader(new FileReader(file));
+            FileReader fileReader=new FileReader(file);
+            BufferedReader br=new BufferedReader(fileReader);
             String line="";
             while ((line=br.readLine()) != null){
                 String quocGia=line.split(",")[5];
