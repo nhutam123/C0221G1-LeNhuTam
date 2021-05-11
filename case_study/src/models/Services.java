@@ -29,13 +29,14 @@ public abstract class Services {
     public void input(){
         try{
 
-        System.out.println("nhập id của dịch vụ: ");
         boolean check=false;
         do {
+            System.out.println("nhập id của dịch vụ: ");
             String idInput=scanner.nextLine();
             String regex="(SVVL)\\-[0-9]{4}";
             if (check=MainController.regexInput(regex,idInput)){
                 id=idInput;
+                check=true;
             };
         }while (check==false);
         check=false;

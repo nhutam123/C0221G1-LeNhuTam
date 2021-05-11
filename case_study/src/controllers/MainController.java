@@ -49,24 +49,25 @@ public class MainController<E> {
                     break;
                 case 2:
                     ArrayList<String> arrayList ;
-                    arrayList = readFile(PATH_FILE);
+                    arrayList = IOFunction.readFile(PATH_FILE);
                     showServices(arrayList);
                     break;
                 case 3:
                     Customer customer=new Customer();
                     customer.inputCustomer();
                     listCustomer.add(customer);
-                    writeFile(DATA_CUSTUMER, listCustomer);
+                    //IOFunction.writeFile(DATA_CUSTUMER, listCustomer);
+                    IOFunction ioFunction=new IOFunction();
                     break;
                 case 4:
                     ArrayList<String> arrayListCustomer;
-                    arrayListCustomer = readFile(DATA_CUSTUMER);
+                    arrayListCustomer = IOFunction.readFile(DATA_CUSTUMER);
                     for (int i = 0; i < arrayListCustomer.size(); i++) {
                         System.out.println(arrayListCustomer.get(i));
                     }
                     break;
                 case 5:
-                   ArrayList<String> list=readFile(DATA_CUSTUMER);
+                   ArrayList<String> list=IOFunction.readFile(DATA_CUSTUMER);
                    for (int i=0;i<list.size();i++){
                        System.out.print(i+1+",");
                        System.out.println(list.get(i));
@@ -79,19 +80,19 @@ public class MainController<E> {
                             "3.Booking Room");
                     int choose2=Integer.parseInt(scanner.nextLine());
                     ArrayList<String> arrayList1 ;
-                    arrayList1 = readFile(PATH_FILE);
+                    arrayList1 = IOFunction.readFile(PATH_FILE);
                     switch (choose2) {
                         case 1:
                             System.out.println("danh sach Villa: ");
-                            showVilla(arrayList1);
+                            ShowFunction.showVilla(arrayList1);
                             break;
                         case 2:
                             System.out.println("danh sach House: ");
-                            showHouse(arrayList1);
+                            ShowFunction.showHouse(arrayList1);
                             break;
                         case 3:
                             System.out.println("danh sach Room: ");
-                            showRoom(arrayList1);
+                            ShowFunction.showRoom(arrayList1);
                             break;
                     }
                     break;
@@ -135,24 +136,10 @@ public class MainController<E> {
                     break;
 
                 case 8:
-                    int count1=0;
                     System.out.println("nhập tên nhân viên muốn tìm kiếm: ");
                     String name1=scanner.nextLine();
-                    Stack<String> stack=new Stack<>();
-                    ArrayList<String> employeeList=readFile("src/data/Employee");
-                    for (int i=0;i<employeeList.size();i++){
-                        stack.push(employeeList.get(i));
-                    }
-                    for (int i=0;i<stack.size();i++){
-                        if(stack.get(i).split(",")[0].equals(name1)){
-                            System.out.println(stack.get(i));
-                            count1++;
-                        }
-                    }
-                    if (count1==0){
-                        System.out.println("không tìm thấy nhân viên: ");
-                    }
-
+                    ArrayList<String> employeeList=IOFunction.readFile("src/data/Employee");
+                   searchEmployee(employeeList,name1);
                     break;
                 case 9:
                     break;
@@ -193,70 +180,30 @@ public class MainController<E> {
             case 5:
                 break;
         }
-        writeFile(PATH_FILE, list);
+        IOFunction.writeFile(PATH_FILE, list);
 
 
     }
 
 
-    public void writeFile(String pathFile, List list) {
-        try {
-            FileWriter fileWriter = new FileWriter(pathFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            String line = "";
-            for (int i = 0; i < list.size(); i++) {
-                line = list.get(i).toString();
-                bufferedWriter.write(line);
-                bufferedWriter.newLine();
-            }
-            bufferedWriter.close();
-            fileWriter.close();
-        } catch (Exception e) {
-            System.out.println("t");
-        }
-
-
-    }
-
-    public ArrayList<String> readFile(String pathFile) {
-        ArrayList<String> arrayList = new ArrayList<>();
-        try {
-            File file = new File(pathFile);
-            if (!file.exists()) {
-                throw new FileNotFoundException();
-            }
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = "";
-            while ((line = bufferedReader.readLine()) != null) {
-                // tạo đối tượng để add list đối tượng ở đây;
-                arrayList.add(line);
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("không tìm thấy file");
-        } catch (Exception e) {
-            System.out.println("t");
-        }
-        return arrayList;
-    }
 
     public void showServices(ArrayList<String> arrayList) {
         int choose = 0;
         do {
-            showMenuServices();
+            ShowFunction.showMenuServices();
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
                     System.out.println("danh sach Villa: ");
-                    showVilla(arrayList);
+                    ShowFunction.showVilla(arrayList);
                     break;
                 case 2:
                     System.out.println("danh sach House: ");
-                    showHouse(arrayList);
+                    ShowFunction.showHouse(arrayList);
                     break;
                 case 3:
                     System.out.println("danh sach Room: ");
-                    showRoom(arrayList);
+                    ShowFunction.showRoom(arrayList);
                     break;
                 case 4:
                     break;
@@ -276,45 +223,6 @@ public class MainController<E> {
         }
     }
 
-    public void showVilla(ArrayList<String> arrayList) {
-
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i).split(",").length == 10) {
-                System.out.println(arrayList.get(i));
-            }
-        }
-
-
-    }
-
-    public void showHouse(ArrayList<String> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i).split(",").length == 9) {
-                System.out.println(arrayList.get(i));
-            }
-        }
-
-    }
-
-    public void showRoom(ArrayList<String> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i).split(",").length == 7) {
-                System.out.println(arrayList.get(i));
-            }
-        }
-
-    }
-
-    public void showMenuServices() {
-        System.out.println("1.Show all Villa\n" +
-                "2.Show all House\n" +
-                "3.Show all Room\n" +
-                "4.Show All Name Villa Not Duplicate\n" +
-                "5.Show All Name House Not Duplicate\n" +
-                "6.Show All Name Name Not Duplicate\n" +
-                "7.Back to menu\n" +
-                "8.Exit");
-    }
 
     public static boolean regexInput(String regex, String string) {
         Pattern pattern = Pattern.compile(regex);
@@ -333,9 +241,8 @@ public class MainController<E> {
 
 
     }
-    public void searchEmployee(ArrayList<String> list){
+    public void searchEmployee(List<String> list,String name){
         System.out.println("nhập tên nhân viên muốn tìm kiếm: ");
-        String name=scanner.nextLine();
         for (int i=0;i<list.size();i++){
             if (list.get(i).split(",")[0].equals(name)){
                 System.out.println(list.get(i));

@@ -1,22 +1,22 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class text {
     public static void main(String[] args) {
-        float sum = 0;
-        int count = 0, subjects = 3;
+        Scanner scan=new Scanner(System.in);
+       Queue<String> queue=new LinkedList<String>();
+       queue.add("tam");
+       queue.add("tam");
+       queue.add("tam");
+       queue.add("tam");
+       queue.add("tam");
+       queue.offer("toi");
+       String a=scan.nextLine();
+       double b=Double.parseDouble(scan.nextLine());
+        System.out.println(a);
 
-        Scanner input = new Scanner(System.in);
-        System.out.print( "Enter the marks for " + subjects + " subjects: ");
-        while (count < subjects) {
-            System.out.print("#" + (count+1) + ": ");
-            float mark = input.nextFloat();
-            if (mark < 0) {
-                System.out.println(mark + " ignored");
-                continue;
-            }
-            sum += mark;
-            count++;
-        }
-        System.out.print("Average mark = "+sum/subjects);
+       for (String e:queue){
+           System.out.println(e);
+       }
+
     }
 }

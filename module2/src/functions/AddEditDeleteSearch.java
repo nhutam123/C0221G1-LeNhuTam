@@ -1,5 +1,7 @@
 package functions;
 
+import CaseStudy.models.Services;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +12,19 @@ import java.util.regex.Pattern;
 public class AddEditDeleteSearch {
     Scanner scanner=new Scanner(System.in);
     String id;
-    ArrayList<String> list=new ArrayList<>();
+    ArrayList<Services> list=new ArrayList<>();
     public void input(){
         try{
+            boolean check=false;
+            do {
             System.out.println("nhập id của sản phẩm: ");
             String idRegex="";
             String idIput=scanner.nextLine();
-            if (regexInput(id,idRegex)){
-                id=idIput;
+            if (regexInput(id,idRegex)) {
+                id = idIput;
+                check=true;
             }
+            }while (check==false);
             throw new CreateEception("lỗi rồi nha");
         } catch (CreateEception createEception) {
             createEception.printStackTrace();
@@ -32,7 +38,7 @@ public class AddEditDeleteSearch {
         Matcher matcher=pattern.matcher(regex);
         return matcher.matches();
     }
-    public void writeFile(String pathFile,ArrayList list) {
+    public void writeFile(String pathFile,List list) {
         String line;
         try {
             FileWriter fileWriter = new FileWriter(pathFile);
@@ -62,7 +68,7 @@ public class AddEditDeleteSearch {
                 }
                 FileReader fileReader = new FileReader(file);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
-                if ((line = bufferedReader.readLine()) != null) {
+                while ((line = bufferedReader.readLine()) != null) {
                     list.add(line);
                 }
             } catch (FileNotFoundException e) {
@@ -71,6 +77,15 @@ public class AddEditDeleteSearch {
                 e.getMessage();
             }
             return list;
+        }
+        public List<Object> changeObjectList(List<String> listString){
+        List<Object> list=new ArrayList<>();
+        int numberOfProperties=4;
+        String[] array=new String[numberOfProperties];
+        for (int i=0;i<listString.size();i++){
+
+        }
+        return list;
         }
         public void delete(String id,String pathFile){
         List<String> list=readFile(pathFile);
@@ -99,6 +114,20 @@ public class AddEditDeleteSearch {
     public void showInfo(){
 
     }
+    public void searchEmployee(List<String> list,String name){
+        for (int i=0;i<list.size();i++){
+            if (list.get(i).split(",")[0].equals(name)){
+                System.out.println(list.get(i));
+            }else {
+                System.out.println("không tìm thấy nhân viên: ");
+            }
+        }
+
+    }
+    // regex của tên có chữ cái đầu viết hoa.
+    String regex="^([A-Z][a-z]{1,}[ ]{0,1})+";
+    // regex birthDay ;
+    String regex1="^[0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{4}$";
 
     @Override
     public String toString() {
