@@ -1,4 +1,5 @@
 create database furuma;
+-- drop database furuma; 
 create table furuma.TrinhDo(
 	IDTrinhDo INT primary key,
     TrinhDo varchar(50)
@@ -33,25 +34,25 @@ create table furuma.DichVuDiKem(
     TrangThaiKhaDung varchar(50)
     
 );
-
-
-create table furuma.HopDong(
-	IDHopDong int primary key,
-    IDNhanVien INT,foreign key(IDNhanVien) references NhanVien(IDNhanVien),
-	TenDichVu varchar(50),
-	DienTich INT,
-	SoTang INT,
-	SoNguoiToiDa INT,
-	ChiPhiThue INT,
-	IDKieuThue varchar(50),
-	IDLoaiDichVu varchar(50),
-	TrangThai varchar(50)
+create  table furuma.kieu_thue(
+	id_kieu_thue INT primary key,
+    KieuThue varchar(50),
+    Gia INT
 );
-create table furuma.HopDongChiTiet(
-	IDHopDongChiTiet INT primary key,
-    IDHopDong INT,
-    IDDichVuDiKem INT,foreign key(IDDichVuDiKem) references DichVuDiKem(IDDichVuDiKem),
-    SoLuong INT
+create table furuma.Loai_Dich_Vu(
+	id_loai_dich_vu INT primary key,
+    LoaiDichVu varchar(50)
+);
+create table furuma.dich_vu(
+	id_dich_vu int primary key,
+    ten_dich_vu varchar(50),
+    dien_tich int,
+    so_tang int,
+    so_nguoi_toi_da int,
+    chi_phi_thue int, 
+    id_kieu_thue int, foreign key(id_kieu_thue) references kieu_thue(id_kieu_thue),
+    id_loai_dich_vu int, foreign key(id_loai_dich_vu) references loai_dich_vu(id_loai_dich_vu),
+    trang_thai varchar(45)
 );
 
 create table furuma.LoaiKhach(
@@ -70,14 +71,28 @@ create table furuma.KhachHang(
     DiaChi varchar(100)
 );
 
+create table furuma.HopDong(
+	IDHopDong int primary key,
+    IDNhanVien INT,foreign key(IDNhanVien) references NhanVien(IDNhanVien),
+    idkhachhang int, foreign key(idkhachhang) references khachhang(idkhachhang),
+	TenDichVu varchar(50),
+	DienTich INT,
+	SoTang INT,
+	SoNguoiToiDa INT,
+	ChiPhiThue INT,
+	IDKieuThue varchar(50),
+	ID_Dich_Vu int,foreign key(id_dich_vu)references dich_vu(id_dich_vu),
+	TrangThai varchar(50)
+);
 
-create  table furuma.KieuThue(
-	IDKieuThue INT,
-    KieuThue varchar(50),
-    Gia INT
+create table furuma.HopDongChiTiet(
+	IDHopDongChiTiet INT primary key,
+    IDHopDong INT,foreign key(idhopdong) references hopdong(idhopdong),
+	IDDichVuDiKem INT,foreign key(IDDichVuDiKem) references DichVuDiKem(IDDichVuDiKem),
+    SoLuong INT
 );
-create table furuma.LoaiDichVu(
-	IDLoaiDichVu INT,
-    LoaiDichVu varchar(50)
-);
+
+
+
+
 
