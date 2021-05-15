@@ -4,7 +4,7 @@ use furuma;
 select *
 from employee e
 where (e.employee_name like 'h%' or  e.employee_name  like't%' or e.employee_name  like'k%') 
-and length(e.employee_name)<15 ;
+and length(e.employee_name)<=15 ;
 
  -- task3
 select * 
@@ -20,7 +20,8 @@ from customer c
 --     join contract_detail cd on co.contract_id=cd.contract_id
 --     join extra_services es on cd.extra_services_id=es.extra_services_id
 where ct.customer_type ='platinium'
-group by c.customer_id;
+group by c.customer_id
+order by count(*) desc;
 
 -- task 5
 select c.customer_id, c.customer_name, ct.customer_type,co.contract_id,
@@ -64,6 +65,27 @@ union
 select c.customer_name
 from customer c;
 
+-- task 9
+select month(c.start_time) as monthly,(c.contract_id)as 'times'
+from contract c
+group by month(c.start_time)
+order by month(c.start_time) ;
 
+-- task 10
+select c.contract_id,c.start_time,c.end_time,c.deposit,count(cd.contract_detail_id)
+from contract c
+	left join contract_detail cd on c.contract_id=cd.contract_id
+group by cd.contract_id;
 
-	
+-- task 11
+select *
+from extra_services es
+	join contract_detail cd on es.extra_services_id=cd.extra_services_id
+    join contract co on cd.contract_id=co.contract_id
+    join customer c on co.customer_id=c.customer_id
+    join customer_type ct on c.customer_type_id=ct.customer_type_id
+where ct.customer_type='diamond' and (c.address='vinh' or c.address='quang ngai');
+
+-- task 12
+select *
+from 	
