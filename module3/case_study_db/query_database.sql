@@ -144,13 +144,32 @@ set customer.customer_type_id=1
 where customer.customer_type_id=2;
 
 -- task 18
+ALTER TABLE contract DROP FOREIGN KEY contract_ibfk_2;
 delete from customer  c
 where c.customer_id in ( select tmp.customer_id from (
 	select c.customer_id
     from customer c
     join contract co on c.customer_id=co.customer_id
     where year(co.start_time) < 2016  )as tmp) ;
+select* from contract;
     
-select * from contract
+-- task 19
+update extra_services es
+set es.price = es.price*2
+where es.extra_services_id = ( select tmp.extra_services_id from (select co.contract_id ,es.extra_services_id, count(*) as times
+		from contract co 
+        join contract_detail dt on co.contract_id=dt.contract_id
+        join extra_services es on dt.extra_services_id=es.extra_services_id
+        group by es.extra_services_id
+        having times >10) as tmp ) ;
+
+-- task 20
+select e.employee_id, e.employee_name,e.email,e.phone_number,e.address
+from employee e 
+	left join contract co on e.employee_id=co.employee_id
+union 
+select c.customer_id, c.customer_name,c.email,c.phone_number,c.address
+from customer c
+    left join contract co on c.customer_id=co.customer_id;
 
     
