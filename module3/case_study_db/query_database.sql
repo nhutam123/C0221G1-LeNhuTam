@@ -21,7 +21,7 @@ from customer c
 --     join extra_services es on cd.extra_services_id=es.extra_services_id
 where ct.customer_type ='platinium'
 group by c.customer_id
-order by count(*) desc;
+order by count(*) asc;
 
 -- task 5
 select c.customer_id, c.customer_name, ct.customer_type,co.contract_id,
@@ -36,10 +36,13 @@ group by c.customer_id;
 
 -- task 6
 select s.service_id, s.service_name,c.start_time, s.using_area, s.price,st.service_type
-from service_type st
-    left join service  s on st.service_type_id=s.service_type_id
+from service s
+    left join service_type  st on st.service_type_id=s.service_type_id
     left join contract c on s.service_id = c.service_id
-where  c.start_time is null ;
+where  s.service_id  not in (select tmp.service_id 
+			from(select s.service_id,c.start_time
+				from service s  join contract c on  s.service_id = c.service_id
+                where year(c.start_time)>=2019 and month(c.start_time)>=1)as tmp);
 
 -- task 7
 select s.service_id,s.service_name,s.using_area,s.max_customer,s.price,st.service_type
@@ -142,11 +145,13 @@ where e.employee_id in (select tmp.id from (
 update customer c
 set c.customer_type_id=1
 where c.customer_type_id=2 and 
-c.customer_id=(select tmp.customer_id from(select sum(total_price) as total, c.customer_id
+c.customer_id in (select tmp.customer_id from(select sum((co.end_time-co.start_time)*s.price) as total, c.customer_id
 from contract co
 join customer c on co.customer_id=c.customer_id
+join service s on co.service_id=s.service_id
 group by c.customer_id
-having total>10 )as tmp);
+having total > 10 )as tmp);
+select * from contract;
 
 -- task 18
 ALTER TABLE contract DROP FOREIGN KEY contract_ibfk_2;
