@@ -87,5 +87,70 @@ from extra_services es
 where ct.customer_type='diamond' and (c.address='vinh' or c.address='quang ngai');
 
 -- task 12
-select *
-from 	
+select  co.contract_id, e.employee_name, c.customer_name, c.phone_number,
+		s.service_name, cd.number_contract, co.deposit
+from contract co
+	join employee e on co.employee_id= e.employee_id
+    join customer c on co.customer_id =c.customer_id
+    join service s on co.service_id =s.service_id
+    join contract_detail cd on co.contract_id=cd.contract_id
+    join extra_services es on cd.extra_services_id=es.extra_services_id
+where year(co.start_time) =2019 and month(co.start_time) in (1,2,3) ;
+
+-- task 13
+select * ,count(*)
+from contract_detail cd
+	join contract co on cd.contract_id=co.contract_id
+    join extra_services es on cd.extra_services_id=es.extra_services_id
+    group by es.extra_services_name
+    having count(*) >= all (
+		select count(*) 
+		from contract_detail cd
+		join contract co on cd.contract_id=co.contract_id
+		join extra_services es on cd.extra_services_id=es.extra_services_id
+		group by es.extra_services_name);
+
+-- task 14
+select co.contract_id, st.service_type, s.service_name ,es.extra_services_name , count(*)
+from contract co 
+join service s on co.service_id= s.service_id
+join service_type st on s.service_type_id=st.service_type_id
+join contract_detail cd on co.contract_id=cd.contract_detail_id
+join extra_services es on cd.extra_services_id=es.extra_services_id
+group by es.extra_services_id
+having count(*)=1 ;
+
+-- task 15
+select  e.employee_id, e.employee_name,de.degree,d.department,
+		e.phone_number,e.address,count(*)
+from employee e
+	left join contract co on e.employee_id=co.employee_id
+	join degree de on e.degree_id=de.degree_id
+    join department d on e.department_id=d.department_id
+    join position_employee pe on e.position_id=pe.position_id
+group by e.employee_id
+having count(*)<=3;
+
+-- task 16 
+delete from employee e
+where e.employee_id in (select tmp.id from (
+	select  e.employee_id as id
+	from employee e left join contract co on e.employee_id=co.employee_id
+	where co.contract_id is null) as tmp );
+
+-- task 17
+update customer
+set customer.customer_type_id=1
+where customer.customer_type_id=2;
+
+-- task 18
+delete from customer  c
+where c.customer_id in ( select tmp.customer_id from (
+	select c.customer_id
+    from customer c
+    join contract co on c.customer_id=co.customer_id
+    where year(co.start_time) < 2016  )as tmp) ;
+    
+select * from contract
+
+    
