@@ -139,9 +139,14 @@ where e.employee_id in (select tmp.id from (
 	where co.contract_id is null) as tmp );
 
 -- task 17
-update customer
-set customer.customer_type_id=1
-where customer.customer_type_id=2;
+update customer c
+set c.customer_type_id=1
+where c.customer_type_id=2 and 
+c.customer_id=(select tmp.customer_id from(select sum(total_price) as total, c.customer_id
+from contract co
+join customer c on co.customer_id=c.customer_id
+group by c.customer_id
+having total>10 )as tmp);
 
 -- task 18
 ALTER TABLE contract DROP FOREIGN KEY contract_ibfk_2;
