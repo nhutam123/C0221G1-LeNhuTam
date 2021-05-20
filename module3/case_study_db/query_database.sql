@@ -47,7 +47,11 @@ select s.service_id,s.service_name,s.using_area,s.max_customer,s.price,st.servic
 from service s
 inner join contract c on s.service_id=c.service_id
 inner join service_type st on s.service_type_id=st.service_type_id
-where year(c.start_time)=2018 ; 
+where year(c.start_time)=2018 and c.contract_id not in (
+select c.contract_id 
+from contract c
+where year(c.start_time)=2019
+) ; 
 
 -- task 8
 -- cach1
@@ -96,8 +100,11 @@ from contract co
     join service s on co.service_id =s.service_id
     join contract_detail cd on co.contract_id=cd.contract_id
     join extra_services es on cd.extra_services_id=es.extra_services_id
-where year(co.start_time) =2019 and month(co.start_time) in (10,12,11) 
- ;
+where year(co.start_time) =2019 and month(co.start_time)  in (10,12,11) 
+	and (co.contract_id not in
+		(select contract_id from contract co 
+		where year(co.start_time)=2019 and (month(co.start_time) between 1 and 6)) )
+	 ;
 
 -- task 13
 select * ,count(*)
