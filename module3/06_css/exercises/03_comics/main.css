@@ -9,11 +9,15 @@ body {
     color: white;
 }
 
+   /* header */
+
 .header {
+    width: 100%;
     height: 6em;
     background-color: #333;
     display: flex;
     justify-content: space-between;
+    position: fixed;
 }
 .logo {
     line-height: 6em;
@@ -27,8 +31,7 @@ body {
     color: yellow;
     float: left;
     font-size: 40px;
-    padding-left: 30px;
-
+    padding: 0 30px;
 }
 
 .navbar-list {
@@ -40,21 +43,62 @@ body {
     line-height: 6em;
     padding: 0 30px;
 }
+#navbar-sub {
+    position: relative;
+}
 
-.navbar-text:hover{
+.navbar-item:hover .subnav-item-nav{
     display: block;
-    background-color: #ccc;
-    color: black;
-
 }
 
 .navbar-text {
     text-decoration: none;
     font-size: 2em;
     color: white;
-
+    padding: 0 15px;
+    width: 100%;
 }
 
+.navbar-text:hover{
+    display: block;
+    background-color: #ccc;
+    color: black;
+}
+
+.subnav {
+    clear: left;
+    position: absolute;
+    background-color: aqua;
+}
+.navbar-item {
+    border-right: 1px solid white;
+}
+
+.subnav-item-nav {
+    list-style: none;
+    display: none;
+    border: 1px solid white;
+}
+.subnav-item-nav:hover{
+    background-color: coral;
+}
+
+.subnav-item-text {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    padding: 0 40px;
+}
+#search-icon {
+    font-size: 40px;
+    line-height: 2em;
+    padding-right: 4px;
+}
+#search-icon:hover {
+    background-color: red;
+}
+
+    /*contenr*/
 .content {
     margin-top: 200px;
     margin-bottom: 100px;
@@ -72,7 +116,7 @@ body {
 .content-item {
     width: 30%;
     float: left;
-    margin: 40px 0 0 3% ;
+    margin: 0 0 50px 3% ;
     text-align: center;
 }
 
@@ -93,7 +137,7 @@ body {
 }
 
 #content-right {
-    background-color: antiquewhite;
+    background-color: blanchedalmond;
     width: 25%;
     float: left;
     min-height: 500px;
@@ -123,12 +167,10 @@ body {
     font-size: 2em;
     text-decoration: none;
     color: blue;
-
 }
 
 .text-list:hover {
     color: red;
-
 }
 
 .footer {
@@ -147,12 +189,16 @@ body {
     #content-left {
         width: 100%;
     }
-    .navbar {
+    .navbar-item {
         display: none;
     }
     .content-item {
         width: 45%;
     }
+    #menu-mobile {
+        display: block;
+    }
+
 
 }
 @media screen and (min-width: 92.375em) and (min-width: 128em) {

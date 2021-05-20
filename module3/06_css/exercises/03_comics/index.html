@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
 </head>
 <body>
 <div>
@@ -11,22 +12,31 @@
 
         <div class="nav">
             <div class="logo">
-                <img id="logo" src="img/gundamlogo.png" alt="">
                 <p id="slogent">vua truyện tranh</p>
-
+                <img id="logo" src="img/gundamlogo.png" alt="">
             </div>
 
         </div>
         <div class="navbar">
             <ul class="navbar-list">
                 <li class="navbar-item"><a href="" class="navbar-text"> TRANG CHỦ</a></li>
-                <li class="navbar-item"><a href="" class="navbar-text">THỂ LOẠI</a></li>
+                <li id="menu-mobile" class="navbar-item">
+                    <a href="" id="navbar-sub" class="navbar-text">
+                        Thể loại
+                        <i class="icon1 ti-angle-down"></i>
+                    </a>
+                    <ul class="subnav">
+                        <li class="subnav-item-nav"><a class="subnav-item-text" href="">action</a></li>
+                        <li class="subnav-item-nav"><a class="subnav-item-text" href="">romantic</a></li>
+                        <li class="subnav-item-nav"><a class="subnav-item-text" href="">fiction</a></li>
+                        <li class="subnav-item-nav"><a class="subnav-item-text" href="">magic</a></li>
+                        <li class="subnav-item-nav"><a class="subnav-item-text" href="">adult</a></li>
+                    </ul>
+                </li>
                 <li class="navbar-item"><a href="" class="navbar-text">BOOKMARK</a></li>
-                <li class="navbar-item"></li>
+                <li id="search-icon" class="navbar-item ti-zoom-out"><a href="" class="navbar-text"></a></li>
             </ul>
         </div>
-
-
     </header>
 
     <div class="content">
@@ -82,9 +92,7 @@
                 <li class="subnav-item"><a class="text-list" href="">adult</a></li>
             </ul>
 
-
         </div>
-
 
     </div>
 

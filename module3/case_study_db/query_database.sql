@@ -17,8 +17,6 @@ select c.customer_id, c.customer_name ,count(*) as 'so lan dat'
 from customer c
 	join customer_type ct on c.customer_type_id=ct.customer_type_id
     join contract co on c.customer_id =co.customer_id
---     join contract_detail cd on co.contract_id=cd.contract_id
---     join extra_services es on cd.extra_services_id=es.extra_services_id
 where ct.customer_type ='platinium'
 group by c.customer_id
 order by count(*) asc;
@@ -98,7 +96,8 @@ from contract co
     join service s on co.service_id =s.service_id
     join contract_detail cd on co.contract_id=cd.contract_id
     join extra_services es on cd.extra_services_id=es.extra_services_id
-where year(co.start_time) =2019 and month(co.start_time) in (1,2,3) ;
+where year(co.start_time) =2019 and month(co.start_time) in (10,12,11) 
+ ;
 
 -- task 13
 select * ,count(*)
@@ -136,10 +135,10 @@ having count(*)<=3;
 
 -- task 16 
 delete from employee e
-where e.employee_id in (select tmp.id from (
+where e.employee_id not in (select tmp.id from (
 	select  e.employee_id as id
 	from employee e left join contract co on e.employee_id=co.employee_id
-	where co.contract_id is null) as tmp );
+	where  year(co.start_time)  in (2017,2018,2019) )as tmp);
 
 -- task 17
 update customer c
@@ -149,6 +148,7 @@ c.customer_id in (select tmp.customer_id from(select sum((co.end_time-co.start_t
 from contract co
 join customer c on co.customer_id=c.customer_id
 join service s on co.service_id=s.service_id
+where  year(co.end_time)=2019
 group by c.customer_id
 having total > 10 )as tmp);
 select * from contract;
