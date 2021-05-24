@@ -144,7 +144,7 @@ having count(*)<=3;
 delete from employee e
 where e.employee_id not in (select tmp.id from (
 	select  e.employee_id as id
-	from employee e left join contract co on e.employee_id=co.employee_id
+	from employee e  join contract co on e.employee_id=co.employee_id
 	where  year(co.start_time)  in (2017,2018,2019) )as tmp);
 
 -- task 17

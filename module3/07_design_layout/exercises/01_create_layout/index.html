@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            height: 40px;
+            background-color: aqua;
+            text-align: center;
+        }
+        .nav {
+            height: 30px;
+            background-color: red;
+        }
+        .nav ul li {
+            list-style: none;
+            float: left;
+            padding: 0 20px;
+            line-height: 30px;
+        }
+
+        .left-content {
+            min-height: 400px;
+            width: 70%;
+            background-color: blueviolet;
+            float: left;
+        }
+        .section {
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .right-content {
+            min-height: 400px;
+            width: 30%;
+            float: left;
+            background-color: chartreuse;
+        }
+        .menu h2 {
+            padding: 10px;
+        }
+        .menu li {
+            width: 100%;
+            list-style: none;
+            padding: 15px 30px ;
+            border: 1px solid #333 ;
+        }
+        .menu li a {
+            text-decoration: none;
+            color: black;
+            width: 100%;
+        }
+        .menu li:hover {
+            background-color: aqua;
+        }
+        .left-content p {
+            padding-left: 15px;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+
+
+        #footer {
+            height: 60px;
+            background-color: black;
+            clear: left;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+  <header class="header">
+      <h1>header</h1>
+  </header>
+    <nav class="nav">
+        <ul>
+            <li>tôi</li>
+            <li>là</li>
+            <li>tâm</li>
+            <li>đẹp trai</li>
+        </ul>
+    </nav>
+    <div id="content">
+        <div class="left-content">
+            <section class="section">
+                <p>đẹp trai thì có gì sai</p>
+            </section>
+
+            <article class="article">
+                <p>đôi lúc cũng sai vì quá đẹp trai</p>
+
+            </article>
+        </div>
+
+        <div class="right-content">
+            <ul class="menu">
+                <h2>menu</h2>
+                <li><a href="">cách làm</a></li>
+                <li><a href="">phong cách</a></li>
+                <li><a href="">nỗi niềm</a></li>
+                <li><a href="">lợi thế</a></li>
+                <li><a href="">đẹp trai</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <footer id="footer">
+        <h2>hãy đẹp trai mỗi ngày</h2>
+    </footer>
+</div>
+
+</body>
+</html>
