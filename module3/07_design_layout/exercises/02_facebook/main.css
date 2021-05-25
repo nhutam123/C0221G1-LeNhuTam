@@ -12,6 +12,7 @@ header {
     height: 56px;
     background-color: white;
     border: 1px solid #e5e7e9;
+    position: fixed;
 
 }
 #navbar {
@@ -57,13 +58,14 @@ header {
     width: 40px;
 }
 
-#content {
-
+.content {
+display: flex;
+    padding-top: 60px;
+    background-color: #e5ebf3;
 }
 
 .content-left  {
     width: 20%;
-    background-color: wheat;
 
 }
 .menu {
@@ -79,4 +81,77 @@ header {
     text-decoration: none;
     font-weight: bold;
     color: #333333;
+}
+.text-item {
+    line-height: 50px;
+}
+.subnav-item {
+    display: flex;
+}
+.content-between {
+    width: 50%;
+ margin: 30px 40px;
+    justify-items: center;
+
+}
+
+.container {
+    width: 500px;
+    height: 120px;
+    border: 1px solid #555555;
+    border-radius: 10px;
+    background-color: white;
+}
+.input-content {
+    display: flex;
+}
+.img-content {
+    width: 40px;
+    border-radius: 50%;
+    margin: 10px;
+}
+.input {
+    height: 40px;
+    width: 400px;
+    background-color: #f0f2f5;
+    border: 1px solid #888888;
+    border-radius: 10px;
+    margin: 10px 20px;
+    outline: none;
+}
+
+.link {
+    display: flex;
+    margin: 15px 15px;
+    justify-content: space-around;
+}
+.add-link {
+    text-decoration: none;
+    font-weight: bolder;
+    color: #555555;
+}
+
+.icon-link {
+    display: flex;
+    line-height: 30px;
+}
+.icon {
+    width: 35px;
+}
+.content-right {
+    margin-top: 30px;
+}
+
+.container-main {
+    margin-top: 30px;
+    height: 500px;
+}
+.img-main {
+    width: 100%;
+}
+
+.content-right {
+}
+.heading5 {
+    line-height: 50px;
 }

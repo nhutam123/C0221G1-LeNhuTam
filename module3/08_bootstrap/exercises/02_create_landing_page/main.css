@@ -1,0 +1,33 @@
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.left-nav {
+    display: flex;
+}
+.right-nav {
+    float: left;
+}
+.nav-item {
+    float: left;
+    list-style: none;
+    padding: 0 10px;
+}
+.right-nav-item {
+    list-style: none;
+    padding: 0 10px;
+}
+.subnav {
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+.icon-mic {
+    border-right: 1px solid #555555;
+    padding-right: 15px;
+}
