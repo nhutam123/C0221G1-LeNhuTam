@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2440de51-8b3f-472a-93f9-53c547f2ae20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/06_css/exercises/01_imbeded_css/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/06_css/exercises/01_imbeded_css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/06_css/exercises/02_format_text/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/06_css/exercises/03_comics/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/06_css/exercises/03_comics/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/06_css/practices/01_use_css/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +31,8 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/09_web/practices/01_display_system_time" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -62,10 +58,23 @@
       <option name="presentableId" value="Default" />
       <updated>1621340763154</updated>
       <workItem from="1621340764422" duration="8336000" />
+      <workItem from="1621991393272" duration="401000" />
+      <workItem from="1622000825108" duration="88000" />
+      <workItem from="1622003795549" duration="70000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="128" y="96" key="FileChooserDialogImpl" timestamp="1622000912382">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="128" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1622000912382" />
+    <state x="1" y="67" width="1099" height="613" key="new project wizard" timestamp="1622003862206">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="1" y="67" width="1099" height="613" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1622003862206" />
   </component>
 </project>
