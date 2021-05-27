@@ -1,3 +1,4 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,14 +12,14 @@ public class DiscountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String product=request.getParameter("product");
         float listPrice=Float.parseFloat(request.getParameter("listPrice"));
-        float discountPercen=Float.parseFloat(request.getParameter("discount"));
+        float discountPercent=Float.parseFloat(request.getParameter("discountPercent"));
 
-        double discount=listPrice*discountPercen*0.01;
-        PrintWriter writer=response.getWriter();
-        writer.println("<html>");
-        writer.println("name :"+product);
-        writer.println("discount : "+discount);
-        writer.println("</html>");
+        double discount=listPrice * discountPercent * 0.01;
+        request.setAttribute("discount",discount);
+        RequestDispatcher dispatcher=request.getRequestDispatcher("result.jsp");
+        dispatcher.forward(request,response);
+        //response.sendRedirect("result.jsp");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
