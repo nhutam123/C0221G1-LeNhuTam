@@ -1,0 +1,33 @@
+.header {
+    height: 60px;
+
+}
+.search{
+    border-radius: 10px;
+}
+.search-img {
+    width: 30px;
+}
+.content {
+    min-height: 500px;
+}
+.item {
+    background-color: white;
+}
+.logo{
+    width: 100px;
+}
+.content-img {
+ width: 100%;
+}
+a{
+    margin: 0;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 739px){
+    .nav-header {
+        display: none;
+    }
+}

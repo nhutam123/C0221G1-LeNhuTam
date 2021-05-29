@@ -1,0 +1,16 @@
+.header {
+    height: 60px;
+
+}
+.search{
+    border-radius: 10px;
+}
+.search-img {
+    width: 30px;
+}
+.content {
+    min-height: 500px;
+}
+.item {
+    background-color: white;
+}
