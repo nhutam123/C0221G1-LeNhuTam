@@ -42,20 +42,7 @@ public class UserService implements iUserSercice {
         return list;
     }
     @Override
-    public User search(String name, ArrayList<User> list) {
-        User user = null;
-        boolean check = false;
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getName().equals(name)) {
-                user = list.get(i);
-                check = true;
-                break;
-            }
-        }
-        if (check) {
-            return user;
-        } else {
-            return null;
-        }
+    public List<User> search(String name) {
+        return userRepository.searchUser(name);
     }
 }

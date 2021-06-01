@@ -10,13 +10,23 @@
 <html>
 <head>
     <title>Title</title>
+
+    <style>
+        header {
+            text-align: center;
+            color: black;
+            background-color: bisque;
+        }
+    </style>
 </head>
 <body>
-<h1>User Management</h1>
-<h2>
-    <a href="/user?action=create">Add New User</a>
-</h2>
-</center>
+<div class="header">
+    <h1>User Management</h1>
+    <h2>
+        <a href="/user?action=create">Add New User</a>
+    </h2>
+</div>
+
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>List of Users</h2></caption>

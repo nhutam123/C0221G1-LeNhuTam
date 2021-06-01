@@ -18,6 +18,7 @@ public class UserRepository {
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
+    private static final String SEARCH_USERS_SQL= "select *from users where users.`name` like ?;";
 
     public UserRepository() {
     }
@@ -50,6 +51,26 @@ public class UserRepository {
             printSQLException(e);
         }
     }
+    public  List<User>  searchUser(String name1){
+        List<User> users=new ArrayList<>();
+        try (Connection connection = getConnection();
+        PreparedStatement preparedStatement=connection.prepareStatement(SEARCH_USERS_SQL)){
+            preparedStatement.setString(1,"%"+name1+"%");
+            System.out.println(preparedStatement);
+            ResultSet rs=preparedStatement.executeQuery();
+            while (rs.next()){
+                int id =rs.getInt("id");
+                String name =rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                users.add( new User(id, name, email, country));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
 
     public User selectUser(int id) {
         User user = null;
@@ -67,7 +88,7 @@ public class UserRepository {
                 String name = rs.getString("name");
                 String email = rs.getString("email");
                 String country = rs.getString("country");
-                user = new User(id, name, email, country);
+                user= new User(id, name, email, country);
             }
         } catch (SQLException e) {
             printSQLException(e);

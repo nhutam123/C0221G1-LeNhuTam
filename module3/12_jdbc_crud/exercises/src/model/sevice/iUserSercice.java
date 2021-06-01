@@ -16,5 +16,5 @@ public interface iUserSercice {
     public boolean deleteUser(int id) throws SQLException;
 
     public boolean updateUser(User user) throws SQLException;
-    public User search(String name, ArrayList<User> list);
+    public List<User> search(String name);
 }

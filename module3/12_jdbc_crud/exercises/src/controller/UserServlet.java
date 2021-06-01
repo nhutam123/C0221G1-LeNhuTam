@@ -84,9 +84,9 @@ public class UserServlet extends HttpServlet {
 
     private void searchUser(HttpServletRequest request, HttpServletResponse response) {
         String name=request.getParameter("name");
-        User user= userService.search(name, (ArrayList<User>) userService.selectAllUsers());
+        List<User> users= userService.search(name);
         RequestDispatcher dispatcher ;
-        if (user==null){
+        if (users==null){
             dispatcher=request.getRequestDispatcher("user/error.jsp");
             try {
                 dispatcher.forward(request,response);
@@ -96,7 +96,7 @@ public class UserServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }else {
-            request.setAttribute("user" ,user);
+            request.setAttribute("users" ,users);
             try {
                 dispatcher=request.getRequestDispatcher("user/search.jsp");
                 dispatcher.forward(request,response);

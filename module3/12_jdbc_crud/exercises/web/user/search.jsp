@@ -12,27 +12,19 @@
     <title>Title</title>
 </head>
 <body>
-<h1>User details</h1>
+<h1>User search</h1>
 <p>
     <a href="/user">Back to User list</a>
 </p>
 <table>
-    <tr>
-        <td>id: </td>
-        <td>${user.getId()}</td>
-    </tr>
-    <tr>
-        <td>Name: </td>
-        <td>${user.getName()}</td>
-    </tr>
-    <tr>
-        <td>Price: </td>
-        <td>${user.getEmail()}</td>
-    </tr>
-    <tr>
-        <td>Price: </td>
-        <td>${user.getCountry()}</td>
-    </tr>
+    <c:forEach var="user" items="${users}">
+        <tr>
+            <td><c:out value="${user.id}"/></td>
+            <td><c:out value="${user.name}"/></td>
+            <td><c:out value="${user.email}"/></td>
+            <td><c:out value="${user.country}"/></td>
+        </tr>
+    </c:forEach>
 
 </table>
 
