@@ -1,5 +1,6 @@
 .header {
     height: 60px;
+    background-color: dodgerblue;
 
 }
 .search{
@@ -25,6 +26,9 @@ a{
     padding: 0;
 }
 
+.img-slider {
+    width: 50%;
+}
 
 @media screen and (max-width: 739px){
     .nav-header {

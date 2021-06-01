@@ -1,5 +1,6 @@
 .header {
     height: 60px;
+    background-color: #cccccc;
 
 }
 .search{
@@ -9,7 +10,7 @@
     width: 30px;
 }
 .content {
-    min-height: 500px;
+
 }
 .item {
     background-color: white;

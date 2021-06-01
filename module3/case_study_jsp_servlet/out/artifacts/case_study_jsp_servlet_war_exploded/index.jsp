@@ -17,7 +17,34 @@
     <a href="#">
       <div class="ml-3"><img class="logo" src="image/LOGOFurama_4C_Normal.png" alt=""></div>
     </a>
-    <div class="mr-3">Nguyễn Văn A</div>
+    <div class="mr-3">
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+              data-target="#myModal">Sign up</button>
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-titel text-danger">Sign up</h4>
+              <button type="button" class="close" id="login" data-dismiss="modal">login</button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-between mb-2">
+                <label> name</label>
+                <input type="text" class="w-75 search">
+              </div>
+              <div class="d-flex justify-content-between">
+                <label >password</label>
+                <input type="password" class="w-75 search">
+              </div>
+              <button type="submit" class="btn btn-success mt-3 float-lg-right" data-dismiss="modal">sign up</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
   </div>
   <div class="d-flex justify-content-around">
     <ul class="nav-header nav nav-tabs">
@@ -53,9 +80,10 @@
     </form>
 
   </div>
+ 
   <div class="row content container-fluid">
-    <div class="row mh-100">
-      <div class="col col-lg-3 col-sm-0 bg-info d-flex flex-column">Menu
+    <div class="row mh-100 ml-3">
+      <div class="col col-lg-3 col-sm-0 bg-light d-flex flex-column ">Menu
         <a href="">item one</a>
         <a href="">item two</a>
         <a href="">item three</a>
@@ -64,7 +92,7 @@
         <div class="row">
 
             <div class="item col col-lg-4 col-sm-12 col-md-6 bg-light">
-              <a class="" href="">
+              <a class="" href="furama/service/villa/list.jsp">
               <img class="content-img" src="./image/villa.webp" alt="">
               <h3>villa</h3>
               <p>villa đẹp nhất đông nam á</p>
@@ -73,7 +101,7 @@
 
 
             <div class="item col col-lg-4 col-sm-12 col-md-6 bg-light">
-              <a class="" href="">
+              <a class="" href="furama/service/room/list.jsp">
               <img class="content-img" src="./image/room.webp" alt="">
               <h3>Room</h3>
               <p>Room đẹp nhất đông nam á</p>
@@ -82,7 +110,7 @@
 
 
             <div class="item col col-lg-4 col-sm-12 col-md-6 bg-light">
-              <a class="" href="">
+              <a class="" href="./furama/service/house/list.jsp">
               <img class="content-img" src="./image/house.webp" alt="">
               <h3>House</h3>
               <p>House đẹp nhất đông nam á</p>
