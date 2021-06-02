@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
   <head>
     <title>Furama</title>
@@ -18,7 +19,7 @@
       <div class="ml-3"><img class="logo" src="image/LOGOFurama_4C_Normal.png" alt=""></div>
     </a>
     <div class="mr-3">
-      <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+      <button type="button" class="btn btn-outline-danger" data-toggle="modal"
               data-target="#myModal">Sign up</button>
       <div class="modal" id="myModal">
         <div class="modal-dialog">
@@ -62,7 +63,7 @@
         <a href="furama/employee/list.jsp" class="nav-link">Employee</a>
       </li>
       <li class="nav-item">
-        <a href="furama/customer/list.jsp" class="nav-link">Customer</a>
+        <a href="/customer" class="nav-link">Customer</a>
       </li>
       <li class="nav-item">
         <a href="furama/contract/list.jsp" class="nav-link">Contract</a>
@@ -84,7 +85,7 @@
   <div class="row content container-fluid">
     <div class="row mh-100 ml-3">
       <div class="col col-lg-3 col-sm-0 bg-light d-flex flex-column ">Menu
-        <a href="">item one</a>
+        <a href="/customer_type">customer type</a>
         <a href="">item two</a>
         <a href="">item three</a>
       </div>
