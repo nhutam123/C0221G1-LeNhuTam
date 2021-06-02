@@ -19,7 +19,7 @@
       <div class="ml-3"><img class="logo" src="image/LOGOFurama_4C_Normal.png" alt=""></div>
     </a>
     <div class="mr-3">
-      <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+      <button type="button" class="btn btn-danger" data-toggle="modal"
               data-target="#myModal">Sign up</button>
       <div class="modal" id="myModal">
         <div class="modal-dialog">

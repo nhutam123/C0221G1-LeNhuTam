@@ -1,5 +1,7 @@
 package model.bean;
 
+import java.util.Date;
+
 public class Customer {
     private int id;
     private String name;
@@ -13,6 +15,7 @@ public class Customer {
     public Customer() {
     }
 
+
     public Customer(int id, String name, String birthday, String card, String phoneNumber, String email, String address, int customerTypeId) {
         this.id = id;
         this.name = name;
@@ -22,6 +25,16 @@ public class Customer {
         this.email = email;
         this.address = address;
         this.customerTypeId = customerTypeId;
+    }
+
+    public Customer(String name, String birthday, String card, String phoneNumber, String email, String address, int typeId) {
+        this.name = name;
+        this.birthday = birthday;
+        this.card = card;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.customerTypeId = typeId;
     }
 
     public int getId() {
@@ -80,7 +93,7 @@ public class Customer {
         this.address = address;
     }
 
-    public int getCustomerType() {
+    public int getCustomerTypeId() {
         return customerTypeId;
     }
 

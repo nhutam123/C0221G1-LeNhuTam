@@ -24,7 +24,7 @@
 <div class="header">
     <h1>Customer Management</h1>
     <h2>
-        <a href="/user?action=create&name=customer">Add New Customer</a>
+        <a href="/customer?action=create&name=customer">Add New Customer</a>
     </h2>
 </div>
 
@@ -47,8 +47,8 @@
                 <td><c:out value="${customer.phoneNumber}"/></td>
                 <td><c:out value="${customer.address}"/></td>
                 <td>
-                    <a href="/furama?action=edit&id=${user.id}">Edit</a>
-                    <a href="/furama?action=delete&id=${user.id}">Delete</a>
+                    <a href="/customer?action=edit&id=${customer.id}">Edit</a>
+                    <a href="/customer?action=delete&id=${customer.id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>
