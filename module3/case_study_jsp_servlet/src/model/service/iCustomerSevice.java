@@ -10,5 +10,6 @@ public interface iCustomerSevice<E> {
  public void insertCustomer(Customer customer) throws SQLException;
  public Customer selectCustomer(int id);
  public void update(Customer customer);
+ public void delete(int id);
 }
 

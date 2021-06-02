@@ -31,5 +31,10 @@ public class CustomerService implements iCustomerSevice {
         service.update(customer);
     }
 
+    @Override
+    public void delete(int id) {
+        service.delete(id);
+    }
+
 
 }

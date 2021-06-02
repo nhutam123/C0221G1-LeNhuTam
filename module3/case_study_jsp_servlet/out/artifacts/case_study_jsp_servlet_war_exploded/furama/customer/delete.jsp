@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -53,10 +54,10 @@
                 </td>
             </tr>
             <tr>
-                <th>Country:</th>
+                <th>address:</th>
                 <td>
-                    <input type="text" name="country" size="15"
-                           value="<c:out value='${user.country}' />"
+                    <input type="text" name="address" size="15"
+                           value="<c:out value='${user.address}' />"
                     />
                 </td>
             </tr>

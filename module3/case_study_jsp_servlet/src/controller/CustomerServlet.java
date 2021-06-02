@@ -51,7 +51,7 @@ public class CustomerServlet extends HttpServlet {
                     showEditForm(request, response);
                 break;
             case "delete":
-//                    deleteUser(request, response);
+                    delete(request, response);
                 break;
             case "sort":
                 sort(request,response);
@@ -63,6 +63,23 @@ public class CustomerServlet extends HttpServlet {
 
 
     }
+
+    private void delete(HttpServletRequest request, HttpServletResponse response) {
+        int id=Integer.parseInt(request.getParameter("id"));
+        service.delete(id);
+        List<Customer> list=service.selectAll();
+        request.setAttribute("listCustomers",list);
+        RequestDispatcher dispatcher=request.getRequestDispatcher("furama/customer/list.jsp");
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id=Integer.parseInt(request.getParameter("id"));
         int typeId=Integer.parseInt(request.getParameter("typeId"));

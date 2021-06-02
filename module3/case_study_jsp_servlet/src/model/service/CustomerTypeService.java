@@ -29,4 +29,9 @@ public class CustomerTypeService implements iCustomerSevice {
 
     }
 
+    @Override
+    public void delete(int id) {
+
+    }
+
 }

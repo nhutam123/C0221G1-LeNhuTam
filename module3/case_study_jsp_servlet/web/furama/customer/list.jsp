@@ -48,7 +48,30 @@
                 <td><c:out value="${customer.address}"/></td>
                 <td>
                     <a href="/customer?action=edit&id=${customer.id}">Edit</a>
-                    <a href="/customer?action=delete&id=${customer.id}">Delete</a>
+                    <a href="customer?action=customer" data-toggle="modal"
+                       data-target="#myModal">
+                        Delete
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content w-75">
+                                    <div class="modal-header">
+                                        <h4 class="modal-titel text-danger">Do you want to delete </h4>
+                                    </div>
+                                    <div class="modal-body d-flex justify-content-around">
+                                        <form action="">
+                                            <button type="submit" class="btn btn-success mt-3 " data-dismiss="modal">cancel</button>
+                                        </form>
+
+                                        <form action="/customer?action=delete&id=${customer.id}" >
+                                            <button type="submit" class="btn btn-danger mt-3 " name="action" value="delete" data-dismiss="modal">delete</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
                 </td>
             </tr>
         </c:forEach>

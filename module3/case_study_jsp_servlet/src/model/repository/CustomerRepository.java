@@ -15,7 +15,20 @@ public class CustomerRepository {
     private static final String UPDATE_CUSTOMER="update customer c\n" +
             "set c.customer_type_id=?,c.customer_name=?,c.identify_card_number=?,c.phone_number=?, c.Email=?,c.address=?\n" +
             "where c.customer_id=?;";
+    private  static  final  String DELETE ="delete from customer c\n" +
+            "where c.customer_id=? ;";
     BaseRepository baseRepository=new BaseRepository();
+
+    public void  delete(int id){
+        try{
+            Connection connection=baseRepository.getConnection();
+            PreparedStatement statement=connection.prepareStatement(DELETE);
+            statement.setInt(1,id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void update(Customer customer){
         try {
