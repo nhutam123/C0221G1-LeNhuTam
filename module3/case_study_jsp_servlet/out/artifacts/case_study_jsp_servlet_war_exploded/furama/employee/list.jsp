@@ -24,7 +24,7 @@
 <div class="header">
     <h1>Employee Management</h1>
     <h2>
-        <a href="/user?action=create">Add New Employee</a>
+        <a href="furama/employee/create.jsp">Add New Employee</a>
     </h2>
 </div>
 
@@ -35,7 +35,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Country</th>
+            <th>address</th>
             <th>Actions</th>
         </tr>
         <c:forEach var="employee" items="${listEmployee}">
@@ -43,10 +43,10 @@
                 <td><c:out value="${employee.id}"/></td>
                 <td><c:out value="${employee.name}"/></td>
                 <td><c:out value="${employee.email}"/></td>
-                <td><c:out value="${employee.country}"/></td>
+                <td><c:out value="${employee.address}"/></td>
                 <td>
-                    <a href="/user?action=edit&id=${user.id}">Edit</a>
-                    <a href="/user?action=delete&id=${user.id}">Delete</a>
+                    <a href="/employee?action=edit&id=${employee.id}">Edit</a>
+                    <a href="/employee?action=delete&id=${employee.id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

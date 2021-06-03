@@ -60,7 +60,7 @@
           <a class="dropdown-item" href="furama/service/room/list.jsp">Room</a></div>
       </li>
       <li class="nav-item">
-        <a href="furama/employee/list.jsp" class="nav-link">Employee</a>
+        <a href="/employee" class="nav-link">Employee</a>
       </li>
       <li class="nav-item">
         <a href="/customer" class="nav-link">Customer</a>

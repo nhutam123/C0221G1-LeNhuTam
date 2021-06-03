@@ -10,8 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <style>
         .header {
@@ -38,7 +37,8 @@
             <th>Email</th>
             <th>phoneNumber</th>
             <th>address</th>
-            <th>Actions</th>
+            <th>edit</th>
+            <th>delete</th>
         </tr>
         <c:forEach var="customer" items="${listCustomers}">
             <tr>
@@ -49,31 +49,47 @@
                 <td><c:out value="${customer.address}"/></td>
                 <td>
                     <a href="/customer?action=edit&id=${customer.id}">Edit</a>
-                    <a href="customer?action=customer" data-toggle="modal"
-                       data-target="#myModal">
-                        Delete
-                        <div class="modal" id="myModal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-titel text-danger">Sign up</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <button type="submit" class="btn btn-success mt-3 float-lg-right"
-                                                data-dismiss="modal">sign up
-                                        </button>
-                                    </div>
-                                </div>
+                </td>
+                <td>
 
-                            </div>
-                        </div>
-                    </a>
+<%--                    <button class="btn btn-danger" id="de" onclick="deleteCustomer(${customer.id})" value=""   data-toggle="modal"--%>
+<%--                            data-target="#myModal">--%>
+<%--                        Delete--%>
+<%--                    </button>--%>
+                    <button type="button" class="btn btn-danger" onclick="sendDataToModal('${customer.id}','${customer.name}')" data-toggle="modal" data-target="#exampleModalLong">
+                        Delete
+                    </button></td>
+
                 </td>
             </tr>
         </c:forEach>
     </table>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <form action="/customer" method="get">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input hidden type="text" name="id" id="idStudent">
+                        <p>Bạn có muốn xóa sình viên tên :<span id="nameStudent"></span> </p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-around">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                        <input type="hidden" name="action" value="delete">
+                        <button type="submit" class="btn btn-danger ">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <br>
-    <form method="post" action="">
+    <form method="post" action="" >
         <input class="search" type="text" name="name" id="search">
         <input class="btn btn-success" type="submit" name="action" value="search">
     </form>
@@ -82,14 +98,15 @@
         <input class="btn btn-danger" type="submit" name="action" value="sort">
     </form>
 </div>
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
+<script>
+    function sendDataToModal(id, name) {
+        document.getElementById("idStudent").value=id;
+        document.getElementById("nameStudent").innerText=name
+    }
+
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
