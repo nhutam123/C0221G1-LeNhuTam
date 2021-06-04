@@ -10,27 +10,15 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-    <style>
-        .header {
-            text-align: center;
-            color: blue;
-            background-color: bisque;
-        }
-    </style>
+  <jsp:include page="commond/style.jsp"/>
 </head>
 <body>
-<div class="header">
-    <h1>Customer Management</h1>
-    <h2>
-        <a href="/customer?action=create&name=customer">Add New Customer</a>
-    </h2>
-</div>
+<jsp:include page="commond/heading.jsp"/>
 
 <div align="center">
-    <table border="1" cellpadding="5">
+    <table border="1" cellpadding="5" id="table" class="table table-striped table-bordered">
         <caption><h2>List of Customers</h2></caption>
+        <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -40,6 +28,8 @@
             <th>edit</th>
             <th>delete</th>
         </tr>
+        </thead>
+        <tbody>
         <c:forEach var="customer" items="${listCustomers}">
             <tr>
                 <td><c:out value="${customer.id}"/></td>
@@ -51,20 +41,18 @@
                     <a href="/customer?action=edit&id=${customer.id}">Edit</a>
                 </td>
                 <td>
-
-<%--                    <button class="btn btn-danger" id="de" onclick="deleteCustomer(${customer.id})" value=""   data-toggle="modal"--%>
-<%--                            data-target="#myModal">--%>
-<%--                        Delete--%>
-<%--                    </button>--%>
-                    <button type="button" class="btn btn-danger" onclick="sendDataToModal('${customer.id}','${customer.name}')" data-toggle="modal" data-target="#exampleModalLong">
+                    <button type="button" class="btn btn-danger"
+                            onclick="sendDataToModal('${customer.id}','${customer.name}')" data-toggle="modal"
+                            data-target="#exampleModalLong">
                         Delete
-                    </button></td>
-
+                    </button>
                 </td>
             </tr>
         </c:forEach>
+        </tbody>
     </table>
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+         aria-hidden="true">
         <form action="/customer" method="get">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -76,7 +64,7 @@
                     </div>
                     <div class="modal-body">
                         <input hidden type="text" name="id" id="idStudent">
-                        <p>Bạn có muốn xóa sình viên tên :<span id="nameStudent"></span> </p>
+                        <p>Bạn có muốn xóa sình viên tên :<span id="nameStudent"></span></p>
                     </div>
                     <div class="modal-footer d-flex justify-content-around">
                         <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
@@ -89,24 +77,9 @@
     </div>
 
     <br>
-    <form method="post" action="" >
-        <input class="search" type="text" name="name" id="search">
-        <input class="btn btn-success" type="submit" name="action" value="search">
-    </form>
-    <br>
-    <form action="" method="get">
-        <input class="btn btn-danger" type="submit" name="action" value="sort">
-    </form>
-</div>
-<script>
-    function sendDataToModal(id, name) {
-        document.getElementById("idStudent").value=id;
-        document.getElementById("nameStudent").innerText=name
-    }
 
-</script>
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</div>
+
+<jsp:include page="./commond/script.jsp"/>
 </body>
 </html>

@@ -1,14 +1,13 @@
 package model.bean;
 
 public class Employee {
-    private  int id;
+    private int id;
     private String name;
-    private String degree;
-    private String department;
-    private String position;
+    private Degree degree;
+    private Department department;
+    private Position position;
     private String birthday;
-    private  String card;
-
+    private String card;
     private String phoneNumber;
     private String email;
     private String address;
@@ -16,7 +15,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String name, String degree, String department, String position, String birthday, String card,  String phoneNumber, String email, String address) {
+    public Employee(int id, String name, Degree degree, Department department, Position position, String birthday, String card, String phoneNumber, String email, String address) {
         this.id = id;
         this.name = name;
         this.degree = degree;
@@ -24,10 +23,21 @@ public class Employee {
         this.position = position;
         this.birthday = birthday;
         this.card = card;
-
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
+    }
+
+    public Employee(String name, Degree degree, Department department, Position position, String birthday, String card, String phoneNumber, String email, String address) {
+        this.name=name;
+        this.degree=degree;
+        this.department=department;
+        this.position=position;
+        this.birthday=birthday;
+        this.card=card;
+        this.phoneNumber=phoneNumber;
+        this.email=email;
+        this.address=address;
     }
 
     public int getId() {
@@ -46,27 +56,27 @@ public class Employee {
         this.name = name;
     }
 
-    public String getDegree() {
+    public Degree getDegree() {
         return degree;
     }
 
-    public void setDegree(String degree) {
+    public void setDegree(Degree degree) {
         this.degree = degree;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
@@ -85,7 +95,6 @@ public class Employee {
     public void setCard(String card) {
         this.card = card;
     }
-
 
     public String getPhoneNumber() {
         return phoneNumber;

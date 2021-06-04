@@ -10,19 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-    <style>
-        .header {
-            text-align: center;
-            color: orange;
-            background-color: bisque;
-        }
-        table{
-            border: 1px solid chartreuse;
-        }
-        th {
-            color: blue;
-        }
-    </style>
+  <jsp:include page="commond/style.jsp"/>
 </head>
 <body>
 <div class="header">
@@ -78,9 +66,8 @@
             <tr>
                 <th>User phoneNumber:</th>
                 <td>
-                    <input type="text" name="name" size="45"
-                           value="<c:out value='${customer.phoneNumber}' />"
-                    />
+                    <input type="text" name="phoneNumber" size="45"
+                           value="<c:out value='${customer.phoneNumber}' />"/>
                 </td>
             </tr>
             <tr>

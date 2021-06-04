@@ -41,7 +41,7 @@
             <tr>
                 <th>birthday:</th>
                 <td>
-                    <input type="text" name="birthday" id="birthday" size="45"/>
+                    <input type="date" name="birthday" id="birthday" size="45"/>
                 </td>
             </tr>
             <tr>
@@ -71,7 +71,14 @@
             <tr>
                 <th>id loại khach:</th>
                 <td>
-                    <input type="text" name="type_id" id="type_id" size="45"/>
+                    <select name="type_id" id="type_id">
+                        <option value="1">diamond</option>
+                        <option value="2">platinium</option>
+                        <option value="3">gold</option>
+                        <option value="4">silver</option>
+                        <option value="5">member</option>
+                    </select>
+
                 </td>
             </tr>
             <tr>

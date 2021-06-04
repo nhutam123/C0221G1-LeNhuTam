@@ -34,5 +34,10 @@ public class CustomerService implements iCustomerSevice {
         service.delete(id);
     }
 
+    @Override
+    public List<Customer> search(String name) {
+        return service.search(name);
+    }
+
 
 }

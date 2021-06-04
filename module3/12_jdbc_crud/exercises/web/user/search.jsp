@@ -12,9 +12,9 @@
     <title>Title</title>
 </head>
 <body>
-<h1>User search</h1>
+<h1>Customer search</h1>
 <p>
-    <a href="/user">Back to User list</a>
+    <a href="/user">Back to Customer list</a>
 </p>
 <table>
     <c:forEach var="user" items="${users}">

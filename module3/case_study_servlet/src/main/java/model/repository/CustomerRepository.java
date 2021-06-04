@@ -20,6 +20,8 @@ public class CustomerRepository {
             "where c.customer_id=?;";
     private  static  final  String DELETE ="delete from customer c\n" +
             "where c.customer_id=? ;";
+    private  static final String SEARCH_CUSTOMER_SQL="select * from customer\n" +
+            "where customer.customer_name like ?;";
     BaseRepository baseRepository=new BaseRepository();
 
     public void  delete(int id){
@@ -31,6 +33,30 @@ public class CustomerRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public  List<Customer> search(String name1){
+        List<Customer> customers=new ArrayList<>();
+        try (Connection connection = baseRepository.getConnection();
+             PreparedStatement preparedStatement=connection.prepareStatement(SEARCH_CUSTOMER_SQL)){
+            preparedStatement.setString(1,"%"+name1+"%");
+            System.out.println(preparedStatement);
+            ResultSet rs=preparedStatement.executeQuery();
+            while (rs.next()){
+                int id =rs.getInt("customer_id");
+                String name =rs.getString("customer_name");
+                String birthday=rs.getString("birthday");
+                String card=rs.getString("identify_card_number");
+                String phoneNumber=rs.getString("phone_number");
+                int type=rs.getInt("customer_type_id");
+                String email = rs.getString("email");
+                String address = rs.getString("address");
+                customers.add( new Customer(id, name,birthday,card,phoneNumber, email, address,type));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customers;
     }
 
     public void update(Customer customer){

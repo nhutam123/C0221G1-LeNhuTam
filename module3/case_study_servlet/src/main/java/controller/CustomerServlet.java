@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "CustomerServlet" ,urlPatterns = {"/customer"})
@@ -29,10 +33,11 @@ public class CustomerServlet extends HttpServlet {
                     updateCustomer(request, response);
                 break;
             case "search":
-//                    searchUser(request,response);
+                    searchCustomer(request,response);
                 break;
         }
     }
+
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -61,6 +66,33 @@ public class CustomerServlet extends HttpServlet {
 
 
     }
+    private void searchCustomer(HttpServletRequest request, HttpServletResponse response) {
+        String name=request.getParameter("name");
+        List<Customer> customers= service.search(name);
+        RequestDispatcher dispatcher ;
+        if (customers==null){
+            dispatcher=request.getRequestDispatcher("furama/error.jsp");
+            try {
+                dispatcher.forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
+            request.setAttribute("customers" ,customers);
+            try {
+                dispatcher=request.getRequestDispatcher("furama/customer/search.jsp");
+                dispatcher.forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
 
     private void delete(HttpServletRequest request, HttpServletResponse response) {
         int id=Integer.parseInt(request.getParameter("id"));
@@ -89,6 +121,8 @@ public class CustomerServlet extends HttpServlet {
         String address=request.getParameter("address");
         Customer customer=new Customer(id,name,birthday,card,phoneNumber,email,address,typeId);
         service.update(customer);
+        Customer customer1=service.selectCustomer(id);
+        request.setAttribute("customer" ,customer1);
         RequestDispatcher dispatcher=request.getRequestDispatcher("furama/customer/edit.jsp");
         try {
             dispatcher.forward(request,response);
@@ -139,9 +173,7 @@ public class CustomerServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher dispatcher = request.getRequestDispatcher("./furama/customer/create.jsp");

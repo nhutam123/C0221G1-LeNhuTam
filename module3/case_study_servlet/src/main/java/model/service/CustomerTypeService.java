@@ -34,4 +34,9 @@ public class CustomerTypeService implements iCustomerSevice {
 
     }
 
+    @Override
+    public List<Customer> search(String name) {
+        return null;
+    }
+
 }

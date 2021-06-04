@@ -43,9 +43,9 @@
                 <th>degree</th>
                 <td>
                     <select name="degree" id="degree">
-                        <option value="trung cap">trung cap</option>
-                        <option value="cao dang">cao dang</option>
-                        <option value="dai hoc">dai hoc</option>
+                        <option value="1">trung cap</option>
+                        <option value="2">cao dang</option>
+                        <option value="3">dai hoc</option>
                     </select>
                 </td>
             </tr>
@@ -53,10 +53,10 @@
                 <th>department</th>
                 <td>
                     <select name="department" id="department">
-                        <option value="Sale-Marketing">Sale-Marketing</option>
-                        <option value="Hành Chính">Hành Chính</option>
-                        <option value="Phục vụ">Phục vụ</option>
-                        <option value="Quản lý">Quản lý</option>
+                        <option value="1">Sale-Marketing</option>
+                        <option value="2">Hành Chính</option>
+                        <option value="3">Phục vụ</option>
+                        <option value="4">Quản lý</option>
                     </select>
                 </td>
             </tr>
@@ -64,12 +64,12 @@
                 <th>position</th>
                 <td>
                     <select name="position" id="position">
-                        <option value="le tan">le tan</option>
-                        <option value="phuc vu">phuc vu</option>
-                        <option value="chuyen vien">chuyen vien</option>
-                        <option value="giam sat">giam sat</option>
-                        <option value="quan ly">quan ly</option>
-                        <option value="giam doc">giam doc</option>
+                        <option value="1">le tan</option>
+                        <option value="2">phuc vu</option>
+                        <option value="3">chuyen vien</option>
+                        <option value="4">giam sat</option>
+                        <option value="5">quan ly</option>
+                        <option value="6">giam doc</option>
                     </select>
                 </td>
             </tr>
@@ -77,7 +77,7 @@
             <tr>
                 <th>birthday:</th>
                 <td>
-                    <input type="text" name="birthday" id="birthday" size="45"/>
+                    <input type="date" name="birthday" id="birthday" size="45"/>
                 </td>
             </tr>
             <tr>

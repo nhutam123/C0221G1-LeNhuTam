@@ -11,5 +11,6 @@ public interface iCustomerSevice<E> {
  public Customer selectCustomer(int id);
  public void update(Customer customer);
  public void delete(int id);
+ public List<Customer> search(String name);
 }
 
