@@ -1,7 +1,9 @@
 package controller;
 
 import model.bean.Customer;
+import model.bean.CustomerType;
 import model.service.CustomerService;
+import model.service.CustomerTypeService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,6 +22,7 @@ import java.util.List;
 @WebServlet(name = "CustomerServlet" ,urlPatterns = {"/customer"})
 public class CustomerServlet extends HttpServlet {
     CustomerService service=new CustomerService();
+    CustomerTypeService typeService=new CustomerTypeService();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -112,7 +115,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id=Integer.parseInt(request.getParameter("id"));
-        int typeId=Integer.parseInt(request.getParameter("typeId"));
+        CustomerType typeId=typeService.selectType(Integer.parseInt(request.getParameter("typeId")));
         String name=request.getParameter("name");
         String birthday=request.getParameter("birthday");
         String phoneNumber=request.getParameter("phoneNumber");
@@ -122,6 +125,8 @@ public class CustomerServlet extends HttpServlet {
         Customer customer=new Customer(id,name,birthday,card,phoneNumber,email,address,typeId);
         service.update(customer);
         Customer customer1=service.selectCustomer(id);
+        List<CustomerType> list=typeService.selectAll();
+        request.setAttribute("list",list);
         request.setAttribute("customer" ,customer1);
         RequestDispatcher dispatcher=request.getRequestDispatcher("furama/customer/edit.jsp");
         try {
@@ -139,8 +144,11 @@ public class CustomerServlet extends HttpServlet {
 
             int id = Integer.parseInt(request.getParameter("id"));
             Customer customer = service.selectCustomer(id);
+            List<CustomerType> list=typeService.selectAll();
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("furama/customer/edit.jsp");
             request.setAttribute("customer", customer);
+            request.setAttribute("list",list);
             try {
                 dispatcher.forward(request, response);
             } catch (ServletException e) {
@@ -158,7 +166,7 @@ public class CustomerServlet extends HttpServlet {
         String phoneNumber=request.getParameter("phoneNumber");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        int typeId=Integer.parseInt(request.getParameter("type_id"));
+        CustomerType typeId=typeService.selectType(Integer.parseInt(request.getParameter("type_id")));
         Customer customer = new Customer(name,birthday,card,phoneNumber, email, address,typeId);
         try {
             service.insertCustomer(customer);

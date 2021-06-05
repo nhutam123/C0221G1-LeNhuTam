@@ -42,7 +42,7 @@ public class CustomerTypeServlet extends HttpServlet {
 //                    sort(request,response);
                     break;
                 default:
-                    listUser(request, response);
+                    listtype(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -51,11 +51,11 @@ public class CustomerTypeServlet extends HttpServlet {
 
     }
 
-    private void listUser(HttpServletRequest request, HttpServletResponse response)
+    private void listtype(HttpServletRequest request, HttpServletResponse response)
        throws SQLException, IOException, ServletException {
-            List<CustomerType> listUser = service.selectAll();
-            request.setAttribute("list", listUser);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("./furama/customer_type/list.jsp");
+            List<CustomerType> listType = service.selectAll();
+            request.setAttribute("list", listType);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./furama/customerType/list.jsp");
             try {
                 dispatcher.forward(request, response);
             } catch (ServletException e) {

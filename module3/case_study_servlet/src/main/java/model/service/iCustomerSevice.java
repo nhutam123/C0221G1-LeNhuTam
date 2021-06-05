@@ -1,6 +1,7 @@
 package model.service;
 
 import model.bean.Customer;
+import model.bean.CustomerType;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -12,5 +13,6 @@ public interface iCustomerSevice<E> {
  public void update(Customer customer);
  public void delete(int id);
  public List<Customer> search(String name);
+ public CustomerType selectType(int id);
 }
 

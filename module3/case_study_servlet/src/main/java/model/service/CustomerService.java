@@ -1,6 +1,7 @@
 package model.service;
 
 import model.bean.Customer;
+import model.bean.CustomerType;
 import model.repository.CustomerRepository;
 
 import java.sql.SQLException;
@@ -37,6 +38,11 @@ public class CustomerService implements iCustomerSevice {
     @Override
     public List<Customer> search(String name) {
         return service.search(name);
+    }
+
+    @Override
+    public CustomerType selectType(int id) {
+        return null;
     }
 
 

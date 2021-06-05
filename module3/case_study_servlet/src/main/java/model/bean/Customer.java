@@ -8,13 +8,13 @@ public class Customer {
     private String phoneNumber;
     private String email;
     private String address;
-    private  int customerTypeId;
+    private  CustomerType type;
 
     public Customer() {
     }
 
 
-    public Customer(int id, String name, String birthday, String card, String phoneNumber, String email, String address, int customerTypeId) {
+    public Customer(int id, String name, String birthday, String card, String phoneNumber, String email, String address, CustomerType type) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -22,17 +22,17 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.customerTypeId = customerTypeId;
+        this.type = type;
     }
 
-    public Customer(String name, String birthday, String card, String phoneNumber, String email, String address, int typeId) {
+    public Customer(String name, String birthday, String card, String phoneNumber, String email, String address, CustomerType type) {
         this.name = name;
         this.birthday = birthday;
         this.card = card;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.customerTypeId = typeId;
+        this.type = type;
     }
 
     public int getId() {
@@ -91,11 +91,11 @@ public class Customer {
         this.address = address;
     }
 
-    public int getCustomerTypeId() {
-        return customerTypeId;
+    public CustomerType getType() {
+        return type;
     }
 
-    public void setCustomerType(int customerTypeId) {
-        this.customerTypeId = customerTypeId;
+    public void setType(CustomerType type) {
+        this.type = type;
     }
 }

@@ -25,6 +25,11 @@ public class CustomerTypeService implements iCustomerSevice {
     }
 
     @Override
+    public CustomerType selectType(int id) {
+        return customerTypeRepo.selectType(id);
+    }
+
+    @Override
     public void update(Customer customer) {
 
     }

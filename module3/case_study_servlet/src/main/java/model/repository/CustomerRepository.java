@@ -1,6 +1,8 @@
 package model.repository;
 
 import model.bean.Customer;
+import model.bean.CustomerType;
+import model.service.CustomerTypeService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,6 +25,7 @@ public class CustomerRepository {
     private  static final String SEARCH_CUSTOMER_SQL="select * from customer\n" +
             "where customer.customer_name like ?;";
     BaseRepository baseRepository=new BaseRepository();
+    CustomerTypeService typeService=new CustomerTypeService();
 
     public void  delete(int id){
         try{
@@ -47,7 +50,7 @@ public class CustomerRepository {
                 String birthday=rs.getString("birthday");
                 String card=rs.getString("identify_card_number");
                 String phoneNumber=rs.getString("phone_number");
-                int type=rs.getInt("customer_type_id");
+                CustomerType type=typeService.selectType(rs.getInt("customer_type_id"));
                 String email = rs.getString("email");
                 String address = rs.getString("address");
                 customers.add( new Customer(id, name,birthday,card,phoneNumber, email, address,type));
@@ -63,7 +66,7 @@ public class CustomerRepository {
         try {
             Connection connection=baseRepository.getConnection();
             PreparedStatement statement=connection.prepareStatement(UPDATE_CUSTOMER);
-            statement.setInt(1,customer.getCustomerTypeId());
+            statement.setInt(1,customer.getType().getId());
             statement.setString(2,customer.getName());
             statement.setString(3,customer.getCard());
             statement.setString(4,customer.getPhoneNumber());
@@ -71,6 +74,7 @@ public class CustomerRepository {
             statement.setString(6,customer.getAddress());
             statement.setInt(7,customer.getId());
             statement.executeUpdate();
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,7 +97,7 @@ public class CustomerRepository {
                 String phoneNumber=rs.getString("phone_number");
                 String email = rs.getString("Email");
                 String address = rs.getString("address");
-                int customerType=rs.getInt("customer_type_id");
+                CustomerType customerType=typeService.selectType(rs.getInt("customer_type_id"));
                 list.add(new Customer(id, name, birthday,card,phoneNumber,email,address,customerType));
             }
         } catch (SQLException e) {
@@ -106,7 +110,7 @@ public class CustomerRepository {
             Connection connection=baseRepository.getConnection();
             PreparedStatement statement=connection.prepareStatement(INSERT_CUSTOMER);
 
-            statement.setInt(1,customer.getCustomerTypeId());
+            statement.setInt(1,customer.getType().getId());
             statement.setString(2,customer.getName());
             statement.setString(3,  customer.getBirthday());
             statement.setString(4,customer.getCard());
@@ -138,7 +142,7 @@ public class CustomerRepository {
                 String phoneNumber=rs.getString("phone_number");
                 String email=rs.getString("Email");
                 String address=rs.getString("address");
-                int typeId=rs.getInt("customer_type_id");
+                CustomerType typeId=typeService.selectType(rs.getInt("customer_type_id"));
                 customer=new Customer(name,birthday,card,phoneNumber,email,address,typeId);
 
             }

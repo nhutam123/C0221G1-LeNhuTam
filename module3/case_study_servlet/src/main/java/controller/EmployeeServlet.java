@@ -1,7 +1,10 @@
 package controller;
 
 import model.bean.*;
+import model.service.DegreeService;
+import model.service.DepartmentSevice;
 import model.service.EmployeeService;
+import model.service.PositionService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +19,10 @@ import java.util.List;
 @WebServlet(name = "EmployeeServlet" ,urlPatterns = {"/employee"})
 public class EmployeeServlet extends HttpServlet {
     EmployeeService service=new EmployeeService();
+    DepartmentSevice departmentSevice=new DepartmentSevice();
+    PositionService positionService=new PositionService();
+    DegreeService degreeService=new DegreeService();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -96,6 +103,7 @@ public class EmployeeServlet extends HttpServlet {
         Degree degree=service.selectDegree(Integer.parseInt(request.getParameter("degree")));
         Department department=service.selectDepartment(Integer.parseInt(request.getParameter("department")));
         Position position=service.selectPositon(Integer.parseInt(request.getParameter("position")));
+
         String birthday=request.getParameter("birthday");
         String card =request.getParameter("card");
         String phoneNumber=request.getParameter("phoneNumber");
@@ -103,6 +111,15 @@ public class EmployeeServlet extends HttpServlet {
         String address=request.getParameter("address");
         Employee employee=new Employee(id,name,degree,department,position,birthday,card,phoneNumber,email,address);
         service.update(employee);
+        Employee employee1=service.select(id);
+        List<Degree> degrees=degreeService.selectAll();
+        List<Department> departments=departmentSevice.selectAll();
+        List<Position> positions=positionService.selectAll();
+
+        request.setAttribute("employee",employee1);
+        request.setAttribute("listPosition",positions);
+        request.setAttribute("listDegree",degrees);
+        request.setAttribute("listDepartment",departments);
         RequestDispatcher dispatcher=request.getRequestDispatcher("furama/employee/edit.jsp");
         try {
             dispatcher.forward(request,response);
@@ -116,8 +133,15 @@ public class EmployeeServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Employee employee = service.select(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("furama/employee/edit.jsp");
+        List<Department> list=departmentSevice.selectAll();
+        List<Position> positionList=positionService.selectAll();
+        List<Degree> degreeList=degreeService.selectAll();
+
         request.setAttribute("employee", employee);
+        request.setAttribute("listDepartment",list);
+        request.setAttribute("listPosition",positionList);
+        request.setAttribute("listDegree",degreeList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("furama/employee/edit.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

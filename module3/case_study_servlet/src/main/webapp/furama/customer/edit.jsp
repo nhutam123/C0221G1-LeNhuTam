@@ -40,11 +40,13 @@
 <%--                </td>--%>
 <%--            </tr>--%>
             <tr>
-                <th>User type id:</th>
+                <th>type of customer:</th>
                 <td>
-                    <input type="text" name="typeId" size="45"
-                           value="<c:out value='${customer.customerTypeId}' />"
-                    />
+                    <select name="typeId" id="typeId">
+                        <c:forEach var="type" items="${list}">
+                            <option value="${type.id}" ${type.id==customer.type.id?"selected":""} >${type.type}</option>
+                        </c:forEach>
+                    </select>
                 </td>
             </tr>
             <tr>
