@@ -3,6 +3,7 @@ package model.service;
 import model.bean.Degree;
 import model.bean.Department;
 import model.bean.Position;
+import model.bean.ServiceType;
 import model.repository.DegreeRepo;
 
 import java.util.List;
@@ -27,6 +28,11 @@ public class DegreeService implements iDepartmentService {
 
     @Override
     public Position selectPosition(int id) {
+        return null;
+    }
+
+    @Override
+    public ServiceType selectServiceType(int id) {
         return null;
     }
 

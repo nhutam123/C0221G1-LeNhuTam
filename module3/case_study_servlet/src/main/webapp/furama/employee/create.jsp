@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -43,9 +44,10 @@
                 <th>degree</th>
                 <td>
                     <select name="degree" id="degree">
-                        <option value="1">trung cap</option>
-                        <option value="2">cao dang</option>
-                        <option value="3">dai hoc</option>
+                        <c:forEach var="degree" items="${listDegree}">
+                            <option value="${degree.id}"  ${degree.id==employee.degree.id?"selected":""}>${degree.degree}</option>
+
+                        </c:forEach>
                     </select>
                 </td>
             </tr>
@@ -53,10 +55,9 @@
                 <th>department</th>
                 <td>
                     <select name="department" id="department">
-                        <option value="1">Sale-Marketing</option>
-                        <option value="2">Hành Chính</option>
-                        <option value="3">Phục vụ</option>
-                        <option value="4">Quản lý</option>
+                        <c:forEach var="department" items="${listDepartment}">
+                            <option value="${department.id}" ${department.id==employee.department.id?"selected":""}>${department.department}</option>
+                        </c:forEach>
                     </select>
                 </td>
             </tr>
@@ -64,12 +65,9 @@
                 <th>position</th>
                 <td>
                     <select name="position" id="position">
-                        <option value="1">le tan</option>
-                        <option value="2">phuc vu</option>
-                        <option value="3">chuyen vien</option>
-                        <option value="4">giam sat</option>
-                        <option value="5">quan ly</option>
-                        <option value="6">giam doc</option>
+                        <c:forEach var="position" items="${listPosition}">
+                            <option value="${position.id}" ${position.id==employee.position.id?"selected":""} >${position.position}</option>
+                        </c:forEach>
                     </select>
                 </td>
             </tr>

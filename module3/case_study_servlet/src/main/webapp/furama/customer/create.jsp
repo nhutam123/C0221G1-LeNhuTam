@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -19,9 +20,9 @@
 </head>
 <body>
 <div class="header">
-    <h1>User Management</h1>
+    <h1>Customer Management</h1>
     <h2>
-        <a href="/customer?action=customer">List All Users</a>
+        <a href="/customer?action=customer">List All Customer</a>
     </h2>
 </div>
 
@@ -71,14 +72,11 @@
             <tr>
                 <th>id loại khach:</th>
                 <td>
-                    <select name="type_id" id="type_id">
-                        <option value="1">diamond</option>
-                        <option value="2">platinium</option>
-                        <option value="3">gold</option>
-                        <option value="4">silver</option>
-                        <option value="5">member</option>
+                    <select name="typeId" id="typeId">
+                        <c:forEach var="type" items="${list}">
+                            <option value="${type.id}" ${type.id==customer.type.id?"selected":""} >${type.type}</option>
+                        </c:forEach>
                     </select>
-
                 </td>
             </tr>
             <tr>

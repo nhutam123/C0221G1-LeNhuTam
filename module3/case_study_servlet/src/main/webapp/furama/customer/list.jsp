@@ -13,7 +13,22 @@
   <jsp:include page="commond/style.jsp"/>
 </head>
 <body>
-<jsp:include page="commond/heading.jsp"/>
+<div class="header">
+    <div>
+        <h1>Customer Management</h1>
+        <h2>
+            <form method="get" action="/customer">
+                <input class="btn btn-success" type="submit" name="action" value="create">
+            </form>
+        </h2>
+    </div>
+    <div>
+        <form method="post" action="/customer">
+            <input class="search" type="text" name="name" id="search">
+            <input class="btn btn-success" type="submit" name="action" value="search">
+        </form>
+    </div>
+</div>
 
 <div align="center">
     <table border="1" cellpadding="5" id="table" class="table table-striped table-bordered">

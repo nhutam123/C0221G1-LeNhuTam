@@ -53,11 +53,11 @@
         <a href="" class="nav-link">home</a>
       </li>
       <li class="nav-item dropdown">
-        <a  class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Service</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="furama/service/villa/list.jsp">Villa</a>
-          <a class="dropdown-item" href="furama/service/house/list.jsp">House</a>
-          <a class="dropdown-item" href="furama/service/room/list.jsp">Room</a></div>
+        <a  class="nav-link " href="/service">Service</a>
+<%--        <div class="dropdown-menu">--%>
+<%--          <a class="dropdown-item" href="furama/service/villa/list.jsp">Villa</a>--%>
+<%--          <a class="dropdown-item" href="furama/service/house/list.jsp">House</a>--%>
+<%--          <a class="dropdown-item" href="furama/service/room/list.jsp">Room</a></div>--%>
       </li>
       <li class="nav-item">
         <a href="/employee" class="nav-link">Employee</a>

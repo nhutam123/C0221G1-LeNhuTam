@@ -30,7 +30,7 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-                insertUser(request, response);
+                insertCustomer(request, response);
                 break;
             case "edit":
                     updateCustomer(request, response);
@@ -159,14 +159,14 @@ public class CustomerServlet extends HttpServlet {
 
         }
 
-    private void insertUser(HttpServletRequest request, HttpServletResponse response) {
+    private void insertCustomer(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         String birthday=request.getParameter("birthday");
         String card =request.getParameter("card");
         String phoneNumber=request.getParameter("phoneNumber");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        CustomerType typeId=typeService.selectType(Integer.parseInt(request.getParameter("type_id")));
+        CustomerType typeId=typeService.selectType(Integer.parseInt(request.getParameter("typeId")));
         Customer customer = new Customer(name,birthday,card,phoneNumber, email, address,typeId);
         try {
             service.insertCustomer(customer);
@@ -184,7 +184,9 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response) {
+        List<CustomerType> list=typeService.selectAll();
         RequestDispatcher dispatcher = request.getRequestDispatcher("./furama/customer/create.jsp");
+        request.setAttribute("list",list);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

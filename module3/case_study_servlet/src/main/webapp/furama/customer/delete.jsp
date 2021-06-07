@@ -20,9 +20,9 @@
 </head>
 <body>
 <div class="header">
-    <h1>User Management</h1>
+    <h1>Customer Management</h1>
     <h2>
-        <a href="customer?action=customer">List All Users</a>
+        <a href="customer?action=customer">List All Customer</a>
     </h2>
 </div>
 

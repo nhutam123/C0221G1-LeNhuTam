@@ -28,7 +28,9 @@
     <div>
         <h1>Employee Management</h1>
         <h2>
-            <a href="furama/employee/create.jsp">Add New Employee</a>
+            <form method="get" action="/employee">
+                <input class="btn btn-success" type="submit" name="action" value="create">
+            </form>
         </h2>
     </div>
     <div>

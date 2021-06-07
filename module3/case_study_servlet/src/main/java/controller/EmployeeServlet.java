@@ -51,7 +51,7 @@ public class EmployeeServlet extends HttpServlet {
 
         switch (action) {
             case "create":
-//                showNewForm(request, response);
+                showNewForm(request, response);
                 break;
             case "edit":
                 showEditForm(request, response);
@@ -65,6 +65,24 @@ public class EmployeeServlet extends HttpServlet {
             default:
                 listEmployee(request, response);
                 break;
+        }
+
+    }
+
+    private void showNewForm(HttpServletRequest request, HttpServletResponse response) {
+        List<Department> list=departmentSevice.selectAll();
+        List<Position> positionList=positionService.selectAll();
+        List<Degree> degreeList=degreeService.selectAll();
+        request.setAttribute("listDepartment",list);
+        request.setAttribute("listPosition",positionList);
+        request.setAttribute("listDegree",degreeList);
+        RequestDispatcher dispatcher=request.getRequestDispatcher("furama/employee/create.jsp");
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }
