@@ -22,7 +22,7 @@
 
 <div align="center">
     <form method="post" action="">
-        <table border="1" cellpadding="5">
+        <table border="1" cellpadding="5" class="table table-striped table-bordered">
             <caption>
                 <h2>
                     Edit Customer
@@ -31,14 +31,7 @@
             <c:if test="${customer != null}">
                 <input type="hidden" name="id" value="<c:out value='${customer.id}' />"/>
             </c:if>
-<%--            <tr>--%>
-<%--                <th>User  id:</th>--%>
-<%--                <td>--%>
-<%--                    <input type="text" name="id" size="45"--%>
-<%--                           value="<c:out value='${customer.id}' />"--%>
-<%--                    />--%>
-<%--                </td>--%>
-<%--            </tr>--%>
+
             <tr>
                 <th>type of customer:</th>
                 <td>

@@ -28,7 +28,7 @@
 
 <div align="center">
     <form method="post">
-        <table border="1" cellpadding="5">
+        <table border="1" cellpadding="5" class="table table-striped table-bordered">
             <caption>
                 <h2>
                     Edit Customer

@@ -8,13 +8,23 @@ public class Service {
     private int maxCustomer;
     private ServiceType Type;
     private RentalType rentalType;
-    private String status;
+    private int status;
 
     public Service() {
     }
 
-    public Service(int id, String name, int area, double price, int maxCustomer, ServiceType type, RentalType rentalType, String status) {
+    public Service(int id, String name, int area, double price, int maxCustomer, ServiceType type, RentalType rentalType, int status) {
         this.id = id;
+        this.name = name;
+        this.area = area;
+        this.price = price;
+        this.maxCustomer = maxCustomer;
+        this.Type = type;
+        this.rentalType = rentalType;
+        this.status = status;
+    }
+    public Service( String name, int area, double price, int maxCustomer, ServiceType type, RentalType rentalType, int status) {
+
         this.name = name;
         this.area = area;
         this.price = price;
@@ -80,11 +90,13 @@ public class Service {
         this.rentalType = rentalType;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
+
+
 }

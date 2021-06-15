@@ -18,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet" ,urlPatterns = {"/customer"})
 public class CustomerServlet extends HttpServlet {
@@ -169,8 +170,21 @@ public class CustomerServlet extends HttpServlet {
         CustomerType typeId=typeService.selectType(Integer.parseInt(request.getParameter("typeId")));
         Customer customer = new Customer(name,birthday,card,phoneNumber, email, address,typeId);
         try {
-            service.insertCustomer(customer);
+            Map<String, String> mapMsg = service.insertCustomer(customer);
+            if (mapMsg.isEmpty()) {
+                request.setAttribute("listCustomers", service.selectAll());
+                request.getRequestDispatcher("furama/customer/list.jsp").forward(request,response);
+            }else {
+                request.setAttribute("msgEmail", mapMsg.get("email"));
+                request.setAttribute("customer", customer);
+                request.getRequestDispatcher("furama/customer/create.jsp").forward(request,response);
+            }
+
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher("furama/customer/create.jsp");

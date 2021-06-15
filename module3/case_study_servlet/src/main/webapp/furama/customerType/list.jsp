@@ -21,7 +21,7 @@
 </div>
 
 <div align="center">
-    <table border="1" cellpadding="5">
+    <table border="1" cellpadding="5" class="table table-striped table-bordered">
         <caption><h2>List of CustomerType</h2></caption>
         <tr>
             <th>ID</th>

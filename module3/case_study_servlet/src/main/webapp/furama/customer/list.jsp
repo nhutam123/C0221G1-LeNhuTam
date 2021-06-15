@@ -31,7 +31,7 @@
 </div>
 
 <div align="center">
-    <table border="1" cellpadding="5" id="table" class="table table-striped table-bordered">
+    <table border="1" cellpadding="5" id="table" class="table table-striped table-bordered table-dark">
         <caption><h2>List of Customers</h2></caption>
         <thead>
         <tr>
@@ -94,7 +94,30 @@
     <br>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
 
-<jsp:include page="./commond/script.jsp"/>
+<script>
+    $(document).ready(function x() {
+        $('#table').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        })
+    });
+    function sendDataToModal(id, name) {
+        document.getElementById("idStudent").value = id;
+        document.getElementById("nameStudent").innerText = name;
+    }
+</script>
+
 </body>
 </html>

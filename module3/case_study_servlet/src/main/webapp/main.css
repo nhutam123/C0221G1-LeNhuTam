@@ -1,7 +1,16 @@
 .header {
     height: 60px;
-    background-color: dodgerblue;
+    background-image: linear-gradient(0, #33c6fe, #a5d5e7);
 
+}
+
+#slider{
+    background-image:  url("/image/pngtree-travel-poster-banner-beach-poster-image_138426.jpg") ;width: 100% ;height: auto;
+    background-repeat: no-repeat;
+    margin: 10px 0;
+    position: relative;
+    right: 0;
+    left: 0;
 }
 .search{
     border-radius: 10px;
@@ -28,6 +37,9 @@ a{
 
 .img-slider {
     width: 50%;
+}
+.footer {
+    background-color: #77b5f1;
 }
 
 @media screen and (max-width: 739px){

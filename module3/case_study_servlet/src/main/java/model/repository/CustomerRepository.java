@@ -143,7 +143,7 @@ public class CustomerRepository {
                 String email=rs.getString("Email");
                 String address=rs.getString("address");
                 CustomerType typeId=typeService.selectType(rs.getInt("customer_type_id"));
-                customer=new Customer(name,birthday,card,phoneNumber,email,address,typeId);
+                customer=new Customer(id,name,birthday,card,phoneNumber,email,address,typeId);
 
             }
         } catch (SQLException e) {

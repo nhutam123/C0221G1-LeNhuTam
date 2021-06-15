@@ -42,7 +42,7 @@
 </div>
 
 <div align="center">
-    <table border="1" cellpadding="5" id="table" class="table table-striped table-bordered">
+    <table border="1" cellpadding="5" id="table" class="table table-dark table-striped table-bordered ">
         <caption><h2>List of Employee</h2></caption>
         <thead>
         <tr>

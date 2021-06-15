@@ -5,7 +5,9 @@ import model.bean.CustomerType;
 import model.repository.CustomerTypeRepo;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CustomerTypeService implements iCustomerSevice {
     CustomerTypeRepo customerTypeRepo=new CustomerTypeRepo();
@@ -15,8 +17,9 @@ public class CustomerTypeService implements iCustomerSevice {
     }
 
     @Override
-    public void insertCustomer(Customer o) throws SQLException {
-
+    public Map<String,String> insertCustomer(Customer o) throws SQLException {
+        Map<String,String> map=new HashMap<>();
+        return map;
     }
 
     @Override

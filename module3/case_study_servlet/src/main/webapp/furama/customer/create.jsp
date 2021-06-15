@@ -29,44 +29,45 @@
 
 <div align="center">
     <form method="post" action="/customer">
-        <table border="1" cellpadding="5">
+        <table border="1" cellpadding="5" class="table table-striped table-bordered">
             <caption>
                 <h2>Add New User</h2>
             </caption>
             <tr>
                 <th>User Name:</th>
                 <td>
-                    <input type="text" name="name" id="name" size="45"/>
+                    <input type="text" name="name" value="<c:out value="${customer.name}"/>" size="45"/>
                 </td>
             </tr>
             <tr>
                 <th>birthday:</th>
                 <td>
-                    <input type="date" name="birthday" id="birthday" size="45"/>
+                    <input type="date" name="birthday" value="<c:out value="${customer.birthday}"/>" size="45"/>
                 </td>
             </tr>
             <tr>
                 <th>card:</th>
                 <td>
-                    <input type="text" name="card" id="card" size="45"/>
+                    <input type="text" name="card" value="<c:out value="${customer.card}"/>" size="45"/>
                 </td>
             </tr>
             <tr>
                 <th>phone number:</th>
                 <td>
-                    <input type="text" name="phoneNumber" id="phoneNumber" size="45"/>
+                    <input type="text" name="phoneNumber" value="<c:out value="${customer.phoneNumber}"/>" size="45"/>
                 </td>
             </tr>
             <tr>
                 <th>Email:</th>
                 <td>
-                    <input type="text" name="email" id="email" size="45"/>
+                    <input type="text" name="email" value="<c:out value="${customer.email}"/>" size="45"/>
+                    <p style="color: red"><c:out value="${msgEmail}"/></p>
                 </td>
             </tr>
             <tr>
                 <th>address:</th>
                 <td>
-                    <input type="text" name="address" id="address" size="45"/>
+                    <input type="text" name="address" value="<c:out value="${customer.address}"/>" size="45"/>
                 </td>
             </tr>
             <tr>

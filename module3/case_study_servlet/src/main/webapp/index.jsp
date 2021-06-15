@@ -47,6 +47,8 @@
     </div>
     </div>
   </div>
+
+
   <div class="d-flex justify-content-around">
     <ul class="nav-header nav nav-tabs">
       <li class="nav-item">
@@ -66,8 +68,7 @@
         <a href="/customer" class="nav-link">Customer</a>
       </li>
       <li class="nav-item">
-        <a href="furama/contract/list.jsp" class="nav-link">Contract</a>
-        <span class="glyphicon glyphicon-cloud"></span>
+        <a href="/contract" class="nav-link">Contract</a>
       </li>
 
     </ul>
@@ -80,6 +81,12 @@
       </div>
     </form>
 
+  </div>
+  <div id="slider">
+    <div class="text-content">
+      <h2 class="text-heading">Mùa Thu</h2>
+      <div class="text-slider1">mùa thu này đẹp lắm em ơi</div>
+    </div>
   </div>
  
   <div class="row content container-fluid">
@@ -124,7 +131,7 @@
     </div>
 
   </div>
-  <div class="footer row bg-success d-flex align-items-center justify-content-center">
+  <div class=" row d-flex align-items-center justify-content-center footer " style="background-color: dodgerblue ;color: white" >
     footer
   </div>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

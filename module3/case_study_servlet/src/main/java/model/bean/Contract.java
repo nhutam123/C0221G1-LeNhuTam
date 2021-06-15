@@ -11,12 +11,12 @@ public class Contract {
     private  Employee employee;
     private Customer customer;
     private Service service;
-    private String standardRoom;
+
 
     public Contract() {
     }
 
-    public Contract(int id, String startTime, String endTime, double deposit, double total, Employee employee, Customer customer, Service service, String standardRoom) {
+    public Contract(int id, String startTime, String endTime, double deposit, double total, Employee employee, Customer customer, Service service) {
         this.id = id;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -25,7 +25,17 @@ public class Contract {
         this.employee = employee;
         this.customer = customer;
         this.service = service;
-        this.standardRoom = standardRoom;
+
+    }
+
+    public Contract(String startTime, String endTime, double deposit, double total, Employee employee, Customer customer, Service service) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.deposit = deposit;
+        this.total = total;
+        this.employee = employee;
+        this.customer = customer;
+        this.service = service;
     }
 
     public int getId() {
@@ -92,11 +102,5 @@ public class Contract {
         this.service = service;
     }
 
-    public String getStandardRoom() {
-        return standardRoom;
-    }
 
-    public void setStandardRoom(String standardRoom) {
-        this.standardRoom = standardRoom;
-    }
 }

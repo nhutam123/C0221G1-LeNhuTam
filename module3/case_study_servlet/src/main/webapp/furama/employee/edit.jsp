@@ -16,7 +16,7 @@
             color: orange;
             background-color: bisque;
         }
-        table{
+        #table{
             border: 1px solid chartreuse;
         }
         th {
@@ -34,7 +34,7 @@
 
 <div align="center">
     <form method="post" action="/employee">
-        <table border="1" cellpadding="5">
+        <table id="table" border="1" cellpadding="5" class="table table-striped table-bordered">
             <caption>
                 <h2>
                     Edit Employee
