@@ -17,7 +17,7 @@
       }
       .heading{
         color: red;
-        margin-left: 10px;
+        margin:30px auto;
       }
       form{
         border: 1px solid #aaaaaa;
@@ -36,12 +36,13 @@
         justify-content: space-around;
       }
       .btn{
-        background-color: #00afef;
+        background-color: #555555;
         color: white;
         height: 38px;
         min-width: 80px;
         border-radius: 4px;
         border: 1px solid #aaaaaa;
+
       }
       .btn:hover {
         background-color: #0d9ed3;
@@ -73,17 +74,17 @@
     <form action="/calculator" method="post">
       <h1 class="heading">Calculator</h1>
       <div class="container-input">
-        <input class="input" type="text" name="number1">
-        <input class="input" type="text" name="number2">
+        <input class="input" type="text" name="number1" value="${number1}">
+        <input class="input" type="text" name="number2" value="${number2}">
       </div>
       <p class="result">Result : ${result}</p>
       <br>
       <br>
       <div class="container-btn">
-        <input class="btn" type="submit" name="ca" value="cong">
-        <input class="btn" type="submit" name="tru" value="tru">
-        <input class="btn" type="submit" name="nhan" value="nhan">
-        <input class="btn" type="submit" name="chia" value="chia">
+        <input class="btn" type="submit" name="calcul" value="cong">
+        <input class="btn" type="submit" name="calcul" value="tru">
+        <input class="btn" type="submit" name="calcul" value="nhan">
+        <input class="btn" type="submit" name="calcul" value="chia">
       </div>
 
     </form>

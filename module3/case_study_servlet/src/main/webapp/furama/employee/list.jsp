@@ -66,7 +66,7 @@
                 <td>
                     <a href="/employee?action=edit&id=${employee.id}">Edit</a>
                     <button type="button" class="btn btn-danger"
-                            onclick="sendDataToModal('${employee.id}','${employee.name}')" data-toggle="modal"
+                             data-toggle="modal"
                             data-target="#exampleModalLong">
                         Delete
                     </button>

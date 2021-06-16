@@ -3,6 +3,7 @@ package dictionary.model.service;
 import java.util.HashMap;
 import java.util.Map;
 
+@org.springframework.stereotype.Service
 public class Service {
     Map<String,String> map=new HashMap<>();
     public Map<String,String> getMap(){

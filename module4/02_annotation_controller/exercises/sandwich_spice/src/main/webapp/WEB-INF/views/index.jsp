@@ -82,13 +82,13 @@
 <body>
 <div class="container">
 
-    <form action="" method="post">
+    <form action="/save" method="post">
         <h1 class="heading">Sandwich Condiments</h1>
         <div class="container-btn">
-            <input class="box" type="checkbox" name="calcul" value="Lettuce">Lettuce
-            <input class="box" type="checkbox" name="calcul" value="Tomato">Tomato
-            <input class="box" type="checkbox" name="calcul" value="Mustard">Mustard
-            <input class="box" type="checkbox" name="calcul" value="Sprouts">Sprouts
+            <input class="box" type="checkbox" name="spice" value="Lettuce">Lettuce
+            <input class="box" type="checkbox" name="spice" value="Tomato">Tomato
+            <input class="box" type="checkbox" name="spice" value="Mustard">Mustard
+            <input class="box" type="checkbox" name="spice" value="Sprouts">Sprouts
         </div>
       <br>
       <br>

@@ -13,8 +13,10 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach var="spice" items="listSpice">
+<h1>List Spices </h1>
+<c:forEach var="spice" items="${listSpice}">
     <c:out value="${spice}"/>
+    <br>
 </c:forEach>
 
 </body>
