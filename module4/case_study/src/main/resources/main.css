@@ -1,0 +1,41 @@
+.header {
+    height: 60px;
+    background-image: linear-gradient(0, #33c6fe, #a5d5e7);
+
+}
+
+.search{
+    border-radius: 10px;
+}
+.search-img {
+    width: 30px;
+}
+.content {
+    min-height: 500px;
+}
+.item {
+    background-color: white;
+}
+.logo{
+    width: 100px;
+}
+.content-img {
+ width: 100%;
+}
+a{
+    margin: 0;
+    padding: 0;
+}
+
+.img-slider {
+    width: 50%;
+}
+.footer {
+    background-color: #77b5f1;
+}
+
+@media screen and (max-width: 739px){
+    .nav-header {
+        display: none;
+    }
+}

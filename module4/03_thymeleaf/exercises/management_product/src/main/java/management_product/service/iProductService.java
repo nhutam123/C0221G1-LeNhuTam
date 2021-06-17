@@ -7,4 +7,5 @@ import java.util.List;
 public interface iProductService {
  List<Product> findAll();
  void save(Product product);
+ void delete(int id);
 }

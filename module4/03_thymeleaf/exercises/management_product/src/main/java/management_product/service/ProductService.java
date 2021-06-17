@@ -35,4 +35,9 @@ public class ProductService implements iProductService {
     public void save(Product product) {
         products.put(product.getId(),product);
     }
+
+    @Override
+    public void delete(int id) {
+        products.remove(id);
+    }
 }

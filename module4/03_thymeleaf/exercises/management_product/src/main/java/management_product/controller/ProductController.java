@@ -3,8 +3,10 @@ package management_product.controller;
 import management_product.model.bean.Product;
 import management_product.service.iProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,6 +35,16 @@ public class ProductController {
         product.setId((int) (Math.random() * 10000));
         productService.save(product);
         return "redirect:/";
+    }
+    @PostMapping("product/delete")
+    public String delete(int id){
+        productService.delete(id);
+
+        return "redirect:/";
+    }
+    @GetMapping("product/test")
+    public String test(){
+        return "test";
     }
 
 
