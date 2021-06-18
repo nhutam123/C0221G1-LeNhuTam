@@ -34,11 +34,11 @@
         <table  class="table">
             <tr>
                 <td>Language</td>
-                <td> <form:select name="language" id="language" path="language">
-                    <option value="English">English</option>
-                    <option value="Vietnamese">Vietnamese</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Chinese">Chinese</option>
+                <td> <form:select name="language" id="language" path="language" items="${list}">
+<%--                    <option value="English">English</option>--%>
+<%--                    <option value="Vietnamese">Vietnamese</option>--%>
+<%--                    <option value="Japanese">Japanese</option>--%>
+<%--                    <option value="Chinese">Chinese</option>--%>
 
                 </form:select></td>
             </tr>

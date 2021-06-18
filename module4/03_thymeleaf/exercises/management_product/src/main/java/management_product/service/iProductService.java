@@ -8,4 +8,6 @@ public interface iProductService {
  List<Product> findAll();
  void save(Product product);
  void delete(int id);
+ Product findById(int id);
+ List<Product> search(String name);
 }

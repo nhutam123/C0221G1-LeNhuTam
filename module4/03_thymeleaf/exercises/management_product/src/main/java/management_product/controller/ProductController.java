@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +42,24 @@ public class ProductController {
     @GetMapping("product/test")
     public String test(){
         return "test";
+    }
+    @GetMapping("product/{id}/edit")
+    public String showEditForm( Model model, @PathVariable int id){
+        Product product=productService.findById(id);
+        model.addAttribute(product);
+    return "edit";
+    }
+    @GetMapping("product/{id}/view")
+    public String showInfo(@PathVariable int id,Model model){
+        Product product=productService.findById(id);
+        model.addAttribute(product);
+        return "info";
+    }
+    @GetMapping("product/search")
+    public String  search(@RequestParam String name,Model model){
+        List<Product> list=productService.search(name);
+        model.addAttribute("products",list);
+        return "index";
     }
 
 
