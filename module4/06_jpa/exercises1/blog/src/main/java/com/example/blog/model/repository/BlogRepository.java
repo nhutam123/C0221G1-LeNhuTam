@@ -9,16 +9,16 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class BlogRepository implements IBlogRepository{
+public class BlogRepository {
     @PersistenceContext
     EntityManager entityManager;
-    @Override
+
     public List<Blog> findAll() {
         TypedQuery<Blog> query = entityManager.createQuery("select c from Blog c", Blog.class);
         return query.getResultList();
     }
 
-    @Override
+
     public void save(Blog blog) {
         if (blog.getId() != null) {
             entityManager.merge(blog);
@@ -27,7 +27,7 @@ public class BlogRepository implements IBlogRepository{
         }
     }
 
-    @Override
+
     public Blog findById(int id) {
         return null;
     }

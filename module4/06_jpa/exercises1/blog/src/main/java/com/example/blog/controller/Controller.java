@@ -4,12 +4,10 @@ import com.example.blog.model.entity.Blog;
 import com.example.blog.model.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -17,7 +15,7 @@ public class Controller {
     IBlogService iBlogService;
     @RequestMapping("")
     public String display(Model model){
-        List<Blog> list=iBlogService.findAll();
+        Iterable<Blog> list=iBlogService.findAll();
         model.addAttribute("listBlog",list);
         return "/index";
     }
@@ -29,6 +27,28 @@ public class Controller {
     @PostMapping("/create")
     public String create(@ModelAttribute("blog") Blog blog){
         iBlogService.save(blog);
+        return "redirect:";
+    }
+    @GetMapping("/edit")
+    public  String showEditForm(@RequestParam Integer id,Model model){
+        Optional<Blog> blog=iBlogService.findById(id);
+        model.addAttribute("blog",blog);
+        return "/edit";
+    }
+    @PostMapping("edit")
+    public String edit(@ModelAttribute Blog blog){
+        iBlogService.save(blog);
+        return "redirect:";
+    }
+    @GetMapping("delete")
+    public String showDeleteForm(@RequestParam Integer id, Model model){
+       Optional<Blog> blog=iBlogService.findById(id);
+       model.addAttribute("blog",blog);
+        return "/delete";
+    }
+    @PostMapping("delete")
+    public String delete(@RequestParam Integer id){
+        iBlogService.delete(id);
         return "redirect:";
     }
 
