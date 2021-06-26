@@ -25,4 +25,9 @@ public class ProductService implements IProductService {
     public Product findById(Integer id) {
         return iProductRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void delete(Integer id) {
+        iProductRepository.deleteById(id);
+    }
 }

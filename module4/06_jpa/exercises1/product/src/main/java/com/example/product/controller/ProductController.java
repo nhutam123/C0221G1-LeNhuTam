@@ -71,15 +71,19 @@ public class ProductController {
         return "edit";
     }
     @PostMapping("/edit")
-    public String edit(){
+    public String edit(@ModelAttribute Product product){
+        iProductService.save(product);
         return "redirect:/";
     }
     @GetMapping("/delete")
-    public String showDeleteForm(){
+    public String showDeleteForm(@RequestParam Integer id,Model model){
+        Product product=iProductService.findById(id);
+        model.addAttribute("product",product);
         return "delete";
     }
     @PostMapping("/delete")
-    public String delete(){
-        return "";
+    public String delete(@RequestParam Integer id){
+        iProductService.delete(id);
+        return "redirect:/";
     }
 }

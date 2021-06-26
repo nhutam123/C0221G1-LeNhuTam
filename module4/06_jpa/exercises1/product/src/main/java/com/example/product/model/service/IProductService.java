@@ -8,4 +8,5 @@ public interface IProductService {
     Page<Product> findAllByNameContaining(Pageable pageable, String name);
     void save(Product product);
     Product findById(Integer id);
+    void  delete(Integer id);
 }
