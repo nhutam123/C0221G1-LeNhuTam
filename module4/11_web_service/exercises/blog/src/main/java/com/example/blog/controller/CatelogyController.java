@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/category")
 public class CatelogyController {
     @Autowired
     ICategoryService iCategoryService;

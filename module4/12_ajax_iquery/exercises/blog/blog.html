@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List blog </title>
+    <link rel="stylesheet" href="./bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+</head>
+<body>
+<div>
+    <input type="text" id="input">
+    <input type="button" value="search" onclick="searchBlog()">
+</div>
+<div class="container mt-4">
+    <div class="row w-50 mx-auto">
+        <div class="col-lg-12">
+            <h2>List blog </h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">author</th>
+                    <th scope="col">content</th>
+                </tr>
+                </thead>
+                <tbody id="blog">
+                </tbody>
+            </table>
+
+            <div>
+                <button id="more" onclick="getMore()">More</button>
+
+            </div>
+            <div>
+                <button id="previous" onclick="previousPage()">previousPage</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+></script>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./bootstrap-4.0.0-alpha.6-dist/jquery/jquery.js"></script>
+<script src="./bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
+<script>
+
+    let stt=1;
+    let page=0;
+
+    function showList(page,search){
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET", //GET, DELETE, PUT...
+            url: "http://localhost:8080/rest/search?page="+page+"&search="+search,
+            success: function(resultSuccess){
+                console.log("Success");
+                console.log(resultSuccess);
+                let list=resultSuccess.content;
+                let resultHTML = "";
+                let text=resultSuccess.totalPages;
+                console.log(text);
+                console.log(page);
+                if (page<resultSuccess.totalPages){
+                    for (let i = 0; i < list.length; i++) {
+                        resultHTML += "<tr>";
+                        resultHTML += "<th scope='row'>" + (stt) + "</th>";
+                        resultHTML += "<td>" + list[i].id + "</td>";
+                        resultHTML += "<td>" + list[i].author + "</td>";
+                        resultHTML += "<td>" + list[i].content + "</td>";
+                        resultHTML += "</tr>";
+                        stt++;
+                    }
+                }else {
+                   alert("hết trang");
+                }
+                console.log(resultHTML);
+                $("#blog").html(resultHTML);
+            },
+            error: function(resultError) {
+                console.log("Error: ");
+                console.log(resultError);
+            }
+        });
+
+    }
+    showList(page,"");
+
+    function searchBlog() {
+        page=0;
+         let search=$("#input").val();
+        showList(page,search);
+    }
+
+    function getMore() {
+        let search=$("#input").val();
+        page=page+1;
+        showList(page,search);
+    }
+    function previousPage() {
+        let search=$("#input").val();
+        stt=page*2-1;
+        page=page-1;
+        showList(page,search);
+
+    }
+
+</script>
+
+</body>
+</html>

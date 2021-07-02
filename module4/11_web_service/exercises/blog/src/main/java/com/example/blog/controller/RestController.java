@@ -7,6 +7,7 @@ import com.example.blog.model.service.ICategoryService;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/rest")
+@CrossOrigin
 public class RestController {
     @Autowired
     IBlogService iBlogService;
@@ -28,12 +30,12 @@ public class RestController {
 
     @GetMapping(value = {"/","/search"})
 
-    public ResponseEntity<Page<Blog>> display(@RequestParam Optional<String> search, @PageableDefault(size = 3) Pageable pageable, Model model){
+    public ResponseEntity<Page<Blog>> display(@RequestParam Optional<String> search,@RequestParam int page ){
         String keyword="";
         if (search.isPresent()){
             keyword=search.get();
         }
-        Page<Blog> blogPage=iBlogService.findAllByAuthorContaining(pageable,keyword);
+        Page<Blog> blogPage=iBlogService.findAllByAuthorContaining(PageRequest.of(page,2),keyword);
         if (blogPage.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

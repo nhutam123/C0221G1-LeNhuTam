@@ -23,7 +23,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer save(Customer customer) {
-        return null;
+        return iCustomerRepository.save(customer);
     }
 
     @Override
