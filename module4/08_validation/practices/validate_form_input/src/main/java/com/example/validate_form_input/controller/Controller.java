@@ -1,6 +1,7 @@
 package com.example.validate_form_input.controller;
 
 import com.example.validate_form_input.model.entity.User;
+
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -17,7 +20,7 @@ public class Controller {
         return "/index";
     }
     @PostMapping("/validateUser")
-    public ModelAndView checkValidation(@ModelAttribute("user") User user, BindingResult bindingResult) {
+    public ModelAndView checkValidation(@Valid  @ModelAttribute("user") User user, BindingResult bindingResult) {
         if (bindingResult.hasFieldErrors()) {
             return new ModelAndView("/index");
         }
