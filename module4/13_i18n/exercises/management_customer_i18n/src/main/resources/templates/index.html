@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="#{title}"></title>
 </head>
 <body>
-<h1 th:text="#{title}">tam dep trai</h1>
+<h1 th:text="#{title}"></h1>
 <a href="?lang=vi">Vietnamese</a>
+<a href="?lang=en">English</a>
 <form th:action="@{/search}" method="post">
     Search by first name:
     <input name="search" type="text"/>
