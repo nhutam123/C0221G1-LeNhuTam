@@ -1,14 +1,11 @@
-package com.example.case_study.model.entity;
+package com.example.case_study.dto;
 
-import javax.persistence.*;
+import com.example.case_study.model.entity.CustomerType;
 
 import java.sql.Date;
-import java.util.List;
 
-@Entity
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class CustomerDto {
     private Integer id;
     private String name;
     private Date birthday;
@@ -18,14 +15,9 @@ public class Customer {
     private String email;
     private String address;
     private int flag;
-    @ManyToOne
-    @JoinColumn(name = "customer_type_id",referencedColumnName = "id")
     private CustomerType customerType;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Contract> contractList;
-
-    public Customer() {
+    public CustomerDto() {
     }
 
     public Integer getId() {
@@ -106,13 +98,5 @@ public class Customer {
 
     public void setFlag(int flag) {
         this.flag = flag;
-    }
-
-    public List<Contract> getContractList() {
-        return contractList;
-    }
-
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
     }
 }

@@ -1,12 +1,11 @@
-package com.example.case_study.model.entity;
+package com.example.case_study.dto;
 
-import javax.persistence.*;
+import com.example.case_study.model.entity.Contract;
+import com.example.case_study.model.entity.ServiceType;
+
 import java.util.List;
 
-@Entity
-public class Service {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ServiceDto {
     private Integer id;
     private String serviceName;
     private Integer area;
@@ -16,14 +15,10 @@ public class Service {
     private String description;
     private Double poolArea;
     private int floor;
-    @ManyToOne
-    @JoinColumn(name = "service_type",referencedColumnName = "id")
     private ServiceType serviceType;
-
-    @OneToMany(mappedBy = "service")
     private List<Contract> contractList;
 
-    public Service() {
+    public ServiceDto() {
     }
 
     public Integer getId() {

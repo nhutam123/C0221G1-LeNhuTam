@@ -39,4 +39,5 @@ public class ServiceType {
     public void setServiceList(List<Service> serviceList) {
         this.serviceList = serviceList;
     }
+
 }

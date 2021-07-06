@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/service/create}" th:object="${serviceDto}" method="post" >
+    <label>Name : </label>
+    <input type="text" th:field="*{serviceName}">
+    <td th:if="${#fields.hasErrors('name')}" th:errors="*{serviceName}">Name Error</td>
+    <br>
+    <label>area : </label>
+    <input type="date" th:field="*{area}">
+    <br>
+    <label>cost : </label>
+    <input th:field="*{cost}">
+    <br>
+    <label>max people : </label>
+    <input type="text" th:field="*{maxPeople}">
+    <br>
+    <label>standard : </label>
+    <input type="text" th:field="*{standardRoom}">
+    <br>
+    <label>description : </label>
+    <input type="text" th:field="*{description}">
+    <br>
+    <label>poolArea : </label>
+    <input type="text" th:field="*{poolArea}">
+    <br>
+    <label>floor : </label>
+
+    <select th:field="*{floor}">
+        <option th:each="customerType : ${typeList}" th:value="${customerType.id}" th:text="${customerType.type}"></option>
+    </select>
+
+    <input type="submit" value="create">
+</form>
+
+</body>
+</html>

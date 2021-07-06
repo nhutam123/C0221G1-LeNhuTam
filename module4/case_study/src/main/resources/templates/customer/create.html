@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/customer/create}" th:object="${customerDto}" method="post" >
+    <input type="hidden" th:value="1" th:field="*{flag}">
+    <label>Name : </label>
+    <input type="text" th:field="*{name}">
+    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+    <br>
+    <label>birthday : </label>
+    <input type="date" th:field="*{birthday}">
+    <br>
+    <label>producer : </label>
+    <select th:field="*{gender}">
+        <option  th:value="nam" >nam</option>
+        <option  th:value="nữ" >nữ</option>
+    </select>
+    <br>
+    <label>card : </label>
+    <input type="text" th:field="*{card}">
+    <br>
+    <label>PhoneNumber : </label>
+    <input type="text" th:field="*{phoneNumber}">
+    <br>
+    <label>email : </label>
+    <input type="text" th:field="*{email}">
+    <br>
+    <label>address : </label>
+    <input type="text" th:field="*{address}">
+    <br>
+    <label>type : </label>
+
+    <select th:field="*{customerType}">
+        <option th:each="customerType : ${typeList}" th:value="${customerType.id}" th:text="${customerType.type}"></option>
+    </select>
+
+    <input type="submit" value="create">
+</form>
+
+</body>
+</html>

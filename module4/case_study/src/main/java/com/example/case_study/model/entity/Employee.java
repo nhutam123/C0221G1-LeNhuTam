@@ -1,31 +1,37 @@
 package com.example.case_study.model.entity;
 
 import javax.persistence.*;
-
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Customer {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private Date birthday;
-    private String gender;
-    private String card;
+    private Double salary;
     private String phoneNumber;
     private String email;
     private String address;
-    private int flag;
+
     @ManyToOne
-    @JoinColumn(name = "customer_type_id",referencedColumnName = "id")
-    private CustomerType customerType;
+    @JoinColumn(name = "position_id",referencedColumnName = "id")
+    private Position position;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Contract> contractList;
+    @ManyToOne
+    @JoinColumn(name = "degree_id",referencedColumnName = "id")
+    private Degree degree;
 
-    public Customer() {
+    @ManyToOne
+    @JoinColumn(name = "devision_id",referencedColumnName = "id")
+    private Division division;
+
+    @OneToMany(mappedBy = "employee")
+    List<Contract> contractList;
+
+    public Employee() {
     }
 
     public Integer getId() {
@@ -52,20 +58,12 @@ public class Customer {
         this.birthday = birthday;
     }
 
-    public String getGender() {
-        return gender;
+    public Double getSalary() {
+        return salary;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getCard() {
-        return card;
-    }
-
-    public void setCard(String card) {
-        this.card = card;
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
     public String getPhoneNumber() {
@@ -92,20 +90,28 @@ public class Customer {
         this.address = address;
     }
 
-    public CustomerType getCustomerType() {
-        return customerType;
+    public Position getPosition() {
+        return position;
     }
 
-    public void setCustomerType(CustomerType customerType) {
-        this.customerType = customerType;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
-    public int getFlag() {
-        return flag;
+    public Degree getDegree() {
+        return degree;
     }
 
-    public void setFlag(int flag) {
-        this.flag = flag;
+    public void setDegree(Degree degree) {
+        this.degree = degree;
+    }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public void setDivision(Division division) {
+        this.division = division;
     }
 
     public List<Contract> getContractList() {
