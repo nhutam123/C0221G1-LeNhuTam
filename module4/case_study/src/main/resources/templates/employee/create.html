@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/employee/create}" th:object="${employeeDto}" method="post" >
+    <label>Name : </label>
+    <input type="text" th:field="*{name}">
+    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+    <br>
+    <label>division : </label>
+    <select th:field="*{division}">
+        <option th:each="d :${divisionList}" th:value="${d.id}" th:text="${d.name}"></option>
+    </select>
+    <br>
+    <label>degree : </label>
+    <select th:field="*{degree}">
+        <option th:each="de :${degreeList}" th:value="${de.id}" th:text="${de.name}"></option>
+    </select>
+    <br>
+    <label>position : </label>
+    <select th:field="*{position}">
+        <option th:each="p :${positionList}" th:value="${p.id}" th:text="${p.name}"></option>
+    </select>
+    <br>
+    <label>birthday : </label>
+    <select th:field="*{birthday}">
+        <option  th:value="nam" >nam</option>
+        <option  th:value="nữ" >nữ</option>
+    </select>
+    <br>
+    <label>salary : </label>
+    <input type="text" th:field="*{salary}">
+    <br>
+    <label>PhoneNumber : </label>
+    <input type="text" th:field="*{phoneNumber}">
+    <br>
+    <label>email : </label>
+    <input type="text" th:field="*{email}">
+    <br>
+    <label>address : </label>
+    <input type="text" th:field="*{address}">
+
+    <input type="submit" value="create">
+</form>
+
+</body>
+</html>

@@ -19,6 +19,7 @@ public class ServiceService implements IServiceService{
 
     @Override
     public void save(Service service) {
+        iServiceRepository.save(service);
 
     }
 

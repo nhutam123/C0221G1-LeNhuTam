@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>tam dep trai</h1>
+<form th:action="@{/contract/search}">
+    <label>name : </label>
+    <input class="search" type="text" name="search">
+    <input class="btn btn-primary" type="submit" value="search">
+</form>
+<br>
+<a href="/contract/create">Add new contract</a>
+<table border="1px">
+    <tr>
+        <th>STT</th>
+        <th>Id</th>
+        <th>customer name</th>
+        <th>service</th>
+        <th>employee name</th>
+        <th>start time</th>
+        <th>end time</th>
+        <th>diposit</th>
+        <th>total money</th>
+
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    <tr th:each="contract,loop :${contractPage}" >
+        <td th:text="${loop.index+1}"></td>
+        <td th:text="${contract.id}"></td>
+        <td th:text="${contract.customer.name}"></td>
+        <td th:text="${contract.service.serviceName}"></td>
+        <td th:text="${contract.employee.name}"></td>
+        <td th:text="${contract.startTime}"></td>
+        <td th:text="${contract.endTime}"></td>
+        <td th:text="${contract.deposit}"></td>
+        <td th:text="${contract.totalMoney}"></td>
+
+        <td><a th:href="@{/contract/edit(id=${contract.getId()})}">Edit</a></td>
+        <td><a th:href="@{/contract/delete(id=${contract.getId()})}">Delete</a></td>
+    </tr>
+
+</table>
+<div>
+    <a th:href="@{/(page=${contractPage.number - 1},name=${keyword})}" th:if="${contractPage.hasPrevious()}">Previous</a>
+    <span th:text="${contractPage.number + 1}"></span>/<span th:text="${contractPage.totalPages}"></span>
+    <a th:href="@{/(page=${contractPage.number + 1},name=${keyword})}" th:if="${contractPage.hasNext()}">Next</a>
+</div>
+
+</body>
+</html>
