@@ -1,16 +1,24 @@
 package com.example.case_study.controller;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.case_study.util.WebUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@SessionAttributes("listUser")
 public class MainController {
+    @ModelAttribute("listUser")
+    public List<User> addUser(){
+        return new ArrayList<>();
+    }
+
+
 
     @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
     public String welcomePage(Model model) {
@@ -20,13 +28,12 @@ public class MainController {
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String adminPage(Model model, Principal principal) {
+    public String adminPage(Model model, Principal principal, @SessionAttribute List<User> listUser) {
 
         User loginedUser = (User) ((Authentication) principal).getPrincipal();
-
+        listUser.add(loginedUser);
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
-
         return "adminPage";
     }
 
@@ -55,7 +62,7 @@ public class MainController {
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
 
-        return "userInfoPage";
+        return "/home/index";
     }
 
     @RequestMapping(value = "/403", method = RequestMethod.GET)

@@ -7,12 +7,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class EmployeeService implements IEmployeeService{
     @Autowired
     IEmployeeRepository iEmployeeRepository;
+
+    @Override
+    public Page<Employee> findAll(Pageable pageable, String name, String email) {
+        return null;
+    }
+
     @Override
     public Page<Employee> findAll(Pageable pageable, String name) {
         return iEmployeeRepository.findAllByNameContaining(pageable,"%"+name+"%");
@@ -27,5 +34,10 @@ public class EmployeeService implements IEmployeeService{
     @Override
     public Optional<Employee> findById(Integer id) {
         return Optional.empty();
+    }
+
+    @Override
+    public List<Employee> findAll() {
+        return (List<Employee>) iEmployeeRepository.findAll();
     }
 }

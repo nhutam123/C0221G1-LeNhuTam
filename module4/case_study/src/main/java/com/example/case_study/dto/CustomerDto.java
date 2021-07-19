@@ -1,20 +1,31 @@
 package com.example.case_study.dto;
 
 import com.example.case_study.model.entity.CustomerType;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.aspectj.apache.bcel.ExceptionConstants;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.sql.Date;
 
 
 public class CustomerDto {
     private Integer id;
     private String name;
+//    @Pattern(regexp = "^[0-9]{2}/[0-9]{2}/[0-9]{4}$")
+    @JsonFormat( pattern = "MM/dd/yyyy")
     private Date birthday;
     private String gender;
     private String card;
+    @Pattern(regexp = "090[0-9]{7}")
     private String phoneNumber;
+    @Pattern(regexp = "^[a-zA-Z0-9]{1,9}@[0-9a-zA-Z]{1,9}")
     private String email;
     private String address;
     private int flag;
+    @Pattern(regexp="^KH-[0-9]{4}")
+    private String customerCode;
     private CustomerType customerType;
 
     public CustomerDto() {
@@ -98,5 +109,13 @@ public class CustomerDto {
 
     public void setFlag(int flag) {
         this.flag = flag;
+    }
+
+    public String getCustomerCode() {
+        return customerCode;
+    }
+
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
     }
 }

@@ -12,7 +12,6 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <%--    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js">--%>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 
     <style>
@@ -124,14 +123,6 @@
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function x() {
-        $('#table').dataTable({
-            "dom": 'lrtip',
-            "lengthChange": false,
-            "pageLength": 3
-        })
-    });
-
     function sendDataToModal(id, name) {
         document.getElementById("idStudent").value = id;
         document.getElementById("nameStudent").innerText = name;

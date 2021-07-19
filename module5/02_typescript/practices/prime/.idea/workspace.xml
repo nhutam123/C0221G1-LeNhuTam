@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2b11ebd2-1073-4966-b3f6-3510fad9462c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../module3/bai_thi/.idea/bai_thi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module3/bai_thi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/01_spring_mvc_overview/exercises/currency_converter/.idea/currency_converter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/14_spring_security/bai_thi/src/main/java/com/example/bai_thi/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/ContractDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/dto/ContractDetailDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/repository/IAttachRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/AttachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/IAttachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/common/common.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/contractDetail/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/dto/QuestionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/dto/StudentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/entity/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/entity/QuestionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/entity/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/repository/IQuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/repository/IQuestionTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/repository/IStudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/service/IQuestionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/service/IQuestionTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/service/IStudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/service/QuestionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/service/QuestionTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/java/com/example/demo/model/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/LOGOFurama_4C_Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/house.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/intercontinental-danang-city-2532269014-2x1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/intercontinental-danang-city-4065464306-2x1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/intercontinental-danang-city-4772490829-2x1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/music-player-client-large.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/room.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/image/villa.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/static/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/demo/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/test/src/main/java/com/example/test/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/test/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../conditional_loop/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../conditional_loop/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../conditional_loop/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../geometry/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../geometry/src/IArea.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../geometry/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../geometry/src/rectangle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../geometry/src/shape.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../geometry/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../typescript-variables/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../typescript-variables/src/variable.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../typescript-variables/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../typescript-variables/variable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module3/bai_thi/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/bai_thi/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module3/bai_thi/src/main/webapp/pro/object/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/bai_thi/src/main/webapp/pro/object/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/01_spring_mvc_overview/exercises/currency_converter/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/01_spring_mvc_overview/exercises/currency_converter/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/01_spring_mvc_overview/practices/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/01_spring_mvc_overview/practices/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/02_annotation_controller/practices/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/02_annotation_controller/practices/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/11_web_service/exercises/blog/src/main/resources/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/11_web_service/exercises/blog/src/main/resources/templates/blog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/dto/ContractDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/dto/ContractDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/dto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/dto/CustomerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/dto/EmployeeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/dto/EmployeeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/entity/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/entity/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/entity/ContractDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/entity/ContractDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ICommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ICommonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/IEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/IServiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/IServiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ServiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/java/com/example/case_study/model/service/ServiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/static/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/static/t.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/14_spring_security/bai_thi/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/employee/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/employee/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/home/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/contract/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/case_study/src/main/resources/templates/home/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="package.json" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1vXBf8bEcyR72XjYhR7xdzWATTz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/main.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.main.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b11ebd2-1073-4966-b3f6-3510fad9462c" name="Default Changelist" comment="" />
+      <created>1626698653191</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626698653191</updated>
+      <workItem from="1626698654401" duration="750000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/main.js" />
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1626699410187">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626699410187" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1626699410187">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1626699410187" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1626699410187">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1626699410187" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1626699410187">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1626699410187" />
+  </component>
+</project>

@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,12 +27,16 @@ public class CustomerController {
     @Autowired
     ICustomerTypeService iCustomerTypeService;
     @GetMapping(value = {"","/search"})
-    public String display(Model model , @PageableDefault(size = 5) Pageable pageable,@RequestParam Optional<String> search){
+    public String display(Model model , @PageableDefault(size = 5) Pageable pageable,@RequestParam Optional<String> search,@RequestParam("email") Optional<String> email){
         String keyword="";
+        String emailValue="";
         if (search.isPresent()){
             keyword=search.get();
         }
-        Page<Customer> customerPage=iCustomerService.findAll(pageable,keyword);
+        if (email.isPresent()){
+            emailValue=email.get();
+        }
+        Page<Customer> customerPage=iCustomerService.findAll(pageable,keyword,emailValue);
         model.addAttribute("customerPage",customerPage);
         model.addAttribute("keyword",keyword);
         return "customer/list";
@@ -44,7 +49,7 @@ public class CustomerController {
         return "customer/create";
     }
     @PostMapping(value = "/create")
-    public String create(@ModelAttribute("customerDto") CustomerDto customerDto, BindingResult bindingResult,Model model){
+    public String create(@Valid  @ModelAttribute("customerDto") CustomerDto customerDto, BindingResult bindingResult, Model model){
         if (bindingResult.hasFieldErrors()){
             return "customer/create";
         }

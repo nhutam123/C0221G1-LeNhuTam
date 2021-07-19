@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <style>
+        .header {
+            text-align: center;
+            color: orange;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Customer Management</h1>
+    <h2>
+        <a href="/home/list">List All Customer</a>
+    </h2>
+</div>
+
+
+<div align="center" class="container">
+    <form method="post" action="/home/create" th:object="${questionDto}">
+        <table border="1" cellpadding="5" class="table table-striped table-bordered">
+            <caption>
+                <h2>Add New question</h2>
+            </caption>
+            <tr>
+                <th>Title:</th>
+                <td>
+                    <input th:field="*{title}" class="form-control"  type="text" name="name" size="45"/>
+                <td th:if="${#fields.hasErrors('title')}" th:errors="*{title}">title Error</td>
+                </td>
+            </tr>
+            <tr>
+                <th>day create:</th>
+                <td>
+                    <input class="form-control"  type="date" th:field="*{dateCreate}"  />
+
+                <td th:if="${#fields.hasErrors('dateCreate')}" th:errors="*{dateCreate}">dateCreate Error</td>
+
+                </td>
+            </tr>
+            <tr>
+                <th>question:</th>
+                <td>
+                    <input class="form-control" th:field="*{content}"  type="text" name="card" />
+                <td th:if="${#fields.hasErrors('content')}" th:errors="*{content}">content Error</td>
+                </td>
+            </tr>
+            <tr>
+                <th>Answer:</th>
+                <td>
+                    <input class="form-control" th:field="*{answer}"  type="text" name="phoneNumber" />
+
+                <td th:if="${#fields.hasErrors('answer')}" th:errors="*{answer}">answer Error</td>
+                </td>
+            </tr>
+            <tr>
+                <th>status:</th>
+                <td>
+                    <select th:field="*{status}">
+                        <option th:value="1">chờ phản hồi</option>
+                        <option th:value="0">đã phản hồi</option>
+                    </select>
+                    <p style="color: red"></p>
+                </td>
+            </tr>
+            <tr>
+                <th> loại câu hỏi:</th>
+                <td>
+                        <select th:field="*{questionType}">
+                            <option name="type" th:each="type : ${questionTypeList}" th:value="${type.id}" th:text="${type.name}"></option>
+                        </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input class="btn btn-success" type="submit" name="action" value="Create"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

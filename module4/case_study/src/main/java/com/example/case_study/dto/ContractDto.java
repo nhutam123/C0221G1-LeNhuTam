@@ -15,6 +15,7 @@ public class ContractDto {
     private Employee employee;
     private Service service;
     private Customer customer;
+    private int flag;
 
     public ContractDto() {
     }
@@ -81,5 +82,13 @@ public class ContractDto {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
     }
 }

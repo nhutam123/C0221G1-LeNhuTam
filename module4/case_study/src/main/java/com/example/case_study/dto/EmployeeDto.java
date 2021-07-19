@@ -4,16 +4,21 @@ import com.example.case_study.model.entity.Contract;
 import com.example.case_study.model.entity.Degree;
 import com.example.case_study.model.entity.Division;
 import com.example.case_study.model.entity.Position;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.List;
 
 public class EmployeeDto {
     private Integer id;
     private String name;
+    @JsonFormat( pattern = "MM/dd/yyyy")
     private Date birthday;
     private Double salary;
+
     private String phoneNumber;
+    @Pattern(regexp = "^[a-zA-Z0-9]{1,9}@[0-9a-zA-Z]{1,9}.[0-9a-zA-Z]{1,9}")
     private String email;
     private String address;
     private Position position;

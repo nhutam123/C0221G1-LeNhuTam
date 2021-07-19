@@ -8,6 +8,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface ICustomerRepository extends PagingAndSortingRepository<Customer,Integer> {
-    @Query(value = "select * from customer where flag = 1 and `name` like:keyword",nativeQuery = true)
-    Page<Customer> findAllByNameContaining(Pageable pageable,@Param("keyword") String name);
+    @Query(value = "select * from customer where flag = 1 and concat(`name`,id) like:keyword and email like :email",nativeQuery = true)
+    Page<Customer> findAllByNameContaining(Pageable pageable,@Param("keyword") String name,@Param("email") String email);
 }

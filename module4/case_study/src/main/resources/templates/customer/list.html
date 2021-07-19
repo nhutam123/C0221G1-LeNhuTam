@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<head th:replace="/common/common.html :: head">
+
 </head>
 <body>
+<header th:replace="/common/common.html :: header"></header>
 <h1>tam dep trai</h1>
 <form th:action="@{/customer/search}">
     <label>name : </label>
     <input class="search" type="text" name="search">
+    <label >email : </label>
+    <input type="text" name="email">
     <input class="btn btn-primary" type="submit" value="search">
 </form>
 <br>
 <a href="/customer/create">Add new customer</a>
-<table border="1px">
+<table border="1px" class="table container" >
     <tr>
         <th>STT</th>
         <th>Id</th>
@@ -41,15 +43,68 @@
         <td th:text="${customer.address}"></td>
         <td th:text="${customer.customerType.type}"></td>
         <td><a th:href="@{/customer/edit(id=${customer.getId()})}">Edit</a></td>
-        <td><a th:href="@{/customer/delete(id=${customer.getId()})}">Delete</a></td>
+        <td>
+                <button type="button"
+                        th:onclick="|sendDataToModal(${customer.id})|"
+                        class="btn btn-danger"
+                        data-toggle="modal"
+                        data-target="#myModal1"
+
+                        >Delete
+                </button>
+        </td>
     </tr>
 
 </table>
 <div>
-    <a th:href="@{/(page=${customerPage.number - 1},name=${keyword})}" th:if="${customerPage.hasPrevious()}">Previous</a>
+    <a th:href="@{/customer/(page=${customerPage.number - 1},search=${keyword})}" th:if="${customerPage.hasPrevious()}">Previous</a>
     <span th:text="${customerPage.number + 1}"></span>/<span th:text="${customerPage.totalPages}"></span>
-    <a th:href="@{/(page=${customerPage.number + 1},name=${keyword})}" th:if="${customerPage.hasNext()}">Next</a>
+    <a th:href="@{/customer/(page=${customerPage.number + 1},search=${keyword})}" th:if="${customerPage.hasNext()}">Next</a>
 </div>
+
+<div class="modal" id="myModal1">
+    <form th:action="@{customer/delete}" method="post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input hidden type="text" name="id" id="idStudent">
+                    <p>Do you want to delete : <span id="nameStudent"></span></p>
+                </div>
+                <div class="modal-footer d-flex justify-content-around">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                    <input type="hidden" name="action" value="delete">
+                    <button type="submit" class="btn btn-danger ">Delete</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script>
+
+    function sendDataToModal(id, name) {
+        document.getElementById("idStudent").value = id;
+        document.getElementById("nameStudent").innerText = name;
+    }
+</script>
 
 </body>
 </html>

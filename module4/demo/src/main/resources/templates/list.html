@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <style>
+    .header {
+      text-align: center;
+      color: #333;
+      background-color: bisque;
+    }
+    #table {
+      background-color: lightskyblue;
+    }
+    #search{
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <h2>Customer list</h2>
+  <div class="container d-flex justify-content-between">
+
+    <div>
+      <form method="get" action="/home/create">
+        <input class="btn btn-success" type="submit" name="action" value="create">
+
+      </form>
+      <h2 th:text="${message}"></h2>
+
+    </div>
+    <form method="get" action="/home/list">
+      <label>Title:</label>
+      <input type="text" name="title" class="search">
+      <label>Question type : </label>
+      <select name="type">
+        <option value="">tìm kiếm loại</option>
+        <option th:each="type : ${questionTypeList}" th:value="${type.id}" th:text="${type.name}"></option>
+      </select>
+      <input class="btn btn-success" type="submit" name="action" value="search">
+    </form>
+  </div>
+
+</div>
+
+
+<div align="center" class="container">
+  <table border="1" cellpadding="5" id="table" class="table table-striped table-bordered table-dark">
+    <caption><h2>List of Employee</h2></caption>
+    <thead>
+    <tr>
+      <th>STT</th>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Question</th>
+      <th>Answer</th>
+      <th>Date create</th>
+      <th>Question type</th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <tr th:each="question, loop :${questionPage}">
+        <td th:text="${loop.count +questionPage.number*questionPage.size}"></td>
+        <td th:text="${question.id}"></td>
+        <td th:text="${question.title}"></td>
+        <td th:text="${question.content}"></td>
+        <td th:text="${question.answer}"></td>
+        <td th:text="${question.dateCreate}"></td>
+        <td th:text="${question.questionType.name}">
+        </td>
+        <td ><a th:href="@{/home/edit(id=${question.id})}" >Edit</a></td>
+        <td>
+          <button type="button" id="delete"
+          th:data-id="${question.id}"
+          th:data-name="${question.title}"
+                  class="btn btn-danger"
+                  data-toggle="modal"
+                  data-target="#myModal1"
+
+          >Delete
+          </button>
+        </td>
+      </tr>
+
+  </table>
+  <div class="position-fixed fixed-bottom" >
+    <a th:href="@{/home/list/(page=${questionPage.number - 1},title=${keyword},type=${typeValue})}" th:if="${questionPage.hasPrevious()}">Previous</a>
+    <span th:text="${questionPage.number + 1}"></span>/<span th:text="${questionPage.totalPages}"></span>
+    <a th:href="@{/home/list/(page=${questionPage.number + 1},title=${keyword},type=${typeValue})}" th:if="${questionPage.hasNext()}">Next</a>
+  </div>
+
+  <div class="modal" id="myModal1">
+    <form th:action="@{/home/delete}" method="post">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Delete Product</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input hidden type="text" name="id" id="idStudent">
+            <p>Do you want to delete : <input id="nameStudent" style="border-color: white ; outline: none"></p>
+          </div>
+          <div class="modal-footer d-flex justify-content-around">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+            <input type="hidden" name="action" value="delete">
+            <button type="submit" class="btn btn-danger ">Delete</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script>
+
+  function sendDataToModal(id) {
+    document.getElementById("idStudent").value = id;
+    document.getElementById("nameStudent").innerText = id;
+  }
+  $("#delete").click(function () {
+      $("#myModal1 input[id='idStudent']").val($(this).data("id"));
+      $("#myModal1 input[id='nameStudent']").val($(this).data("name"));
+
+  });
+</script>
+
+</body>
+</html>

@@ -17,7 +17,7 @@
     <br>
     <label>degree : </label>
     <select th:field="*{degree}">
-        <option th:each="de :${degreeList}" th:value="${de.id}" th:text="${de.name}"></option>
+        <option th:each="de :${degreeList}" th:value="${de.id}" th:text="${de.degree}"></option>
     </select>
     <br>
     <label>position : </label>
@@ -26,19 +26,19 @@
     </select>
     <br>
     <label>birthday : </label>
-    <select th:field="*{birthday}">
-        <option  th:value="nam" >nam</option>
-        <option  th:value="nữ" >nữ</option>
-    </select>
+   <input type="date" th:field="*{birthday}"><
+    <p th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Name Error</p>
     <br>
     <label>salary : </label>
     <input type="text" th:field="*{salary}">
     <br>
     <label>PhoneNumber : </label>
     <input type="text" th:field="*{phoneNumber}">
+    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Name Error</p>
     <br>
     <label>email : </label>
     <input type="text" th:field="*{email}">
+    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</p>
     <br>
     <label>address : </label>
     <input type="text" th:field="*{address}">

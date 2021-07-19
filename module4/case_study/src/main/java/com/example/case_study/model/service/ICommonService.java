@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 public interface ICommonService<T> {
+    Page<T> findAll(Pageable pageable, String name,String email);
     Page<T> findAll(Pageable pageable, String name);
     void save(T t);
     Optional<T> findById(Integer id);

@@ -13,6 +13,7 @@ public class Contract {
     private Date endTime;
     private Double deposit;
     private Double totalMoney;
+    private int flag;
 
     @ManyToOne
     @JoinColumn(name = "employee_id",referencedColumnName = "id")
@@ -25,6 +26,10 @@ public class Contract {
     @ManyToOne
     @JoinColumn(name = "customer_id",referencedColumnName = "id")
     private Customer customer;
+
+    @OneToOne(mappedBy = "contract", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private ContractDetail contractDetail;
 
     public Contract() {
     }
@@ -91,5 +96,13 @@ public class Contract {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
     }
 }

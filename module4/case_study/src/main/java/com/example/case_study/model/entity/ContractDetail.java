@@ -13,6 +13,13 @@ public class ContractDetail {
     @JoinColumn(name = "attach_id",referencedColumnName = "id")
     private AttachService attachService;
 
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "contract_id")
+    private Contract contract;
+
+
     public ContractDetail() {
     }
 

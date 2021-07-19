@@ -1,6 +1,7 @@
 package com.example.case_study.model.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 import java.sql.Date;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Customer {
     private String email;
     private String address;
     private int flag;
+    private String customerCode;
     @ManyToOne
     @JoinColumn(name = "customer_type_id",referencedColumnName = "id")
     private CustomerType customerType;
@@ -115,4 +117,13 @@ public class Customer {
     public void setContractList(List<Contract> contractList) {
         this.contractList = contractList;
     }
+
+    public String getCustomerCode() {
+        return customerCode;
+    }
+
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
+    }
+
 }

@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,7 +58,7 @@ public class EmployeeController {
         return "employee/create";
     }
     @PostMapping("/create")
-    public String create(@ModelAttribute("employeeDto") EmployeeDto employeeDto, BindingResult bindingResult,Model model){
+    public String create(@Valid  @ModelAttribute("employeeDto") EmployeeDto employeeDto, BindingResult bindingResult, Model model){
         if (bindingResult.hasFieldErrors()){
             return "/employee/create";
         }

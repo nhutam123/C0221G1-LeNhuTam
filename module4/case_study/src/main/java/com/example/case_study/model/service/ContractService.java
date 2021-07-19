@@ -19,7 +19,13 @@ public class ContractService implements IContractService{
     }
 
     @Override
+    public Page<Contract> findAll(Pageable pageable, String name, String email) {
+        return null;
+    }
+
+    @Override
     public void save(Contract contract) {
+        iContractRepository.save(contract);
 
     }
 

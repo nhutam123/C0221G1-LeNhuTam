@@ -1,0 +1,19 @@
+<p>calculator works!</p>
+<div class="container">
+  <label>number one </label>
+  <input class="form-control" #element type="number"   (change)="onFirstChane($any($event.target).value)">
+  <label >number two </label>
+  <input class="form-control" #element type="number"   (change)="onSecondChane($any($event.target).value)">
+  <br>
+  <select class="form-control" (change)="onSelectChane($any($event.target).value)">
+    <option value="+">cộng</option>
+    <option value="-">trừ</option>
+    <option value="*">nhân</option>
+    <option value="/">chia</option>
+  </select>
+  <br>
+  <input class="btn btn-secondary" type="button" (click)="calculate()" value="tính">
+
+  <p>ket qua : {{output}}</p>
+</div>
+
