@@ -1,4 +1,4 @@
-<p>article works!</p>
+
 <h2>Today's article</h2>
 <hr>
 <div>
@@ -6,7 +6,7 @@
 </div>
 <hr>
 <div>
-  <h2>Article Information</h2>
+  <h2 >Article Information</h2>
   <table>
     <tr>
       <td>Title:</td>
@@ -20,11 +20,17 @@
     </tr>
     <tr>
       <td></td>
-      <td><button style="float: right" (click)="addNewArticle()">Add</button></td>
+      <td><button class="btn btn-secondary" style="float: right" (click)="addNewArticle()">Add</button></td>
     </tr>
   </table>
-  <div *ngFor="let art of articles">
-    <a href="{{art.url}}" target="_blank">{{art.title}}</a> <app-like></app-like>
+  <div >
+    <table >
+      <tr *ngFor="let art of articles">
+        <td><a href="{{art.url}}" target="_blank">{{art.title}}</a></td>
+        <td class="text-center"><app-like></app-like></td>
+      </tr>
+    </table>
+
   </div>
 </div>
 <hr>
