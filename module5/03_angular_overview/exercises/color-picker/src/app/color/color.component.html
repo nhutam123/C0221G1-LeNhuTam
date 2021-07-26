@@ -1,9 +1,18 @@
 <p>color works!</p>
+<label style="color: red">Enter red (px): {{red}}</label>
+<input #element type="range" min="0" max="250" value="18" [(ngModel)]="red">
+<br>
+<label style="color: green">Enter green (px): {{green}}</label>
+<input #element type="range" min="0" max="250" value="18" [(ngModel)]="green">
+<br>
+<label style="color: blue">Enter font size (px): {{blue}}</label>
+<input #element type="range" min="0" max="250" value="18" [(ngModel)]="blue">
+<br>
 <select (change)="onchaneColor($event.target.value)" >
   <option value="red">red</option>
   <option value="blue">blue</option>
   <option value="black">black</option>
 </select>
 
-<p style="color: {{color}}">tam dep trai</p>
+<div class="circle" style="background-color: rgb( {{red}} , {{green}} , {{blue}})"></div>
 

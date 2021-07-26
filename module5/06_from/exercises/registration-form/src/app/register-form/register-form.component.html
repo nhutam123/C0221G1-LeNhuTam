@@ -1,0 +1,61 @@
+<p>hello form</p>
+
+<form class="container" (ngSubmit)="onSubmit(formSubmid)" #formSubmid="ngForm" novalidate >
+  <label>email : </label>
+  <input class="form-control" type="text" required pattern="^[0-9a-zA-Z]{1,}@[0-9a-zA-Z.]{1,}$" [(ngModel)]="email"  name="email">
+  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.pattern">
+    pattern abc@gmail
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.required && (formSubmid.controls.email?.dirty || formSubmid.controls.email?.touched)">
+    email is not required
+  </div>
+
+
+  <label>password : </label>
+  <input class="form-control" type="text" required minlength="6" [(ngModel)]="password"  name="password" >
+  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.required && (formSubmid.controls.password?.dirty || formSubmid.controls.password?.touched)" >
+    password is not empty
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.password?.errors?.minlength">
+    không dc ít hơn 6 kỹ tự
+  </div>
+
+
+  <label>confirm password : </label>
+  <input class="form-control" type="text" pattern="{{password}}" [(ngModel)]="confirmPassword"  name="confirmPassword">
+  <div style="color: red" *ngIf="formSubmid.controls.confirmPassword?.errors?.pattern">
+    confirmPassword phải trùng password
+  </div>
+
+  <label>age : </label>
+  <input class="form-control" type="number" required min="18" [(ngModel)]="age"  name="age">
+  <div style="color: red" *ngIf="formSubmid.controls.age?.errors?.min">
+    age >= 18
+  </div>
+  <div style="color: red" *ngIf="formSubmid.controls.age?.errors?.required && (formSubmid.controls.age?.dirty || formSubmid.controls.age?.touched)">
+    age is not empty!
+  </div>
+
+  <label>country : </label>
+  <select class="form-control" name="country" [(ngModel)]="country"  >
+    <option *ngFor="let title of countries" [value]="title">
+      {{title}}
+    </option>
+  </select>
+
+  <br>
+  <label>gender : </label>
+
+  <input  type="radio" [(ngModel)]="gender" name="gender" value="male">male
+  <input  type="radio" [(ngModel)]="gender" name="gender" value="female">female
+  <input  type="radio" [(ngModel)]="gender" name="gender" value="order">order
+
+  <br>
+  <label>phone : </label>
+  <input class="form-control" type="text" [(ngModel)]="phone"  name="phone">
+  <br>
+  <input [disabled]="formSubmid.control.invalid" class="btn btn-danger" type="submit" value="register">
+</form>
+
+<p *ngFor="let user of users">{{user.email}}</p>
+

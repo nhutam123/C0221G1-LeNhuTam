@@ -1,0 +1,18 @@
+<p>{{message}}</p>
+<form [formGroup]= "contactForm" (ngSubmit)="onSubmid()" novalidate >
+  <label>name : </label>
+  <input class="fo" type="text"  name="name" required formControlName="name"><br>
+  <div *ngIf="!contactForm.controls.name?.valid && (contactForm.controls.name?.dirty || contactForm.controls.name?.touched)">
+    <p>sai roi em</p>
+  </div>
+  <label>password : </label>
+  <input type="text"  name="password" formControlName="password">
+  <div *ngIf="!contactForm.controls.password?.valid && (contactForm.controls.password?.dirty || contactForm.controls.password?.touched)">
+    <p>sai roi em</p>
+  </div>
+  <br>
+  <button  type="submit" [disabled]="!contactForm.valid" value="login">submit</button>
+</form>
+
+<p>name: {{userInfomation}}</p>
+

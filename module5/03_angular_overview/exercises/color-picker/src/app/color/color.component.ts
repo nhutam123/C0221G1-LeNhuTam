@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorComponent implements OnInit {
   color: any;
+  blue = 0;
+  red = 250;
+  green = 0;
 
   constructor() { }
 
@@ -14,7 +17,6 @@ export class ColorComponent implements OnInit {
   }
 
   onchaneColor(value: any) {
-    this.color = value;
 
   }
 }
