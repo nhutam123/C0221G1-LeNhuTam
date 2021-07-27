@@ -14,7 +14,7 @@ export class RegisterFormComponent implements OnInit {
   users: User[] = [];
   countries = ['japan', 'usa', 'canada'];
   password: string;
-  email: string;
+  email1: string;
   confirmPassword: string;
   age: number;
   country: string;

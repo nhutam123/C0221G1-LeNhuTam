@@ -2,11 +2,11 @@
 
 <form class="container" (ngSubmit)="onSubmit(formSubmid)" #formSubmid="ngForm" novalidate >
   <label>email : </label>
-  <input class="form-control" type="text" required pattern="^[0-9a-zA-Z]{1,}@[0-9a-zA-Z.]{1,}$" [(ngModel)]="email"  name="email">
-  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.pattern">
+  <input class="form-control" type="text" required pattern="^[0-9a-zA-Z]{1,}@[0-9a-zA-Z.]{1,}$" [(ngModel)]="email1"  name="email">
+  <div style="color: red" *ngIf="formSubmid.controls.email1?.errors?.pattern">
     pattern abc@gmail
   </div>
-  <div style="color: red" *ngIf="formSubmid.controls.email?.errors?.required && (formSubmid.controls.email?.dirty || formSubmid.controls.email?.touched)">
+  <div style="color: red" *ngIf="formSubmid.controls.email1?.errors?.required && (formSubmid.controls.email1?.dirty || formSubmid.controls.email1?.touched)">
     email is not required
   </div>
 
