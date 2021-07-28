@@ -1,0 +1,18 @@
+<a  routerLink="/dictionary/create">create new word</a>
+<table border="1px">
+  <tr>
+    <th>STT</th>
+    <th>word:</th>
+    <th>Mean: </th>
+    <th>synonym</th>
+    <th>view</th>
+  </tr>
+  <tr *ngFor="let word of words, let i = index">
+    <td>{{i+1}}</td>
+    <td>{{word.word}}</td>
+    <td>{{word.mean}}</td>
+    <td>{{word.synonym}}</td>
+    <td><button (click)="openDialog(word.word, word.mean, word.synonym)">View</button></td>
+
+  </tr>
+</table>
