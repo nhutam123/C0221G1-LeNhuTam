@@ -1,0 +1,27 @@
+<h1>Update product</h1>
+
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+
+      <label>Mã sản phẩm:</label>
+      <input class="form-control" type="hidden" [(ngModel)]="data.id" formControlName="id" >
+
+
+      <label>Tên sản phẩm:</label>
+      <input class="form-control" type="text" [(ngModel)]="data.name" name="name"  formControlName="name" >
+
+
+      <label>Giá sản phẩm</label>
+      <input class="form-control" type="number" [(ngModel)]="data.price" formControlName="price" >
+
+
+      <label>Mô tả về sản phẩm</label>
+      <input class="form-control" type="text" [(ngModel)]="data.descripttion" formControlName="description" >
+
+<div class="d-flex justify-content-between">
+  <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">update</button>
+  <button class="btn btn-danger mt-3 "  mat-dialog-close="" >close</button>
+
+</div>
+
+</form>
+

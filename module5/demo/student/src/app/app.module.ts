@@ -14,6 +14,8 @@ import { DialogViewComponent } from './dialog-view/dialog-view.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {HttpClientModule} from '@angular/common/http';
+import { StudentEditComponent } from './student-edit/student-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     StudentCreateComponent,
     DialogViewComponent,
     LoginDialogComponent,
-    NavbarComponent
+    NavbarComponent,
+    StudentEditComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    HttpClientModule
 
   ],
   providers: [],

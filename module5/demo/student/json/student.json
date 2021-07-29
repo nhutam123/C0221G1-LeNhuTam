@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "name": "Nguyen thi thuong",
+      "dateOfBirth": "1900-04-04",
+      "id": 3
+    },
+    {
+      "name": "Nhat4",
+      "dateOfBirth": "1900-04-05",
+      "id": 4
+    },
+    {
+      "name": "như tâm",
+      "dateOfBirth": "1900-04-04",
+      "id": 5
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 <div class="container mt-4">
   <a routerLink="/create" class="btn btn-success mb-2 " >Create new student</a>
   <input class="search ml-3 h-100" placeholder="Search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" >
+  <h3 class="text-success">{{data}}</h3>
 </div>
 
 
@@ -12,6 +13,7 @@
     <th>Date of brith : </th>
     <th>Delete  </th>
     <th>View  </th>
+    <th>Edit  </th>
   </tr>
   <tr *ngFor="let student of students | filter: searchText | paginate : config , let i = index">
     <td>{{i + 1 + config.itemsPerPage * (config.currentPage-1) }}</td>
@@ -20,6 +22,7 @@
     <td>{{student.dateOfBirth}}</td>
     <td><button class="btn btn-danger" (click)="openDialog(student.id , student.name)">delete</button></td>
     <td><button class="btn btn-danger" (click)="openDialog1(student.id , student.name , student.dateOfBirth )">view</button></td>
+    <td><button class="btn btn-danger" (click)="openEditDialog(student.id , student.name , student.dateOfBirth )">Edit</button></td>
 
   </tr>
 </table>

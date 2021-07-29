@@ -1,29 +1,24 @@
 import { Injectable } from '@angular/core';
 import {Student} from '../model/student';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentServiceService {
-  students: Student[] = [{
-    id: 1 , name: 'tam' , dateOfBirth: '1993-05-15' } ,
-    {id: 2 , name: 'tấn' , dateOfBirth: '1990-04-03'},
-    {id: 3 , name: 'hiếu' , dateOfBirth: '1995-04-03'},
-    {id: 4 , name: 'hiếu' , dateOfBirth: '1995-04-03'},
-    {id: 5 , name: 'hiếu' , dateOfBirth: '1995-04-03'}] ;
-  constructor() { }
-  getAll() {
-    return this.students;
+  public url = 'http://localhost:3000/students';
+  constructor(private http: HttpClient) { }
+  getAll(): Observable<any> {
+    return this.http.get(this.url);
   }
-  save(student: Student): void {
-    this.students.push(student);
+  save(student: Student): Observable<any> {
+     return   this.http.post(this.url, student);
   }
-  delete(id: string): void {
-    for (let i = 0; i < this.students.length; i++ ) {
-      // @ts-ignore
-      if ( this.students[i].id === id) {
-        this.students.splice(i, 1);
-      }
-    }
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  update(id , student): Observable<any> {
+    return this.http.patch(`${this.url}/${id}`, student);
   }
 }

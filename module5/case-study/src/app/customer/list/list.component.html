@@ -1,1 +1,31 @@
-<p>list works!</p>
+<div class="container mt-4">
+  <a routerLink="/customer/create" class="btn btn-success mb-2 " >Create new customer</a>
+  <input class="search ml-3 h-100" placeholder="Search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" >
+</div>
+
+
+<table  class="table table-dark container">
+  <tr>
+    <th>STT: </th>
+    <th>Id: </th>
+    <th>Name: </th>
+    <th>Date of brith : </th>
+    <th>Delete  </th>
+    <th>Edit  </th>
+    <th>View  </th>
+  </tr>
+  <tr *ngFor="let customer of customers | filter: searchText | paginate : config , let i = index">
+    <td>{{i + 1 + config.itemsPerPage * (config.currentPage-1) }}</td>
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.dateOfBirth}}</td>
+    <td><button class="btn btn-danger" (click)="openDialog(customer.id , customer.name)">delete</button></td>
+    <td><button class="btn btn-danger" (click)="openEditDialog(customer.id , customer.name , customer.dateOfBirth)">edit</button></td>
+    <td><button class="btn btn-danger" (click)="openDialog1(customer.id , customer.name , customer.dateOfBirth )">view</button></td>
+
+  </tr>
+</table>
+<pagination-controls (pageChange)="pageChanged($event)" ></pagination-controls>
+<!--<app-dialog-delete (deleteStudent)="delete1($event)"></app-dialog-delete>-->
+
+

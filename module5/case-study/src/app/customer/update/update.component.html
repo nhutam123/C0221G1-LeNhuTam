@@ -1,0 +1,25 @@
+<h1>Update product</h1>
+
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+
+  <input class="form-control" type="hidden" [(ngModel)]="data.id" formControlName="id" >
+
+
+  <label>name</label>
+  <input class="form-control" type="text" [(ngModel)]="data.name" name="name"  formControlName="name" >
+
+
+  <label>birthday </label>
+  <input class="form-control" type="text" [(ngModel)]="data.dateOfBirth" formControlName="dateOfBirth" >
+
+
+<!--  <label>Mô tả về sản phẩm</label>-->
+<!--  <input class="form-control" type="text"  formControlName="description" >-->
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">update</button>
+    <button class="btn btn-danger mt-3 " mat-button mat-dialog-close="">close</button>
+
+  </div>
+
+</form>
