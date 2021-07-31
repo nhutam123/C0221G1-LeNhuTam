@@ -21,4 +21,12 @@ export class StudentServiceService {
   update(id , student): Observable<any> {
     return this.http.patch(`${this.url}/${id}`, student);
   }
+  search(searchText, dateFrom , dateTo): Observable<any> {
+    if (dateFrom === undefined) {
+      dateFrom = '1000-12-12';
+    }
+    return this.http.get(this.url +  '?dateOfBirth_gte=' + dateFrom + '&dateOfBirth_lte=' + dateTo + '&name_like=' + searchText );
+    // return this.http.get(this.url +  '?dateOfBirth_gte=' + dateFrom + '&dateOfBirth_lte=' + dateTo  );
+
+  }
 }

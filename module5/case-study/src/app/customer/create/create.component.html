@@ -1,16 +1,20 @@
 <form class="container mt-5" [formGroup]="customer"  (ngSubmit)="create()" >
   <table class="table table-striped table-dark">
     <tr>
-      <th><label>Id : </label></th>
-      <td> <input class="form-control" type="text" name="id" formControlName="id"></td>
-    </tr>
-    <tr>
       <th><label>Name : </label></th>
       <td><input class="form-control" type="text" name="name" formControlName="name"></td>
     </tr>
     <tr>
       <th><label>Date of birth : </label></th>
       <td><input class="form-control" type="text" name="dateOfBirth" formControlName="dateOfBirth"></td>
+    </tr>
+    <tr>
+      <th>customer type</th>
+      <td>
+        <select class="form-control" formControlName="type">
+          <option *ngFor="let type of customerTypes" [ngValue]="type">{{type.type}}</option>
+        </select>
+      </td>
     </tr>
     <tr>
 

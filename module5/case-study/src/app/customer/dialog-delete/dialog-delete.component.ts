@@ -15,6 +15,6 @@ export class DialogDeleteComponent implements OnInit {
   }
 
   delete(id: any) {
-    this.customerService.delete(id);
+    this.customerService.delete(id).subscribe();
   }
 }

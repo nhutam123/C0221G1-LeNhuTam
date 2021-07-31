@@ -3,7 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {StudentServiceService} from '../service/student-service.service';
 import {HttpClient} from '@angular/common/http';
 import {NavigationExtras, Router} from '@angular/router';
-import {Student} from '../model/student';
+
 
 @Component({
   selector: 'app-dialog-delete',
@@ -12,7 +12,6 @@ import {Student} from '../model/student';
 })
 export class DialogDeleteComponent implements OnInit {
   @Output() deleteStudent = new EventEmitter();
-  // tslint:disable-next-line:max-line-length
   constructor(@Inject(MAT_DIALOG_DATA) public data,
               private studentServiceService: StudentServiceService ,
               private http: HttpClient ,

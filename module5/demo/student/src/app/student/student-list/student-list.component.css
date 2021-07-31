@@ -1,7 +1,6 @@
 .search {
-  height: 100px;
   padding: 5px 5px 5px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   border-color: blue;
 }

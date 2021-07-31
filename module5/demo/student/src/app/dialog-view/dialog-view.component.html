@@ -1,8 +1,9 @@
-<h2>Detail</h2>
+<h1 class="text-center font-weight-bold text-danger">Detail</h1>
 <p mat-dialog-title></p>
-<h3>Id : {{data.id}} </h3>
-<h3>Name : {{data.name}} </h3>
-<h3>Birthday : {{data.dateOfBirth}} </h3>
-<mat-dialog-actions class="d-flex justify-content-between mt-5">
-  <button class="btn btn-danger" mat-button mat-dialog-close="" >Close</button>
+<h3 class="font-weight-bold">Id : {{data.id}} </h3>
+<h3 class="font-weight-bold">Name : {{data.name}} </h3>
+<h3 class="font-weight-bold">Birthday : {{data.dateOfBirth}} </h3>
+<h3 class="font-weight-bold">teacher : {{data.teacher.name}} </h3>
+<mat-dialog-actions class="d-flex justify-content-end">
+  <button class="btn btn-success " mat-button mat-dialog-close="" >Close</button>
 </mat-dialog-actions>

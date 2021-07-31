@@ -15,6 +15,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { DialogDeleteComponent } from './customer/dialog-delete/dialog-delete.component';
 import { UpdateComponent } from './customer/update/update.component';
 import { ViewComponent } from './customer/view/view.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ViewComponent } from './customer/view/view.component';
     NgxPaginationModule,
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Student} from '../model/student';
+import {Student} from '../../model/student';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import {DialogDeleteComponent} from '../dialog-delete/dialog-delete.component';
-import {StudentServiceService} from '../service/student-service.service';
-import {DialogViewComponent} from '../dialog-view/dialog-view.component';
+import {DialogDeleteComponent} from '../../dialog-delete/dialog-delete.component';
+import {StudentServiceService} from '../../service/student-service.service';
+import {DialogViewComponent} from '../../dialog-view/dialog-view.component';
 import {NavigationExtras, Router} from '@angular/router';
 import {StudentEditComponent} from '../student-edit/student-edit.component';
 
@@ -19,8 +19,10 @@ export class StudentListComponent implements OnInit {
   // tslint:disable-next-line:no-unused-expression
   students: Student[];
   config: any;
-  searchText: any;
+  searchText = '';
   data = '';
+  dateFrom: string;
+  dateTo: string ;
 
   constructor(public dialog: MatDialog ,
               private studentServiceService: StudentServiceService,
@@ -55,10 +57,10 @@ export class StudentListComponent implements OnInit {
     });
   }
 
-  openDialog1(id: number, name: string, dateOfBirth: string) {
+  openDialog1(id: number, name: string, dateOfBirth: string , teacher) {
     const dialog1 = this.dialog.open(DialogViewComponent , {
-      height: '300px' , width: '400px' ,
-      data: {id , name , dateOfBirth}
+      height: '350px' , width: '430px' ,
+      data: {id , name , dateOfBirth , teacher}
     });
   }
   getAll() {
@@ -67,13 +69,20 @@ export class StudentListComponent implements OnInit {
     });
   }
 
-  openEditDialog(id: any, name: any, dateOfBirth: any) {
+  openEditDialog(id: any, name: any, dateOfBirth: any, teacher) {
     const dialog1 = this.dialog.open(StudentEditComponent , {
-      height: '300px' , width: '400px' ,
-      data: {id , name , dateOfBirth}
+      height: '370px' , width: '400px' ,
+      data: {id , name , dateOfBirth, teacher}
     });
     dialog1.afterClosed().subscribe(() => {
       this.ngOnInit();
+    });
+  }
+
+  search() {
+    this.studentServiceService.search(this.searchText, this.dateFrom, this.dateTo).subscribe(next => {
+      this.students = next;
+      console.log(this.students);
     });
   }
 }

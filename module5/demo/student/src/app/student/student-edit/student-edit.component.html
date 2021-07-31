@@ -1,26 +1,23 @@
-<h1>Update product</h1>
+<h1 class="font-weight-bold text-center">Update Student</h1>
 
-<form [formGroup]="productForm" (ngSubmit)="submit()">
+<form [formGroup]="studentForm" (ngSubmit)="update()">
 
+  <label>Mã sản phẩm:</label>
   <input class="form-control" type="hidden"  formControlName="id" >
 
-  <label>name</label>
+
+  <label>Tên sản phẩm:</label>
   <input class="form-control" type="text"  name="name"  formControlName="name" >
 
 
-  <label>birthday </label>
+  <label>birthday</label>
   <input class="form-control" type="text"  formControlName="dateOfBirth" >
-
-  <label>customer type </label>
-  <select class="form-control" [compareWith]="compareFn"  formControlName="customerType">
-    <option *ngFor="let country of customerTypes" [ngValue]="country">
-      {{country.type}}
+  <label>teacher</label>
+  <select class="form-control" [compareWith]="compareFn"  formControlName="teacher">
+    <option *ngFor="let country of teachers" [ngValue]="country">
+      {{country.name}}
     </option>
   </select>
-
-
-<!--  <label>Mô tả về sản phẩm</label>-->
-<!--  <input class="form-control" type="text"  formControlName="description" >-->
 
   <div class="d-flex justify-content-between">
     <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">update</button>
@@ -29,3 +26,4 @@
   </div>
 
 </form>
+

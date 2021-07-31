@@ -1,19 +1,90 @@
 {
   "students": [
     {
-      "name": "Nguyen thi thuong",
+      "name": "iphone7",
       "dateOfBirth": "1900-04-04",
-      "id": 3
+      "teacher": {
+        "id": 1,
+        "name": "chánh tv"
+      },
+      "id": 9
     },
     {
-      "name": "Nhat4",
+      "name": "Nguyen thi thai",
       "dateOfBirth": "1900-04-05",
-      "id": 4
+      "teacher": {
+        "id": 1,
+        "name": "chánh tv"
+      },
+      "id": 10
+    },
+    {
+      "name": "iphone7",
+      "dateOfBirth": "1900-04-04",
+      "teacher": {
+        "id": 2,
+        "name": "trung dp"
+      },
+      "id": 11
+    },
+    {
+      "name": "Nguyen thi thuong",
+      "dateOfBirth": "1900-04-04",
+      "teacher": {
+        "id": 2,
+        "name": "trung dp"
+      },
+      "id": 12
+    },
+    {
+      "name": "iphone7",
+      "dateOfBirth": "2021-07-15",
+      "teacher": {
+        "id": 2,
+        "name": "trung dp"
+      },
+      "id": 13
+    },
+    {
+      "name": "iphone7",
+      "dateOfBirth": "2021-07-07",
+      "teacher": {
+        "id": 3,
+        "name": "hải tt"
+      },
+      "id": 14
+    },
+    {
+      "name": "Nguyen thi thuong",
+      "dateOfBirth": "2021-07-22",
+      "teacher": {
+        "id": 2,
+        "name": "trung dp"
+      },
+      "id": 15
     },
     {
       "name": "như tâm",
-      "dateOfBirth": "1900-04-04",
-      "id": 5
+      "dateOfBirth": "2021-07-07",
+      "teacher": {
+        "id": 2,
+        "name": "trung dp"
+      },
+      "id": 16
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "chánh tv"
+    },
+    {
+      "id": 2,
+      "name": "trung dp"
+    },
+    {
+      "id": 3,
+      "name": "hải tt"
     }
   ]
 }

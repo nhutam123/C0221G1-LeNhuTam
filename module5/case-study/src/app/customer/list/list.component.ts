@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {MatDialog} from '@angular/material/dialog';
 import {CustomerService} from '../../service/customer.service';
 import {DialogDeleteComponent} from '../dialog-delete/dialog-delete.component';
 import {UpdateComponent} from '../update/update.component';
 import {ViewComponent} from '../view/view.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -15,12 +16,21 @@ export class ListComponent implements OnInit {
   searchText: any;
   customers: Customer[] = [];
   config: any;
+  data = '';
+  dateFrom: any;
+  dateTo: any;
 
-  constructor(public dialog: MatDialog, private  customerService: CustomerService) {
+  constructor(public dialog: MatDialog,
+              private  customerService: CustomerService,
+              private router: Router) {
     this.config = {
       itemsPerPage: 3,
       currentPage: 1
     };
+    const state = this.router.getCurrentNavigation().extras.state as {data: string};
+    if (state != null) {
+      this.data = state.data;
+    }
   }
 
   ngOnInit(): void {
@@ -28,16 +38,20 @@ export class ListComponent implements OnInit {
   }
 
   openDialog(id: any, name: any) {
-   let dialog = this.dialog.open(DialogDeleteComponent, {
+   const dialog = this.dialog.open(DialogDeleteComponent, {
         height: '250px' , width: '300px',
         data: {id , name}
     });
+   dialog.afterClosed().subscribe(() => {
+     this.ngOnInit();
+     confirm('xóa thành công');
+   });
   }
 
-  openDialog1(id: any, name: any, dateOfBirth: any) {
-    let  dialog = this.dialog.open(ViewComponent, {
-      height: '300px' , width: '400px' ,
-      data: {id , name , dateOfBirth}
+  openDialog1(id: any, name: any, dateOfBirth: any, customerType) {
+    const  dialog = this.dialog.open(ViewComponent, {
+      height: '350px' , width: '450px' ,
+      data: {id , name , dateOfBirth, customerType}
     });
   }
 
@@ -45,12 +59,21 @@ export class ListComponent implements OnInit {
     this.config.currentPage = event;
   }
   getAll() {
-   this.customers =  this.customerService.getAll();
+    this.customerService.getAll().subscribe(next => {
+      this.customers = next;
+    });
   }
 
-  openEditDialog(id: any, name: any, dateOfBirth: any) {
-    let dialog = this.dialog.open(UpdateComponent, {
-      height: '450px', width: '450px', data: {id, name, dateOfBirth}
+  openEditDialog(id, name, dateOfBirth, type) {
+    const dialog = this.dialog.open(UpdateComponent, {
+      height: '450px', width: '450px', data: {id, name, dateOfBirth, type}
     });
+    dialog.afterClosed().subscribe(() => {
+      this.ngOnInit();
+    });
+  }
+
+  search() {
+
   }
 }
