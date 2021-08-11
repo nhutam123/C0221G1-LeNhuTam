@@ -5,6 +5,9 @@
   <div *ngIf="!contactForm.controls.name?.valid && (contactForm.controls.name?.dirty || contactForm.controls.name?.touched)">
     <p>sai roi em</p>
   </div>
+  <div *ngIf="!contactForm.controls.name?.errors?.minlength && (contactForm.controls.name?.dirty || contactForm.controls.name?.touched)">
+    <p>sai roi em</p>
+  </div>
   <label>password : </label>
   <input type="text"  name="password" formControlName="password">
   <div *ngIf="!contactForm.controls.password?.valid && (contactForm.controls.password?.dirty || contactForm.controls.password?.touched)">

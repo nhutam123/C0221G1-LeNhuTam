@@ -1,0 +1,59 @@
+{
+  "patients": [
+    {
+      "name": "tho",
+      "startTime": "2021-08-05",
+      "endTime": "2021-09-05",
+      "doctor": "tam",
+      "patientCode": "kh-003",
+      "medicalRecordCode": "bn-114",
+      "reason": "covid-19",
+      "method": "uống thuốc",
+      "id": 4
+    },
+    {
+      "name": "tuan",
+      "startTime": "2021-08-05",
+      "endTime": "2021-09-05",
+      "doctor": "tam",
+      "patientCode": "kh-003",
+      "medicalRecordCode": "bn-114",
+      "reason": "covid-19",
+      "method": "uống thuốc",
+      "id": 5
+    },
+    {
+      "name": "tri",
+      "startTime": "2021-08-05",
+      "endTime": "2021-09-05",
+      "doctor": "tam",
+      "patientCode": "kh-003",
+      "medicalRecordCode": "bn-114",
+      "reason": "covid-19",
+      "method": "uống thuốc",
+      "id": 7
+    },
+    {
+      "name": "dũng",
+      "startTime": "2021-08-05",
+      "endTime": "2021-09-05",
+      "doctor": "tam",
+      "patientCode": "kh-003",
+      "medicalRecordCode": "bn-114",
+      "reason": "covid-19",
+      "method": "uống thuốc",
+      "id": 8
+    },
+    {
+      "name": "song",
+      "startTime": "2021-08-05",
+      "endTime": "2021-09-05",
+      "doctor": "tam",
+      "patientCode": "kh-003",
+      "medicalRecordCode": "bn-114",
+      "reason": "covid-19",
+      "method": "uống thuốc",
+      "id": 9
+    }
+  ]
+}

@@ -13,12 +13,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  searchText: any;
+  searchText = '';
   customers: Customer[] = [];
   config: any;
   data = '';
-  dateFrom: any;
-  dateTo: any;
+  dateFrom: string;
+  dateTo: string;
 
   constructor(public dialog: MatDialog,
               private  customerService: CustomerService,
@@ -44,7 +44,6 @@ export class ListComponent implements OnInit {
     });
    dialog.afterClosed().subscribe(() => {
      this.ngOnInit();
-     confirm('xóa thành công');
    });
   }
 
@@ -74,6 +73,9 @@ export class ListComponent implements OnInit {
   }
 
   search() {
-
+    this.customerService.search(this.searchText, this.dateFrom, this.dateTo).subscribe(next => {
+      this.customers = next;
+      console.log(this.customers);
+    });
   }
 }

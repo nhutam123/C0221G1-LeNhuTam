@@ -1,0 +1,19 @@
+Bước 1: Add plugin Sonarqube
+id "org.sonarqube" version "3.0"
+---------------------------------------------------------------------------
+Bước 2: Cấu hình host url, login, projectKey, projectName…
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://3.141.165.122:9000'
+        property 'sonar.login', 'f4570cffe1dd5bf39ecbeed0ef04eef921709b5a'
+        property 'sonar.projectKey', 'Cxx2xG1_ReviewCode_AccountName'
+        property 'sonar.projectName', 'Cxx2xG1_ReviewCode_AccountName'
+    }
+}
+---------------------------------------------------------------------------
+Bước 3: Scan project Gradle
+Mở command ở thư mục gốc của Project. Sử dụng lệnh: gradlew sonarqube
+-> Vào server Sonarqube để xem kết quả.
+URL: http://3.141.165.122:9000/
+Account: cgdn_student
+Password: Abcd1234!

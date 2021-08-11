@@ -1,0 +1,94 @@
+<form class="form container mt-2 " [formGroup]="PatientFormn" (ngSubmit)="edit()" novalidate>
+  <p class="text-center  text-info font-weight-bold head">edit new patient</p>
+  <table>
+    <tr>
+      <th>
+        <label class="mt-3 font-weight-bold text-info">Name : </label>
+
+        <input class="form-control  " placeholder=" name" type="text" formControlName="name">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.name?.errors?.required && (PatientFormn.controls.name?.dirty || PatientFormn.controls.name?.touched)">
+          name không được để trống
+        </div>
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.name?.errors?.pattern && (PatientFormn.controls.name?.dirty || PatientFormn.controls.name?.touched)">
+          tên không được chưa số
+        </div>
+      </th>
+      <th class="ml-5">
+        <label class="mt-3 font-weight-bold text-info">mã bệnh án : </label>
+        <input class="form-control" type="text" disabled  formControlName="medicalRecordCode">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.medicalRecordCode?.errors?.required && (PatientFormn.controls.medicalRecordCode?.dirty || PatientFormn.controls.medicalRecordCode?.touched)">
+          mã bênh án không được để trống
+        </div>
+      </th>
+
+    </tr>
+    <tr>
+      <td>
+        <label class="mt-3 font-weight-bold text-info"> mã bệnh nhân </label>
+        <input class="form-control" type="text"  formControlName="patientCode">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.patientCode?.errors?.required && (PatientFormn.controls.patientCode?.dirty || PatientFormn.controls.patientCode?.touched)">
+          mã bênh nhân không được để trống
+        </div>
+      </td>
+      <td>
+        <label class="mt-3 font-weight-bold text-info"> startTime </label>
+        <input class="form-control" type="date"  formControlName="startTime">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.startTime?.errors?.required && (PatientFormn.controls.startTime?.dirty || PatientFormn.controls.startTime?.touched)">
+          ngày sinh không được để trống
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class="mt-3 font-weight-bold text-info"> endTime </label>
+        <input class="form-control" type="date"  formControlName="endTime">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.endTime?.errors?.required && (PatientFormn.controls.endTime?.dirty || PatientFormn.controls.endTime?.touched)">
+          ngày ra viện không được để trống
+        </div>
+      </td>
+      <td>
+        <label class="mt-3 font-weight-bold text-info"> lý do </label>
+        <input class="form-control" type="text"  formControlName="reason">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.reason?.errors?.required && (PatientFormn.controls.reason?.dirty || PatientFormn.controls.reason?.touched)">
+          lý do không được để trống
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class="mt-3 font-weight-bold text-info"> hướng điều trị </label>
+        <input class="form-control" type="text"  formControlName="method">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.method?.errors?.required && (PatientFormn.controls.method?.dirty || PatientFormn.controls.method?.touched)">
+          hướng điều trị không được để trống
+        </div>
+      </td>
+      <td>
+        <label class="mt-3 font-weight-bold text-info"> bác sĩ điều trị </label>
+        <input class="form-control" type="text"  formControlName="doctor">
+        <div style="color: red"
+             *ngIf="PatientFormn.controls.doctor?.errors?.required && (PatientFormn.controls.doctor?.dirty || PatientFormn.controls.doctor?.touched)">
+          bác sĩ điểu trị không được để trống
+        </div>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden"  formControlName="id">
+
+  <div class="d-flex justify-content-between ">
+    <input [disabled]="PatientFormn.invalid" class="btn btn-danger mt-3" mat-dialog-close="" type="submit" value="edit">
+    <input  class="btn btn-success mt-3" mat-dialog-close=""  value="cancel">
+  </div>
+
+
+
+</form>
+
+

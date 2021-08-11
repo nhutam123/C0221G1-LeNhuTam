@@ -21,7 +21,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-
+@RestController
+@CrossOrigin
 @org.springframework.stereotype.Controller
 @RequestMapping("/home")
 public class Controller {
@@ -78,28 +79,7 @@ public class Controller {
         return "redirect:/home/list";
 
     }
-//
-//    @GetMapping("/edit")
-//    public String showEditForm(@RequestParam("id") Integer id, Model model){
-//        Question question=iQuestionService.findById(id);
-//        StudentDto studentDto=new StudentDto();
-//        BeanUtils.copyProperties(student,studentDto);
-//        model.addAttribute("studentDto",studentDto);
-//        return "/edit";
-//    }
-//
-//    @PostMapping("/edit")
-//    public String edit(@ModelAttribute("studentDto") StudentDto studentDto,BindingResult bindingResult,Model model){
-//        if (bindingResult.hasFieldErrors()){
-//            model.addAttribute("studentDto",studentDto);
-//            return "edit";
-//        }
-//        Student student=new Student();
-//        BeanUtils.copyProperties(studentDto,student);
-//        iQuestionService.save(student);
-//        return "redirect:list";
-//
-//    }
+
     @PostMapping("/delete")
     public String delete(@RequestParam("id") Integer id , RedirectAttributes redirectAttributes){
        Question question= iQuestionService.findById(id);

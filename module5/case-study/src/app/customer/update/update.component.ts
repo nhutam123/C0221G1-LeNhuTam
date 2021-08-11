@@ -35,6 +35,7 @@ export class UpdateComponent implements OnInit {
     }
 
   submit() {
+    console.log(this.productForm.value)
     this.customerService.update(this.productForm.value).subscribe();
   }
 }

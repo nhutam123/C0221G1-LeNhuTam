@@ -1,0 +1,30 @@
+{
+  "cars": [
+    {
+      "id": 2,
+      "name": "crv",
+      "producer": {
+        "id": 2,
+        "name": "honda"
+      }
+    },
+    {
+      "name": "Nguyen thi thuong",
+      "producer": {
+        "id": 2,
+        "name": "honda"
+      },
+      "id": 3
+    }
+  ],
+  "producers": [
+    {
+      "id": 1,
+      "name": "mazda"
+    },
+    {
+      "id": 2,
+      "name": "honda"
+    }
+  ]
+}

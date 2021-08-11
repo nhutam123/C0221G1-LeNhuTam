@@ -16,6 +16,7 @@ import { DialogDeleteComponent } from './customer/dialog-delete/dialog-delete.co
 import { UpdateComponent } from './customer/update/update.component';
 import { ViewComponent } from './customer/view/view.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from '@angular/common/http';
     NavbarComponent,
     DialogDeleteComponent,
     UpdateComponent,
-    ViewComponent
+    ViewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

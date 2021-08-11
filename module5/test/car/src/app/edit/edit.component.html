@@ -1,0 +1,25 @@
+<h1 class="font-weight-bold text-center">Update Student</h1>
+
+<form [formGroup]="carForm" (ngSubmit)="edit()">
+
+  <label>Mã sản phẩm:</label>
+  <input class="form-control" type="hidden"  formControlName="id" >
+  <label>Tên sản phẩm:</label>
+  <input class="form-control" type="text"  name="name"  formControlName="name" >
+  <label>teacher</label>
+  <select class="form-control" [compareWith]="compareFn"  formControlName="producer">
+    <option *ngFor="let country of producers" [ngValue]="country">
+      {{country.name}}
+    </option>
+  </select>
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">update</button>
+    <button class="btn btn-danger mt-3 " mat-button mat-dialog-close="">close</button>
+
+  </div>
+
+</form>
+
+
+

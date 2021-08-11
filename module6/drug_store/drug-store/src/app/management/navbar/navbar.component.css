@@ -1,0 +1,137 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  font-family: Tahoma;
+}
+
+.btn-delete{
+  background-color: #dc3545;
+}
+
+.btn-edit {
+  background-color: #567FEA;
+}
+.btn-edit:hover{
+  color: white;
+  background-color: rgba(86,127,234,0.8) ;
+}
+
+.btn-nav{
+
+}
+
+.btn-pay{
+  background-color: #2FC1A6;
+  color: white;
+}
+.btn-print {
+  background-color: #242a61;
+  color: white;
+}
+
+.btn-print:hover{
+  color: white;
+}
+.btn-search {
+  background-color: #567FEA;
+}
+
+#header{
+  /*background-image: linear-gradient(#1a2bc6,#567FEA);*/
+  background-image: linear-gradient(#242a61,#567FEA);
+  /*background-color: #242a61;*/
+  height: 52px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+
+}
+#list {
+  display: none;
+}
+#list i {
+  font-size: 40px;
+  color: white;
+  margin: 5px 0 0 10px;
+}
+#header .search-icon{
+  float: right;
+}
+#header .search-icon .icon2{
+  color: white;
+  padding: 0 18px;
+  line-height: 52px;
+}
+#header .search-icon:hover .icon2{
+  background-color: red;
+  display: block;
+}
+#nav ul li{
+  list-style: none;
+}
+#nav  li{
+  float: left;
+  list-style: none;
+  position: relative;
+}
+#nav li a{
+  color: white;
+  line-height: 52px;
+  text-decoration: none;
+  padding: 0 24px;
+  font-weight: bold;
+
+}
+#nav .subnav {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0%;
+  display: none;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  border-radius: 5px;
+}
+#nav >li:hover> a{
+  color: white;
+  background-color: rgba(86,127,234,0.3);
+  display: inline-block;
+}
+#nav .subnav li a{
+  color: black;
+  width: 175px;
+}
+#nav li:hover .subnav{
+  display: inline-block;
+}
+#nav .subnav li:hover a {
+  display: inline-block;
+  color: black;
+  background-color: rgba(86,127,234,0.3);
+
+}
+#nav .icon1{
+  font-size: 13px;
+}
+
+#user-image {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: 8px;
+}
+
+#user-name{
+  color: white;
+  margin-top: 12px;
+  margin-right: 10px;
+}
+#bao-cao {
+  width: 170px;
+  text-align: center;
+}

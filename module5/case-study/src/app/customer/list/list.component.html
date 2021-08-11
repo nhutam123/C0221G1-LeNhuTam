@@ -35,8 +35,8 @@
     <td>{{customer.dateOfBirth}}</td>
     <td>{{customer.type.type}}</td>
     <td><button class="btn btn-danger" (click)="openDialog(customer.id , customer.name)">delete</button></td>
-    <td><button class="btn btn-danger" (click)="openEditDialog(customer.id , customer.name , customer.dateOfBirth, customer.type)">edit</button></td>
-    <td><button class="btn btn-danger" (click)="openDialog1(customer.id , customer.name , customer.dateOfBirth, customer.type )">view</button></td>
+    <td><button class="btn btn-warning" (click)="openEditDialog(customer.id , customer.name , customer.dateOfBirth, customer.type)">edit</button></td>
+    <td><button class="btn btn-success" (click)="openDialog1(customer.id , customer.name , customer.dateOfBirth, customer.type )">view</button></td>
 
   </tr>
 </table>

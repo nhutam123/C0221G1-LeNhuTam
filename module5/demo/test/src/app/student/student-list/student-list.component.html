@@ -1,0 +1,47 @@
+<div class="container mt-4 d-flex justify-content-between mb-3">
+  <div>
+    <a routerLink="/create" class="btn btn-success  " >Create new student</a>
+    <h3 class="text-danger">{{data}}</h3>
+  </div>
+
+  <div>
+    <label class="mr-2 font-weight-bold">from</label>
+    <input class="search mr-2" placeholder="DateFrom" type="date" [(ngModel)]="dateFrom" name="search"  >
+    <label class="mr-2 font-weight-bold">to</label>
+    <input class="search mr-2" placeholder="DateTo" type="date" [(ngModel)]="dateTo" name="search"  >
+    <input class="search" placeholder="name" type="text" [(ngModel)]="searchText" name="search"  >
+    <select class="search ml-2"  [(ngModel)]="type" >
+      <option [ngValue]="null" [hidden] ="true">chọn teacher</option>
+      <option class="opt" *ngFor="let type of teachers" [ngValue]="type"   >{{type.name}}</option>
+    </select>
+
+    <button class="btn btn-success ml-3 " (click)="search()">Search</button>
+  </div>
+</div>
+
+<table  class="table table-dark container">
+  <tr>
+    <th>STT: </th>
+    <th>Id: </th>
+    <th>Name: </th>
+    <th>Date of brith : </th>
+    <th>Teacher : </th>
+    <th>Delete  </th>
+    <th>View  </th>
+    <th>Edit  </th>
+  </tr>
+  <tr *ngFor="let student of students  | paginate : config , let i = index">
+    <td>{{i + 1 + config.itemsPerPage * (config.currentPage-1) }}</td>
+    <td>{{student.id}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.dateOfBirth}}</td>
+    <td>{{student.teacher.name}}</td>
+    <td><button class="btn btn-danger" (click)="openDialog(student.id , student.name)">delete</button></td>
+    <td><button class="btn btn-success" (click)="openDialog1(student.id , student.name , student.dateOfBirth , student.teacher)">view</button></td>
+    <td><button class="btn btn-warning" (click)="openEditDialog(student)">Edit</button></td>
+
+  </tr>
+</table>
+<pagination-controls (pageChange)="pageChanged($event)" ></pagination-controls>
+<!--<app-dialog-delete (deleteStudent)="delete1($event)"></app-dialog-delete>-->
+

@@ -20,8 +20,8 @@ export class CategoryEditComponent implements OnInit {
       this.id = +paramMap.get('id');
       const category = this.getCategory(this.id);
       this.categoryForm = new FormGroup({
-        id: new FormControl(category.id),
-        name: new FormControl(category.name),
+        // id: new FormControl(category.id),
+        // name: new FormControl(category.name),
       });
     });
   }

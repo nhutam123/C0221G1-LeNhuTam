@@ -13,14 +13,10 @@
 
   <label>customer type </label>
   <select class="form-control" [compareWith]="compareFn"  formControlName="customerType">
-    <option *ngFor="let country of customerTypes" [ngValue]="country">
-      {{country.type}}
+    <option *ngFor="let customerType of customerTypes" [ngValue]="customerType">
+      {{customerType.type}}
     </option>
   </select>
-
-
-<!--  <label>Mô tả về sản phẩm</label>-->
-<!--  <input class="form-control" type="text"  formControlName="description" >-->
 
   <div class="d-flex justify-content-between">
     <button class="btn btn-success mt-3 " mat-dialog-close=""  type="submit">update</button>

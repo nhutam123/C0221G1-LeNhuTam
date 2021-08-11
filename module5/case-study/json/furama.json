@@ -1,26 +1,13 @@
 {
   "customers": [
     {
-      "name": "iphone79",
-      "type": {
-        "id": 1,
-        "type": "gold"
-      },
-      "dateOfBirth": "1900-04-04",
-      "id": 6,
+      "name": "toi là tam",
+      "dateOfBirth": "2021-08-12",
       "customerType": {
-        "id": 1,
-        "type": "gold"
-      }
-    },
-    {
-      "name": "Nguyen thi thuong",
-      "type": {
-        "id": 3,
-        "type": "diamond"
+        "id": 2,
+        "type": "silver"
       },
-      "dateOfBirth": "1900-04-04",
-      "id": 7
+      "id": 1
     }
   ],
   "customerType": [

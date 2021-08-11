@@ -22,4 +22,13 @@ export class CustomerService {
   update(customer): Observable<any> {
     return this.Http.patch(`${this.URL}/${customer.id}`, customer);
   }
+
+  search(searchText, dateFrom, dateTo): Observable<any> {
+    if (dateFrom === undefined) {
+      dateFrom = '1000-12-12';
+    }
+    return this.Http.get(this.URL +  '?dateOfBirth_gte=' + dateFrom + '&dateOfBirth_lte=' + dateTo + '&name_like=' + searchText );
+    // return this.http.get(this.url +  '?dateOfBirth_gte=' + dateFrom + '&dateOfBirth_lte=' + dateTo  );
+
+  }
 }
